@@ -1,0 +1,125 @@
+.. default-role:: verse
+
+Introduction
+------------
+
+Overview
+~~~~~~~~
+
+This letter was written together with Ephesians, Philippians and Colossians during Paul’s
+first Roman imprisonment. Its position in the Bible was chosen by the Church Fathers who saw
+that it was like Timothy and Titus, a letter to an individual, rather than an epistle to a
+corporate group as were `Mark 3:10-14,16` the other :verse:`Mark 3:16` prison epistles. :RFC:`2822`
+
+Background
+----------
+
+Geographical
+~~~~~~~~~~~~
+
+Philemon lived in a city called Colossae which was in modern day Asiatic Turkey in the
+Phrygian country called Anatolia.
+
+There is no city there today, just the ruins but it was a great city at the time of Paul. A
+companion epistle was written to the church at Colossae, the epistle to the Colossians.
+
+The Main Players
+~~~~~~~~~~~~~~~~
+
+Philemon
+........
+
+Philemon was a very rich man who had come to a saving faith in the Lord Jesus Christ. He
+apparently had come down to Ephesus and listened to Paul who spoke daily for two years at
+the school of Tyrannus.
+        
+He was a mature Christian for after his conversion under Paul’s ministry he had grown under
+the teaching ministry of Paul.
+        
+He was a long term friend of Paul and a leader of the church at Colossae though not the
+pastor.
+
+Onesimus
+........
+
+Onesimus was the slave of Philemon who robbed his master and fled to Rome. His idea was to
+become lost in the huge population of Rome and therefore evade recapture.
+        
+In some wonderful way Onesimus’ path crossed that of Paul resulting in his conversion to
+the Lord Jesus Christ.
+        
+Onesimus becomes a servant of Paul as well as growing under his teaching becoming a mature
+believer.
+        
+Paul knew that under Roman law Onesimus must be returned to his master and to clarify and
+assist in this rather difficult situation he writes a letter to Philemon.
+        
+Onesimus returns to Philemon in company with the pastors of the Ephesian and Colossian
+churches who are also taking letters from Paul back to their respective churches.
+        
+Paul asks in a very gracious manner that Philemon take Onesimus back, not as a free man but
+a servant who is a brother in Christ.
+        
+Here we have a free man addressing a brother who is a slave owner about another brother who
+is a slave. Paul also asks Philemon to prepare a room for his future visit which must have
+given Onesimus additional comfort.
+        
+Paul
+....
+
+The great apostle in chains in prison in Rome is able to give Philemon, who he sees as
+completely in the right, guidance as to how to tackle this problem in the best way.
+        
+Paul had had experience in this area with his rejection of John Mark for the second
+missionary journey after Mark had deserted Paul on the first.
+        
+Paul is also looking forward to his release and going to meet up with his friend Philemon
+in the future.
+        
+This epistle demonstrates that letter writing can be a ministry from God if we allow it to
+be so.  A person who finds it difficult to speak sometimes finds writing a better way.
+        
+Slavery
+~~~~~~~
+
+Slavery was a great evil in the ancient world but it was also part of the 
+ancient world. If there is anywhere in the Bible where you would expect a
+social manifesto regarding the abolition of slavery it would have been here.
+
+There were approximately sixty million slaves in the Roman Empire which 
+represented about half of the population. If they had revolted en masse 
+the Roman Empire would have fallen overnight.
+
+Under Roman law a run away slave could be beaten to death or killed any
+way the master wanted to or he could be pardoned. Paul is sticking to the
+letter of the law.
+
+The Romans had a law that if a slave killed his master and was protected
+by other slaves in the household all the slaves would be killed.
+At the time of writing this the Senate was debating a case where a
+very cruel master had been killed by a slave and protected by his fellow
+slaves. After days of debate all the 300 slaves were killed, 
+men women and children.
+
+Slavery was therefore a very important social issue in Paul’s day not 
+unlike apartheid in recent times.
+
+.. sidebar:: Comment
+
+    Something about apartheid here
+
+It is of note that one thing Paul does not do is to ask Philemon to set 
+the slaves free. Paul is working from within the institution to humanise 
+it from within. From a Scriptural viewpoint slavery is dealt with in 
+`1 Corinthians 7:20-22`_
+
+Lorum ipsum `John 3:16`_ dolor sit
+
+Lorem ipsum `John 3:16-18`_ dolor
+
+Lorem ipsum `verse 16 <John 3:16>`_ dolor
+
+
+
+.. _`1 Corinthians 7:20-22`: http://a.b.c/d.xml
+
