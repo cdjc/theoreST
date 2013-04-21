@@ -1,4 +1,3 @@
-.. default-role:: verse
 
 Introduction
 ------------
@@ -9,7 +8,7 @@ Overview
 This letter was written together with Ephesians, Philippians and Colossians during Paul’s
 first Roman imprisonment. Its position in the Bible was chosen by the Church Fathers who saw
 that it was like Timothy and Titus, a letter to an individual, rather than an epistle to a
-corporate group as were `Mark 3:10-14,16` the other :verse:`Mark 3:16` prison epistles. :RFC:`2822`
+corporate group as were the other prison epistles.
 
 Background
 ----------
@@ -86,6 +85,9 @@ Slavery was a great evil in the ancient world but it was also part of the
 ancient world. If there is anywhere in the Bible where you would expect a
 social manifesto regarding the abolition of slavery it would have been here.
 
+Roman Empire
+............
+
 There were approximately sixty million slaves in the Roman Empire which 
 represented about half of the population. If they had revolted en masse 
 the Roman Empire would have fallen overnight.
@@ -106,20 +108,75 @@ unlike apartheid in recent times.
 
 .. sidebar:: Comment
 
-    Something about apartheid here
+    Not sure the comparison between slavery in ancient Rome and apartheid
+    in recent history is more beneficial than confusing. Also, many people
+    younger than I would not know what apartheid is - at least from a social
+    issue perspective anyway. (Would be more relevant in the 80's, perhaps)
 
 It is of note that one thing Paul does not do is to ask Philemon to set 
 the slaves free. Paul is working from within the institution to humanise 
 it from within. From a Scriptural viewpoint slavery is dealt with in 
-`1 Corinthians 7:20-22`_
+`1 Corinthians 7:20-22`.
 
-Lorum ipsum `John 3:16`_ dolor sit
+Here we see that a free man who was converted became a slave of Christ
+while a slave who was converted was seen to be free in Christ. Slavery
+was neither commended nor condemned by the early church.
+The issue is "What do you think of Christ?"
 
-Lorem ipsum `John 3:16-18`_ dolor
+.. sidebar:: Comment
+    
+        Reworded anachronistic "What think ye of Christ"
+        
+A modern Example
+................
 
-Lorem ipsum `verse 16 <John 3:16>`_ dolor
+When the evil is abolished society will not fall apart with it. However
+with force or a revolution there are no winners but many losers.
 
+As a modern example, following the Civil War in America there were 
+more problems for the slaves than before the war.
 
+It is of interest 
+that Stonewall Jackson, one of the Confederate Generals in the 
+American Civil War used to take time off to go and teach the Negro 
+slaves and their children Bible Class. He looked upon his slaves as 
+his children, his responsibility, so that they had food, clothing and 
+the gospel.
 
-.. _`1 Corinthians 7:20-22`: http://a.b.c/d.xml
+We need to set an example and show what light can do in 
+the darkness. It is only as lives are transformed that society is 
+transformed as well.
 
+Evil is in the world when we are born and will 
+still be here after we leave. Social reform will come naturally with 
+the spread of biblical principles in a nation.
+
+Theological Pictures
+~~~~~~~~~~~~~~~~~~~~
+
+Here we have a glorious picture of the doctrine of imputation, the 
+act of reckoning something to another’s account.
+
+Here we have a person who is in a totally hopeless position whose 
+debt will be willingly paid for another.
+
+We also have the challenge of grace and legalism with Philemon who 
+is not only legally able to kill his slave but also to pardon him.
+
+The Purpose of the Letter
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The primary purpose of this epistle is to reveal Christ’s love for 
+us in what He did for us. This is one of the finest illustrations of 
+substitution.
+
+Another theme running through this letter is [a] spiritual growth 
+`v 1-3|Philemon 1:1-3`, [b] characteristics of a faithful believer 
+`v 4-7|Philemon 1:4-7`, [c] reflections of Christ 
+`v 8-20|Philemon 1:8-20` and [d] abiding with Christ
+`v 21-25|Philemon 1:21-25`.
+
+The practical purpose is to teach brotherly love. These men 
+belonging to two different classes in the Roman Empire, hating each 
+other and hurting each other, are now brothers in Christ, and they 
+are to act like it.

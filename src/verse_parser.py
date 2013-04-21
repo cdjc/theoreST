@@ -3,6 +3,29 @@ from tokenize import tokenize
 import token
 from io import BytesIO
 
+single_books = {'Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy',
+'Joshua', 'Judges', 'Ruth', 
+#'1 Samuel', '2 Samuel', '1 Kings', '2 Kings',
+#    '1 Chronicles', '2 Chronicles',
+'Ezra', 'Nehemiah', 'Esther',
+'Job', 'Psalms', 'Proverbs', 'Ecclesiates', 'Song of Songs',
+'Isaiah', 'Jeremiah', 'Lamentations', 'Ezekiel', 'Daniel',
+'Hosea', 'Joel', 'Amos', 'Obadiah', 'Jonah', 'Micah', 'Nahum',
+'Habbakuk', 'Zephaniah', 'Haggai', 'Zechariah', 'Malachi',
+
+'Matthew', 'Mark', 'Luke', 'John',
+'Acts', 'Romans', 
+#'1 Corinthians', '2 Corinthians', 
+'Galatians', 'Ephesians', 'Philippians','Colossians',
+#'1 Thessalonians', '2 Thessalonians', '1 Timothy', '2 Timothy', 
+'Titus', 'Philemon', 'Hebrews', 'James',
+#'1 Peter', '2 Peter', '1 John', '2 John', '3 John',
+'Jude', 'Revelation'}
+double_books = {'Samuel', 'Kings', 'Chronicles', 'Corinthians',
+'Thessalonians', 'Timothy', 'Peter'}
+triple_books = {'John'}
+all_book_names = single_books | double_books | triple_books
+
 class Token:
     
     def __eq__(self, o):
@@ -13,16 +36,10 @@ class Token:
         
     
 class Book(Token):
-    
-    value = 'book'
-    
     def __init__(self, name):
         self.value = name
         
 class Number(Token):
-    
-    value = 'number'
-    
     def __init__(self, name):
         self.value = name
         
@@ -30,15 +47,12 @@ class Number(Token):
         return str(self.value)
 
 class Colon(Token):
-    
     value = ':'
     
 class Comma(Token):
-    
     value = ','
     
 class Dash(Token):
-    
     value = '-'
     
 class Eof(Token):
@@ -48,76 +62,87 @@ class Unknown(Token):
     def __init__(self, name):
         self.value = name
 
-def to_bib_token(tok):
-    
-    tok_id, tok_val = tok
-    if tok_id == token.NAME:
-        return Book(tok_val)
-    if tok_id == token.NUMBER:
-        return Number(int(tok_val))
-    if tok_id == token.OP:
-        if tok_val == ':':
-            return Colon()
-        if tok_val == ',':
-            return Comma()
-        if tok_val == '-':
-            return Dash()
-    if tok_id == token.ENDMARKER:
-        return Eof()
-    return Unknown(tok_val)
-    
-def transform_for_numbered_books(toklist):
+class Tokeniser:
     '''
-    transform token pairs in the list that form numbered books (1 John) into single book tokens
+    Tokenise the input.
+    Use python's own tokeniser in it's stdlib, then transform to our own tokens
     '''
-    rval = []
-    maxi = len(toklist) - 2
-    i = 0
-    while i <= maxi:
-        first = toklist[i]
-        second = toklist[i + 1]
-        if isinstance(first, Number) and isinstance(second,Book):
-            if first.value in (1,2) and \
-            second.value in ('Samuel', 'Kings','Chronicles','Corinthians','Thessalonians','Timothy','Peter') \
-            or first.value in (1,2,3) and second.value == 'John':
-                rval.append(Book(str(first.value)+' '+second.value))
-                i += 2
-                continue
-        rval.append(first)
-        i += 1
-    rval.append(Eof())
-    return rval
+    def __init__(self):
+        pass
+        
+    def tokenise(self, chars):
+        tokens = [self._to_bib_token(x) for x in self._py_token_list(chars)]
+        return self._transform_for_numbered_books(tokens)
+
+    def _py_token_list(self, s):
+        return [(x[0],x[1]) for x in tokenize(BytesIO(s.encode('ascii')).readline) if x[0] != 56]
+
+    def _to_bib_token(self, tok):
+        '''translate from python's tokens to our own'''
+        tok_id, tok_val = tok
+        if tok_id == token.NAME and tok_val in all_book_names:
+            return Book(tok_val)
+        if tok_id == token.NUMBER:
+            return Number(int(tok_val))
+        if tok_id == token.OP:
+            if tok_val == ':':
+                return Colon()
+            if tok_val == ',':
+                return Comma()
+            if tok_val == '-':
+                return Dash()
+        if tok_id == token.ENDMARKER:
+            return Eof()
+        return Unknown(tok_val)
+        
+    def _transform_for_numbered_books(self, toklist):
+        '''
+        transform token pairs in the list that form numbered books (1 John) into single book tokens
+        '''
+        rval = []
+        maxi = len(toklist) - 2
+        i = 0
+        while i <= maxi:
+            first = toklist[i]
+            second = toklist[i + 1]
+            if isinstance(first, Number) and isinstance(second,Book):
+                if first.value in (1,2) and second.value in double_books\
+                  or first.value in (1,2,3) and second.value in triple_books:
+                    rval.append(Book(str(first.value)+' '+second.value))
+                    i += 2
+                    continue
+            rval.append(first)
+            i += 1
+        rval.append(Eof())
+        return rval
         
             
 
 class ParseException(Exception):
     
     def __init__(self, expected, actual, parsed_so_far=[]):
-        self.expected = expected
-        if isinstance(self.expected, type):
-            self.expected = {self.expected}
+        if isinstance(expected, set):
+            self.expected_str = str([x.__name__ for x in expected])
+            self.expected_set = expected
+        elif isinstance(expected, str):
+            self.expected_str = expected
+            self.expected_set = None
         self.actual = actual
     
     def __str__(self):
-        return "Expected "+str([x.__name__ for x in self.expected])+" (actual "+str(self.actual)+")"
+        return "Expected "+self.expected_str+" (actual "+str(self.actual)+")"
 
 class Parser:
     
     def __init__(self, txt):
-        self.tokens = transform_for_numbered_books([to_bib_token(x) for x in self.py_token_list(txt)])
-        #print([x.value for x in self.tokens])
-        #self.tokens = [to_bib_token(x) for x in self.py_token_list(txt)]
-        #print(self.tokens)
-        #print([x.value for x in self.tokens])
-        unknowns = [x for x in self.tokens if type(x) == Unknown]
-        #if len(unknowns) > 0:
-        #    return Problem(
-        self.index = 0
-        self.refs = []
-        self.book = None
-        self.chapter = None
-        self.text = ""
-        self.swallowed = []
+        self.explicit_txt = None # the explicit text, if any (the 'verse 16' in `verse 16|John 3:16`)
+        self.txt = txt            # the text of the reference
+        self.index = 0            # current token
+        self.refs = []            # verse reference objects
+        self.book = None         # current book
+        self.chapter = None      # current chapter
+        self.text = ""            # text of current verse reference
+        self.swallowed = []       # tokens 'swallowed'
         
         
     def eof(self):
@@ -125,7 +150,14 @@ class Parser:
         
     def parse_verse_references(self):
         #print([x.value for x in self.tokens])
-        
+        if '|' in self.txt:
+            parts = self.txt.split('|')
+            if len(parts) != 2:
+                raise ParseException('One | character',str(len(parts)-1)+" | chars")
+            self.explicit_txt, self.txt = parts
+            
+        self.tokens = Tokeniser().tokenise(self.txt)
+
         state = self.p_book
         
         while state:
@@ -133,8 +165,11 @@ class Parser:
         
         if not self.cur_tok_is(Eof):
             raise ParseException({Eof},self.cur_tok())
-        #print('now at:',self.cur_tok())
-            
+        
+        if self.explicit_txt:
+            if len(self.refs) > 1:
+                raise ParseException('One reference with | char',str(len(self.refs))+' references')
+            self.refs[0].text = self.explicit_txt
         return self.refs
         
     def p_book(self):
@@ -168,7 +203,7 @@ class Parser:
         self.verse = self.swallow(Number)
         self.text += str(self.verse)
         self.to_verse = None
-        self.range = False
+        seen_range = False
         # range (5-17 or 6,7 where two adjacent numbers are separated by comma)
         if self.cur_tok_is(Dash) or self.cur_tok_is(Comma) and self.peek([Number]) and self.peek_ahead(1).value == self.verse.value + 1:
             self.swallow()
@@ -176,7 +211,7 @@ class Parser:
             self.text += '-'+str(self.to_verse)
             self.refs.append(VerseReference(self.text, self.book, self.chapter, self.verse, self.to_verse))
             self.text = ''
-            self.range = True
+            seen_range = True
         elif self.cur_tok_is(Eof):
             self.refs.append(VerseReference(self.text, self.book, self.chapter, self.verse,))
             self.text = ''
@@ -184,33 +219,26 @@ class Parser:
         if self.cur_tok_is(Eof):
             return None
             
-        #print('here',self.cur_tok(),self.peek([Number]))
-        if self.cur_tok_is(Comma):
+        if self.cur_tok_is(Comma):  # another verse or a chapter or a book
+            self.swallow(Comma)
             
-            # another verse or a chapter or a book, (TODO: or a numbered book)
-            if self.peek([Number,Colon]): # a chapter
-                self.swallow(Comma)
-                if not self.range:
+            if self.cur_tok_is(Number) and self.peek([Colon]): # a chapter
+                if not seen_range:
                     self.refs.append(VerseReference(self.text, self.book, self.chapter, self.verse))
                     self.text = ''
                 return self.p_chapter
-            if self.peek([Book]): # a book
-                self.swallow(Comma)
-                if not self.range:
+            if self.cur_tok_is(Book): # a book
+                if not seen_range:
                     self.refs.append(VerseReference(self.text, self.book, self.chapter, self.verse))
                     self.text = ''
                 return self.p_book
-            if self.peek([Number]): # another verse
-                self.swallow(Comma)
-                if not self.range:
+            if self.cur_tok_is(Number): # another verse
+                if not seen_range:
                     self.refs.append(VerseReference(self.text, self.book, self.chapter, self.verse))
                     self.text = ''
                 return self.p_verse
             raise ParseException({Number,Book},self.cur_tok())
         raise ParseException({Dash,Comma,Eof},self.cur_tok())
-        #if self.cur_tok_is(Eof):
-        #    self.refs.append(VerseReference(self.text, self.book, self.chapter, self.verse, self.to_verse))
-        #    return None
             
         
     def oob(self, index):
@@ -246,22 +274,8 @@ class Parser:
             #print('swallow',curtok)
             self.index += 1
             return curtok
-        raise ParseException(tok, self.cur_tok())
+        raise ParseException({tok}, self.cur_tok())
         
-    def py_token_list(self, s):
-        return [(x[0],x[1]) for x in tokenize(BytesIO(s.encode('ascii')).readline) if x[0] != 56]
-    
-class Problem:
-    
-    def __init__(self, expected, actual):
-        self.expected = expected
-        self.actual = actual
-        
-    def __eq__(self, o):
-        return self.expected == o.expected and self.actual == o.actual
-        
-    def __str__(self):
-        return "Expected "+expected+" but found "+actual
     
 class VerseReference:
     
@@ -304,39 +318,55 @@ if __name__ == '__main__':
     'John 3:4-5,4:5-6' : [VerseReference('John 3:4-5', 'John', 3, 4, 5), VerseReference('4:5-6', 'John', 4, 5, 6)],
     '1 John 3:4,5,1 John 2:7' : [VerseReference('1 John 3:4-5', '1 John', 3, 4, 5),
                                 VerseReference('1 John 2:7', '1 John', 2, 7)],
+    'Bill 3:16' : {Book},
+    'John 2:2,3 John 1:1' : [VerseReference('John 2:2', 'John', 2, 2),
+                            VerseReference('3 John 1:1', '3 John', 1, 1)],
+    'verse 16|John 3:16' : [VerseReference('verse 16', 'John', 3, 16)],
+    'verse 16|John 3:16,18' : 'Expected One reference with | char (actual 2 references)',
+    
+    
                                 # TODO: more tests for errors.
     }
 
     def ref_list_as_str(verses):
         return ', '.join(x.text for x in verses)
 
+    pass_count = 0
+    fail_count = 0
     for txt in sorted(tests):
-        print('-------------',txt)
+        print('-------------------',txt)
         p = Parser(txt)
         try:
             vrlist = p.parse_verse_references()
         except ParseException as pe:
             state = 'failed'
             #print(tests[txt],pe.expected,tests[txt] == pe.expected)
-            if tests[txt] == pe.expected:
+            if tests[txt] == pe.expected_set or tests[txt] == str(pe):
                 state = 'passed'
                 print(txt, ' '*(25-len(txt)),'passed', pe)
+                pass_count += 1
             else:
                 if isinstance(tests[txt], set):
                     print(txt, '\n\tfailed: expected exception expecting', [x.__name__ for x in tests[txt]])
                 else:
-                    print(txt, '\n\t','failed: expected:', tests[txt])
-                print('\t','actual:',pe)
+                    print(txt, '\n\texpected:', tests[txt])
+                print('\t  actual:',pe)
+                fail_count += 1
             continue
         if len(vrlist) != len(tests[txt]):
             print(txt,' failed: different length lists:')
             print('\texpected:\t',tests[txt])
             print('\tactual:  \t',vrlist)
+            fail_count = 1
             continue
-        print('ref list:',ref_list_as_str(vrlist))
+        print('appearance as text:',ref_list_as_str(vrlist))
         for vr,expected in zip(vrlist,tests[txt]):
             if vr == expected:
                 print(txt,' '*(25-len(txt)),'passed ',vr)
+                pass_count += 1
             else:
                 print(txt,'\n\texpected:',expected,'\n\t  actual:',vr)
-                
+                failCount += 1
+    print()
+    print('passed:',pass_count)
+    print('failed:',fail_count)
