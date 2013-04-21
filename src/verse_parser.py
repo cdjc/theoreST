@@ -144,7 +144,6 @@ class Parser:
         self.text = ""            # text of current verse reference
         self.swallowed = []       # tokens 'swallowed'
         
-        
     def eof(self):
         return self.index >= len(self.tokens) or self.tokens[self.index] == Eof()
         
@@ -203,19 +202,16 @@ class Parser:
         self.verse = self.swallow(Number)
         self.text += str(self.verse)
         self.to_verse = None
-        seen_range = False
+        
         # range (5-17 or 6,7 where two adjacent numbers are separated by comma)
         if self.cur_tok_is(Dash) or self.cur_tok_is(Comma) and self.peek([Number]) and self.peek_ahead(1).value == self.verse.value + 1:
             self.swallow()
             self.to_verse = self.swallow(Number)
             self.text += '-'+str(self.to_verse)
-            self.refs.append(VerseReference(self.text, self.book, self.chapter, self.verse, self.to_verse))
-            self.text = ''
-            seen_range = True
-        elif self.cur_tok_is(Eof):
-            self.refs.append(VerseReference(self.text, self.book, self.chapter, self.verse,))
-            self.text = ''
-            return None
+
+        self.refs.append(VerseReference(self.text, self.book, self.chapter, self.verse, self.to_verse))
+        self.text = ''
+            
         if self.cur_tok_is(Eof):
             return None
             
@@ -223,19 +219,10 @@ class Parser:
             self.swallow(Comma)
             
             if self.cur_tok_is(Number) and self.peek([Colon]): # a chapter
-                if not seen_range:
-                    self.refs.append(VerseReference(self.text, self.book, self.chapter, self.verse))
-                    self.text = ''
                 return self.p_chapter
             if self.cur_tok_is(Book): # a book
-                if not seen_range:
-                    self.refs.append(VerseReference(self.text, self.book, self.chapter, self.verse))
-                    self.text = ''
                 return self.p_book
             if self.cur_tok_is(Number): # another verse
-                if not seen_range:
-                    self.refs.append(VerseReference(self.text, self.book, self.chapter, self.verse))
-                    self.text = ''
                 return self.p_verse
             raise ParseException({Number,Book},self.cur_tok())
         raise ParseException({Dash,Comma,Eof},self.cur_tok())
@@ -339,10 +326,8 @@ if __name__ == '__main__':
         try:
             vrlist = p.parse_verse_references()
         except ParseException as pe:
-            state = 'failed'
             #print(tests[txt],pe.expected,tests[txt] == pe.expected)
             if tests[txt] == pe.expected_set or tests[txt] == str(pe):
-                state = 'passed'
                 print(txt, ' '*(25-len(txt)),'passed', pe)
                 pass_count += 1
             else:
@@ -357,7 +342,7 @@ if __name__ == '__main__':
             print(txt,' failed: different length lists:')
             print('\texpected:\t',tests[txt])
             print('\tactual:  \t',vrlist)
-            fail_count = 1
+            fail_count += 1
             continue
         print('appearance as text:',ref_list_as_str(vrlist))
         for vr,expected in zip(vrlist,tests[txt]):
