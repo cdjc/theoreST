@@ -1,0 +1,6 @@
+'''
+Options
+'''
+
+bible = 'ESV'
+
