@@ -18,7 +18,7 @@ class BiblePassage(rst.Directive):
         '''
         '''
         ref = self.arguments[0]
-        print('****here',ref,options.bible,file=sys.stderr)
+        #print('****here',ref,options.bible,file=sys.stderr)
         vp = verse_parser.Parser(ref)
         try:
             vrefs = vp.parse_verse_references()
@@ -28,14 +28,15 @@ class BiblePassage(rst.Directive):
             raise self.error("BiblePassage: One, and only one, verse reference allowed")
         vref = vrefs[0]
         
-        
+        #verses = bible.
+        #print(ref,'|',vref.book,'|',type(vref.book))
 
-        rmtxt = '''Line1
-Line2
-
-And Line 3 '''+str(self.arguments)
+        rst = bible.get_passage_as_rst('ESV', vref.book.value,
+                                       vref.chapter.value, vref.verse.value, vref.to_verse.value,
+                                       force=False)
+        print(rst)
         source = 'Bible Passage'
-        include_lines = statemachine.string2lines(rmtxt, 0, convert_whitespace=True)
+        include_lines = statemachine.string2lines(rst, 0, convert_whitespace=True)
         self.state_machine.insert_input(include_lines, source)
         return []
 

@@ -1,5 +1,8 @@
 import sys
 
+out = 'out'
+bible = 'ESV'
+
 sys.path += ['.', '../src']
 
 # paver imports
@@ -13,13 +16,10 @@ from docutils.core import publish_file as rundoc
 
 # my imports
 import verse_role
+import biblepassage
 
 #from bibleref_standalone import Reader
 
-out = 'out'
-bible = 'KJV'
-#print(dir())
-#print(dir(path))
 
 @task
 def ensure_dirs_exists():
@@ -32,7 +32,6 @@ def philemon_latex():
     source = 'philemon.txt'
     dest = path(out) / 'philemon.tex'
     reader = path('.').abspath() / 'bibleref_standalone'
-
     
     rundoc(writer_name='latex',
         source_path = source,

@@ -56,7 +56,7 @@ class Dash(Token):
     value = '-'
     
 class Eof(Token):
-     value = '<EOF>'
+    value = '<EOF>'
     
 class Unknown(Token):
     def __init__(self, name):
