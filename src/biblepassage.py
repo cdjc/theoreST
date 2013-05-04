@@ -30,9 +30,12 @@ class BiblePassage(rst.Directive):
         
         #verses = bible.
         #print(ref,'|',vref.book,'|',type(vref.book))
+        
+        verse = vref.verse.value if vref.verse else None
+        to_verse = vref.to_verse.value if vref.to_verse else None
 
         rst = bible.get_passage_as_rst('ESV', vref.book.value,
-                                       vref.chapter.value, vref.verse.value, vref.to_verse.value,
+                                       vref.chapter.value, verse, to_verse,
                                        force=False)
         print(rst)
         source = 'Bible Passage'
@@ -41,3 +44,24 @@ class BiblePassage(rst.Directive):
         return []
 
 rst.directives.register_directive('biblepassage', BiblePassage)
+
+if __name__ == '__main__':
+    if len(sys.argv) != 2:
+        print('Usage: '+sys.argv[0]+' reference', file=sys.stderr)
+        sys.exit(1)
+    ref = sys.argv[1]
+    vp = verse_parser.Parser(ref)
+    try:
+        vrefs = vp.parse_verse_references()
+    except verse_parser.ParseException as pe:
+        raise self.error("BiblePassage: parse verse ref error: "+str(pe))
+    if len(vrefs) != 1:
+        raise self.error("BiblePassage: One, and only one, verse reference allowed")
+    vref = vrefs[0]
+    verse = vref.verse.value if vref.verse else None
+    to_verse = vref.to_verse.value if vref.to_verse else None
+
+    rst = bible.get_passage_as_rst('ESV', vref.book.value,
+                                   vref.chapter.value, verse, to_verse,
+                                   force=True)
+    print(rst)

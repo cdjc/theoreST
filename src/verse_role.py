@@ -28,7 +28,7 @@ bibleref_function = bibleref_esvapi_esv
 #bibleref_function = bibleref_biblegateway_nasb
 
 def verse_reference_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
-    print(role,' - ',rawtext,' - ',text,file=sys.stderr)
+    #print(role,' - ',rawtext,' - ',text,file=sys.stderr)
     p = Parser(text)
     try:
         vrlist = p.parse_verse_references()
@@ -38,7 +38,7 @@ def verse_reference_role(role, rawtext, text, lineno, inliner, options={}, conte
         return [prb], [msg]
     nodels = []
     for vr in vrlist:
-        print('refuri is',bibleref_function(vr),file=sys.stderr)
+        #print('refuri is',bibleref_function(vr),file=sys.stderr)
         node = nodes.reference(rawtext, vr.text, refuri=bibleref_function(vr), **options)
         nodels.append(node)
         nodels.append(nodes.generated(', ',', ', **options))

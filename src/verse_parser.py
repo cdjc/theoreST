@@ -8,7 +8,10 @@ single_books = {'Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy',
 #'1 Samuel', '2 Samuel', '1 Kings', '2 Kings',
 #    '1 Chronicles', '2 Chronicles',
 'Ezra', 'Nehemiah', 'Esther',
-'Job', 'Psalms', 'Proverbs', 'Ecclesiates', 'Song of Songs',
+'Job',
+'Psalms', 'Psalm',
+'Proverbs', 'Ecclesiates',
+'Song of Songs', 'Song of Solomon',
 'Isaiah', 'Jeremiah', 'Lamentations', 'Ezekiel', 'Daniel',
 'Hosea', 'Joel', 'Amos', 'Obadiah', 'Jonah', 'Micah', 'Nahum',
 'Habbakuk', 'Zephaniah', 'Haggai', 'Zechariah', 'Malachi',
@@ -87,7 +90,7 @@ class Tokeniser:
         if tok_id == token.OP:
             if tok_val == ':':
                 return Colon()
-            if tok_val == ',':
+            if tok_val == ',' or tok_val == ';':
                 return Comma()
             if tok_val == '-':
                 return Dash()

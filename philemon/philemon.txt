@@ -11,4 +11,7 @@
 
 .. include:: apostolicgreeting.txt
 
+Doctrines
+---------
 
+.. include:: ../common/paul_pressure2.txt
