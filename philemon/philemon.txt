@@ -14,4 +14,6 @@
 Doctrines
 ---------
 
-.. include:: ../common/paul_pressure2.txt
+.. include:: ../common/paul_pressure.txt
+
+.. include:: ../common/timothy_ministry.txt
