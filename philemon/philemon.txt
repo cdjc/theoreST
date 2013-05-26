@@ -22,3 +22,5 @@ Doctrines
 
 .. include:: ../common/christian_soldier.txt
 
+.. include:: ../common/grace.txt
+

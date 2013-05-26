@@ -218,7 +218,8 @@ class Parser:
             self.text += str(subv)
         
         # range (5-17 or 6,7 where two adjacent numbers are separated by comma)
-        if self.cur_tok_is(Dash) or self.cur_tok_is(Comma) and self.peek([Number]) and self.peek_ahead(1).value == self.verse.value + 1:
+        if self.cur_tok_is(Dash) or \
+           self.cur_tok_is(Comma) and self.peek([Number]) and self.peek_ahead(1).value == self.verse.value + 1 and type(self.peek_ahead(2)) != Colon:
             self.swallow()
             self.to_verse = self.swallow(Number)
             self.text += '-'+str(self.to_verse)
@@ -326,7 +327,14 @@ if __name__ == '__main__':
     'verse 16|John 3:16,18' : 'Expected One reference with | char (actual 2 references)',
     'John 3:16a' : [VerseReference('John 3:16a', 'John', 3, 16)],
     'John 3:16d' : {Dash,Comma,Eof,SubVerse},
-    
+#    'Psalm 103:8-12, Romans 3:23-4, Romans 4:4, 5:20, Ephesians 2:8, 9' :
+    'Psalm 103:8-12, Romans 3:23-24, Romans 4:4, 5:20, Ephesians 2:8, 9' :
+    [VerseReference('Psalm 103:8-12','Psalm', 103, 8, 12),
+     VerseReference('Romans 3:23-24','Romans', 3, 23, 24),
+     VerseReference('Romans 4:4', 'Romans', 4, 4),
+     VerseReference('5:20', 'Romans', 5, 20),
+     VerseReference('Ephesians 2:8-9', 'Ephesians', 2, 8, 9)]
+                    
                                 # TODO: more tests for errors.
     }
 
