@@ -49,6 +49,10 @@ class Number(Token):
     def __str__(self):
         return str(self.value)
 
+class SubVerse(Token):
+    def __init__(self, name):
+        self.value = name
+
 class Colon(Token):
     value = ':'
     
@@ -83,8 +87,11 @@ class Tokeniser:
     def _to_bib_token(self, tok):
         '''translate from python's tokens to our own'''
         tok_id, tok_val = tok
-        if tok_id == token.NAME and tok_val in all_book_names:
-            return Book(tok_val)
+        if tok_id == token.NAME:
+            if tok_val in all_book_names:
+                return Book(tok_val)
+            if tok_val in 'abc':
+                return SubVerse(tok_val)
         if tok_id == token.NUMBER:
             return Number(int(tok_val))
         if tok_id == token.OP:
@@ -206,6 +213,10 @@ class Parser:
         self.text += str(self.verse)
         self.to_verse = None
         
+        if self.cur_tok_is(SubVerse):
+            subv = self.swallow(SubVerse)
+            self.text += str(subv)
+        
         # range (5-17 or 6,7 where two adjacent numbers are separated by comma)
         if self.cur_tok_is(Dash) or self.cur_tok_is(Comma) and self.peek([Number]) and self.peek_ahead(1).value == self.verse.value + 1:
             self.swallow()
@@ -228,7 +239,7 @@ class Parser:
             if self.cur_tok_is(Number): # another verse
                 return self.p_verse
             raise ParseException({Number,Book},self.cur_tok())
-        raise ParseException({Dash,Comma,Eof},self.cur_tok())
+        raise ParseException({Dash,Comma,Eof,SubVerse},self.cur_tok())
             
         
     def oob(self, index):
@@ -313,7 +324,8 @@ if __name__ == '__main__':
                             VerseReference('3 John 1:1', '3 John', 1, 1)],
     'verse 16|John 3:16' : [VerseReference('verse 16', 'John', 3, 16)],
     'verse 16|John 3:16,18' : 'Expected One reference with | char (actual 2 references)',
-    
+    'John 3:16a' : [VerseReference('John 3:16a', 'John', 3, 16)],
+    'John 3:16d' : {Dash,Comma,Eof,SubVerse},
     
                                 # TODO: more tests for errors.
     }
@@ -354,7 +366,7 @@ if __name__ == '__main__':
                 pass_count += 1
             else:
                 print(txt,'\n\texpected:',expected,'\n\t  actual:',vr)
-                failCount += 1
+                fail_count += 1
     print()
     print('passed:',pass_count)
     print('failed:',fail_count)

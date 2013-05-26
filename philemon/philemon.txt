@@ -17,3 +17,8 @@ Doctrines
 .. include:: ../common/paul_pressure.txt
 
 .. include:: ../common/timothy_ministry.txt
+
+.. include:: ../common/the_church.txt
+
+.. include:: ../common/christian_soldier.txt
+
