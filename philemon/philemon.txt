@@ -24,3 +24,10 @@ Doctrines
 
 .. include:: ../common/grace.txt
 
+.. include:: ../common/peace.txt
+
+.. include:: ../common/trinity.txt
+
+
+
+.. include:: character_of_philemon.txt
