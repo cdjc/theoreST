@@ -50,6 +50,8 @@ lines = sys.stdin.readlines()
 last_match = ''
 for line in lines:
     line = line.strip()
+    line = line.replace('\xa0','')
+
     if line == matcher:
         collecting = True
         continue
@@ -79,19 +81,19 @@ for line in lines:
             lett_match = None
                 
     if num_match != None:
-        print("num ",num_match.group(1), num_match.group(2), file=sys.stderr)
+        #print("num ",num_match.group(1), num_match.group(2), file=sys.stderr)
         n = Node(1, num_match.group(2))
         root.children.append(n)
         last_match = ('num', num_match.group(1))
         continue
     if lett_match != None:
-        print("    let ",lett_match.group(1), lett_match.group(2), file=sys.stderr)
+        #print("    let ",lett_match.group(1), lett_match.group(2), file=sys.stderr)
         n = Node(2, lett_match.group(2))
         root.children[-1].children.append(n)
         last_match = 'let',lett_match.group(1)
         continue
     if rom_match != None:
-        print("        rom ",rom_match.group(1), rom_match.group(4), file=sys.stderr)
+        #print("        rom ",rom_match.group(1), rom_match.group(4), file=sys.stderr)
         n = Node(3, rom_match.group(4))
         root.children[-1].children[-1].children.append(n)
         last_match = 'rom',rom_match.group(1)

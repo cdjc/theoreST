@@ -31,3 +31,22 @@ Doctrines
 
 
 .. include:: character_of_philemon.txt
+
+Doctrines
+---------
+
+.. include:: ../common/thankfulness.txt
+
+.. include:: ../common/prayer.txt
+
+.. include:: ../common/love.txt
+
+.. include:: ../common/faith.txt
+
+.. include:: ../common/saints.txt
+
+.. include:: ../common/evangelism.txt
+
+.. include:: ../common/positional_truth.txt
+
+.. include:: ../common/happiness.txt
