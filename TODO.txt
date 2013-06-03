@@ -2,8 +2,19 @@ Greek role for greek words. Hypertext link to online greek dictionary.
 
 Versioning
 
-Translation: Interaction with versioning. Automatic via online translation provider.
+Translation: Interaction with versioning. Automatic via online translation provider. Pass through greek words as is (also, consider non-latin target alphabet)
 
 LaTeX: biblepassage footnotes should be directly under the passage, not at the bottom of the page
 
 LaTeX: Use rubber to auto-rerun until references are correct
+
+Draft comments
+
+----
+Bugs
+----
+
+"Isaiah", not "lsaiah"
+
+"1 Corinthians", not "I Corinthians"
+
