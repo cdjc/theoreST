@@ -50,11 +50,11 @@ lines = sys.stdin.readlines()
 last_match = ''
 for line in lines:
     line = line.strip()
-    line = line.replace('\xa0','')
 
     if line == matcher:
         collecting = True
         continue
+    line = line.replace('\xa0','')
     if not collecting:
         continue
     if line == "<para/>":

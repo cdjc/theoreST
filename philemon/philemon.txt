@@ -50,3 +50,30 @@ Doctrines
 .. include:: ../common/positional_truth.txt
 
 .. include:: ../common/happiness.txt
+
+
+
+.. include:: intercession_for_onesimus.txt
+
+Doctrines
+---------
+
+.. include:: ../common/gospel_of_salvation.txt
+
+.. include:: ../common/salvation.txt
+
+.. include:: ../common/effective_calling.txt
+
+.. include:: ../common/holy_spirit_church_age.txt
+
+.. include:: ../common/deposits.txt
+
+.. include:: ../common/apostleship.txt
+
+.. include:: ../common/ambassador.txt
+
+.. include:: ../common/minister.txt
+
+.. include:: ../common/free_will.txt
+
+.. include:: ../common/brotherhood_of_believers.txt
