@@ -79,7 +79,9 @@ class Tokeniser:
         
     def tokenise(self, chars):
         tokens = [self._to_bib_token(x) for x in self._py_token_list(chars)]
-        return self._transform_for_numbered_books(tokens)
+        tokens = self._transform_for_SoS(tokens)
+        tokens = self._transform_for_numbered_books(tokens)
+        return tokens
 
     def _py_token_list(self, s):
         return [(x[0],x[1]) for x in tokenize(BytesIO(s.encode('ascii')).readline) if x[0] != 56]
@@ -125,6 +127,25 @@ class Tokeniser:
             i += 1
         rval.append(Eof())
         return rval
+        
+    def _transform_for_SoS(self, toklist):
+        rval = []
+        maxi = len(toklist) - 3
+        i = 0
+        while i <= maxi:
+            tokens = toklist[i:i+3]
+            if all(isinstance(x, Unknown) for x in tokens):
+                three_string = ' '.join([x.value for x in tokens])
+                #print("########", three_string)
+                if three_string.lower() in ['song of solomon', 'song of songs']:
+                    rval.append(Book(three_string))
+                    i += 3
+                    #print('####',three_string)
+                    continue
+            rval.append(toklist[i])
+            i += 1
+        return rval+toklist[-2:]
+                
         
             
 

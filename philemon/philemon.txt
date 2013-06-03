@@ -77,3 +77,22 @@ Doctrines
 .. include:: ../common/free_will.txt
 
 .. include:: ../common/brotherhood_of_believers.txt
+
+.. include:: ../common/reconciliation.txt
+
+.. include:: ../common/imputation.txt
+
+.. include:: ../common/confidence.txt
+
+.. include:: ../common/obedience.txt
+
+
+
+.. include:: salutations_and_conclusion.txt
+
+Doctrines
+---------
+
+.. include:: ../common/soul_and_spirit.txt
+
+.. include:: ../common/amen.txt
