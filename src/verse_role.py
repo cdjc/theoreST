@@ -24,8 +24,12 @@ def bibleref_biblegateway(ref, version):
 def bibleref_biblegateway_nasb(ref):
     return bibleref_biblegateway(ref, 'NASB')
 
+def bibleref_biblegateway_kjv(ref):
+    return bibleref_biblegateway(ref, 'KJV')
+
 bibleref_function = bibleref_esvapi_esv
 #bibleref_function = bibleref_biblegateway_nasb
+bibleref_function = bibleref_biblegateway_kjv
 
 def verse_reference_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
     #print(role,' - ',rawtext,' - ',text,file=sys.stderr)

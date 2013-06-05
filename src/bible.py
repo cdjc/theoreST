@@ -218,6 +218,9 @@ class Retriever_BibleGateway:
         with urllib.request.urlopen(url) as getter:
             html = getter.read()
         fname = 'tmp_'+str(book)+'_'+str(chapter)+'.html'
+        #save_dir = os.path.join(module_dir, save_dir)
+        #if not os.path.exists(save_dir):
+        #    os.mkdir(save_dir)
         path = os.path.join(module_dir, fname)
         with open(path, 'wb') as f:
             f.write(html)
@@ -353,6 +356,8 @@ class Retriever_BibleGateway:
         
     def extract_raw_footnotes(self, soup):
         raw_footnote_parents = [x for x in soup.find_all('div') if x.has_key('class') and 'footnotes' in x['class']]
+        if raw_footnote_parents == []:
+            return []
         raw_footnotes = raw_footnote_parents[0].find_all('li')
         footnotes = []
         for raw_footnote in raw_footnotes:

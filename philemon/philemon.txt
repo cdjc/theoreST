@@ -30,9 +30,7 @@
 
     \pagebreak
 
-.. header:: Evangelical Bible College of Western Australia
-
-.. footer:: Philemon
+.. header:: Philemon
 
 .. include:: introduction.txt
 

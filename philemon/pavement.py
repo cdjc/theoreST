@@ -1,7 +1,7 @@
 import sys
 
 out = 'out'
-bible = 'ESV'
+bible = 'KJV'
 
 sys.path += ['.', '../src']
 

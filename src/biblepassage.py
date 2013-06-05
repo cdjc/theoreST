@@ -34,7 +34,7 @@ class BiblePassage(rst.Directive):
         verse = vref.verse.value if vref.verse else None
         to_verse = vref.to_verse.value if vref.to_verse else None
 
-        rst = bible.get_passage_as_rst('ESV', vref.book.value,
+        rst = bible.get_passage_as_rst('KJV', vref.book.value,
                                        vref.chapter.value, verse, to_verse,
                                        force=False)
         print(rst)
@@ -61,7 +61,7 @@ if __name__ == '__main__':
     verse = vref.verse.value if vref.verse else None
     to_verse = vref.to_verse.value if vref.to_verse else None
 
-    rst = bible.get_passage_as_rst('ESV', vref.book.value,
+    rst = bible.get_passage_as_rst('KJV', vref.book.value,
                                    vref.chapter.value, verse, to_verse,
                                    force=True)
     print(rst)

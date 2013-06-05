@@ -1,3 +1,7 @@
+
+Core process
+------------
+
 Greek role for greek words. Hypertext link to online greek dictionary.
 
 Versioning
@@ -10,9 +14,16 @@ LaTeX: Use rubber to auto-rerun until references are correct
 
 Draft comments
 
-----
-Bugs
-----
+Smallcaps LORD in included biblical passages
+
+
+Editing
+-------
+
+Remove KJV-isms. Useful to ease automatic translations.
+
+Pre-existing Bugs
+-----------------
 
 "Isaiah", not "lsaiah"
 
