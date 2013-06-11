@@ -27,12 +27,24 @@ def bibleref_biblegateway_nasb(ref):
 def bibleref_biblegateway_kjv(ref):
     return bibleref_biblegateway(ref, 'KJV')
 
-bibleref_function = bibleref_esvapi_esv
-#bibleref_function = bibleref_biblegateway_nasb
-bibleref_function = bibleref_biblegateway_kjv
+def bibleref_biblegateway_generic(version):
+    def fn(ref):
+        return bibleref_biblegateway(ref, version)
+    return fn
+
+bibleref_function = None
+
+version_reference_functions = \
+{ 'KJV': bibleref_biblegateway_generic('KJV'),
+  'ESV': bibleref_biblegateway_generic('ESV'),
+  'NET': bibleref_biblegateway_generic('NET'),
+  'NASB': bibleref_biblegateway_generic('NASB'),
+  }
 
 def verse_reference_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
     #print(role,' - ',rawtext,' - ',text,file=sys.stderr)
+    if bibleref_function == None:
+        raise Exception("No bible set. Call set_version() after import")
     p = Parser(text)
     try:
         vrlist = p.parse_verse_references()
@@ -49,5 +61,12 @@ def verse_reference_role(role, rawtext, text, lineno, inliner, options={}, conte
     if len(nodels) > 1:
         del nodels[-1] # delete last comma
     return nodels,[]
+
+def set_version(version):
+    global bibleref_function
+    if version in version_reference_functions:
+        bibleref_function = version_reference_functions[version]
+    else:
+        raise Exception("Unknown bible version:"+str(version))
 
 roles.register_local_role('verse', verse_reference_role)

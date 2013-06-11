@@ -26,7 +26,7 @@ names = ['1 Chronicles', '1 Corinthians', '1 John', '1 Kings', '1 Peter',
 
 def bibquote(text):
     re_names = '('+'|'.join(names)+')'
-    re2 = re_names+r'\s+\d+:(\s*(\d+|,|-|;|:|'+re_names+'))+'
+    re2 = re_names+r'\s+\d+:(\s*(,|-|;|:|'+re_names+'|\d+))+'
         
     re1 = re.compile('('+re2+')')
     return re1.sub(r'`\1`', text)
@@ -35,11 +35,14 @@ def test():
     tests = \
     [(" sister (Acts 23:16), with"," sister (`Acts 23:16`), with"),
      (" sister Acts 23:16 with"," sister `Acts 23:16` with"),
+     (" sister 2 Timothy 23:16 with"," sister `2 Timothy 23:16` with"),
      (" sister Acts 23:16,18 with"," sister `Acts 23:16,18` with"),
      (" sister Acts 23:16-18 with"," sister `Acts 23:16-18` with"),
      (" sister Acts 23:16, 18 with"," sister `Acts 23:16, 18` with"),
      (" sister Acts 23:16, 18:12 with"," sister `Acts 23:16, 18:12` with"),
      (" sister Acts 23:16, John 18:12 with"," sister `Acts 23:16, John 18:12` with"),
+     (" sister Acts 23:16, 2 John 18:12 with"," sister `Acts 23:16, 2 John 18:12` with"),
+     (" sister Acts 23:16, 2 Timothy 18:12 with"," sister `Acts 23:16, 2 Timothy 18:12` with"),
      ]
     
     for raw,expected in tests:

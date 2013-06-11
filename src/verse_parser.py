@@ -30,6 +30,8 @@ triple_books = {'John'}
 all_book_names = single_books | double_books | triple_books
 
 class Token:
+
+    value = None    
     
     def __eq__(self, o):
         return type(self) == type(o) and self.value == o.value

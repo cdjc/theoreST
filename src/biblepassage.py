@@ -13,10 +13,13 @@ class BiblePassage(rst.Directive):
     required_arguments = 1
     optional_aguments = 0
     final_argument_whitespace = True
+    version = None
 
     def run(self):
         '''
         '''
+        if self.version == None:
+            raise self.error("BiblePassage: no bible version. Call set_version() after biblepassage import")
         ref = self.arguments[0]
         #print('****here',ref,options.bible,file=sys.stderr)
         vp = verse_parser.Parser(ref)
@@ -34,7 +37,7 @@ class BiblePassage(rst.Directive):
         verse = vref.verse.value if vref.verse else None
         to_verse = vref.to_verse.value if vref.to_verse else None
 
-        rst = bible.get_passage_as_rst('KJV', vref.book.value,
+        rst = bible.get_passage_as_rst(self.version, vref.book.value,
                                        vref.chapter.value, verse, to_verse,
                                        force=False)
         print(rst)
@@ -44,6 +47,9 @@ class BiblePassage(rst.Directive):
         return []
 
 rst.directives.register_directive('biblepassage', BiblePassage)
+
+def set_version(version):
+    BiblePassage.version = version
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:

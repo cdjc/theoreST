@@ -10,13 +10,7 @@ import re
 
 module_dir = os.path.dirname(__file__)
 
-def enum(**enums):
-    return type('Enum', (), enums)
-    
-Version = enum(ESV='ESV', KJV='KJV', NET='NET')
-
 loaded_bibles = {}
-
 
 def get_passage_as_rst(version, book, chapter, verse=None, to_verse=None, force=False):
     ensure_version_loaded(version)
@@ -208,6 +202,12 @@ class Retriever_BibleGateway:
     
     def __init__(self, version):
         self.version = version
+        self.r_verses = []
+        self.r_curr_verse_lines = []
+        self.r_curr_verse_line = []
+        self.r_curr_verse_num = -1
+        self.r_text_type = None
+        self.r_is_p = None
         
     def get(self, book, chapter):
         query = '?search='+str(book)+'%20'+str(chapter)+'&version='+self.version #+'&interface=print'
@@ -250,16 +250,7 @@ class Retriever_BibleGateway:
             if child.name.lower() in ['h1','h2','h3','h4','h5','h6']:
                 if child.has_key('class') and 'psalm-title' in child['class']:
                     self.r_curr_verse_num = 0
-                    #self.r_verses = []
-                    #self.r_curr_verse_lines = []
-                    #self.r_curr_verse_line = []
-                    #self.r_is_p = True
                     self.r_elem(child)
-                    
-                    #if self.r_curr_verse_line:
-                    #    self.r_curr_verse_lines.append(self.r_curr_verse_line)
-                    #    self.r_verses.append(Verse(self.r_curr_verse_num, self.r_curr_verse_lines))
-                    #    verses += self.r_verses
                 
             if child.name == 'div' and child.has_key('class') or child.name == 'p':
                 if child.name == 'div' and 'footnotes' in child['class']:
@@ -267,11 +258,7 @@ class Retriever_BibleGateway:
                 self.r_text_type = 'plain'
                 if child.name == 'div' and 'poetry' in child['class']:
                     self.r_text_type = 'poetry'
-                #self.r_verses = []
-                #self.r_curr_verse_lines = []
-                #self.r_curr_verse_line = []
                 self.r_is_p = False # Will get set to true if child.name == 'p'
-                #self.r_curr_verse_num = -1 # 0 is for psalm-titles
                 
                 self.r_elem(child)
                 
@@ -290,11 +277,7 @@ class Retriever_BibleGateway:
         if self.r_curr_verse_line:
             self.r_curr_verse_lines.append(self.r_curr_verse_line)
         if self.r_curr_verse_num != -1:
-            #if self.r_is_p:
-            #    self.r_curr_verse_lines[0].insert(0,('p',''))
-            #    self.r_is_p = False
             self.r_verses.append(Verse(self.r_curr_verse_num, self.r_curr_verse_lines))
-            #print(self.r_curr_verse_num, self.r_curr_verse_lines)
         
     def r_elem(self, elem):
         if type(elem) == bs4.element.NavigableString:
@@ -315,7 +298,6 @@ class Retriever_BibleGateway:
                 self.r_add_verse()
                 
                 self.r_curr_verse_num = int(elem.text)
-                self.r_in_verse = True
                 self.r_curr_verse_lines = []
                 self.r_curr_verse_line = []
             elif 'footnote' in elem['class']:
@@ -328,7 +310,6 @@ class Retriever_BibleGateway:
         elif elem.name == 'span' and elem.has_key('class'):
             if 'chapternum' in elem['class']:
                 self.r_curr_verse_num = 1
-                self.r_in_verse = True
                 self.r_curr_verse_lines = []
                 self.r_curr_verse_line = []
                 return
@@ -339,7 +320,6 @@ class Retriever_BibleGateway:
                 self.r_curr_verse_line.append(('sc',elem.text))
             elif 'indent-1-breaks' in elem['class']:
                 self.r_curr_verse_line.append(('tab','    '))
-                pass #self.r_curr_verse_line += ''
             else:
                 print('unknown class:',elem['class'])
                 for child in elem.children:

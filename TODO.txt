@@ -16,6 +16,7 @@ Draft comments
 
 Smallcaps LORD in included biblical passages
 
+verse parser to check chapters and verses are within bounds.
 
 Editing
 -------

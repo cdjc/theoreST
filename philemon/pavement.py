@@ -1,7 +1,5 @@
+#!/usr/bin/env python3
 import sys
-
-out = 'out'
-bible = 'KJV'
 
 sys.path += ['.', '../src']
 
@@ -18,20 +16,27 @@ from docutils.core import publish_file as rundoc
 import verse_role
 import biblepassage
 
-#from bibleref_standalone import Reader
+options(
+    setup=dict(
+        out = 'out',
+        bible = 'NET'
+        )
+    )
 
+verse_role.set_version(options.bible)
+biblepassage.set_version(options.bible)
 
 @task
 def ensure_dirs_exists():
-    if not path.exists(out):
-        path.mkdir(out)
+    if not path.exists(options.out):
+        path.mkdir(options.out)
 
 @task
 @needs(['ensure_dirs_exists'])
 def philemon_latex():
     source = 'philemon.txt'
-    dest = path(out) / 'philemon.tex'
-    reader = path('.').abspath() / 'bibleref_standalone'
+    dest = path(options.out) / 'philemon.tex'
+    #reader = path('.').abspath() / 'bibleref_standalone'
     
     rundoc(writer_name='latex',
         source_path = source,
@@ -41,8 +46,11 @@ def philemon_latex():
 @needs(['ensure_dirs_exists'])
 def philemon_html():
     source = 'philemon.txt'
-    dest = path(out) / 'philemon.html'
-    reader = path('.').abspath() / 'bibleref_standalone'
+    dest = path(options.out) / 'philemon.html'
+    #reader = path('.').abspath() / 'bibleref_standalone'
+    
+    #import traceback
+    #traceback.print_stack()
 
     sys.path += ['.']
     
@@ -53,21 +61,20 @@ def philemon_html():
 @task
 @needs(['philemon_latex'])
 def philemon_pdf():
-    with pushd(out) as old_dir:
-        sh('pdflatex philemon.tex')
+    with pushd(options.out) as old_dir:
+        sh('rubber --pdf philemon.tex')
 
 @task
 def philemon_pseudo():
     source = 'philemon.txt'
-    dest = path(out) / 'philemon.pxml'
+    dest = path(options.out) / 'philemon.pxml'
     reader = path('.').abspath() / 'bibleref_standalone'
 
     sys.path += ['.']
     
     rundoc(writer_name='pseudoxml',
         source_path = source,
-        destination_path = dest,
-        reader = Reader(bible))
+        destination_path = dest)
 
 @task
 @needs(['philemon_pdf', 'philemon_html'])
@@ -78,3 +85,11 @@ def philemon():
 @consume_args
 def pdf(args, help_function):
     print(args)
+
+
+if __name__ == '__main__':
+    from pkg_resources import load_entry_point
+
+    sys.exit(
+        load_entry_point('Paver==1.2.0', 'console_scripts', 'paver')()
+    )
