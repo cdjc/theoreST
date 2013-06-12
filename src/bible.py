@@ -287,7 +287,7 @@ class Retriever_BibleGateway:
         #print('#',elem.name)
         if elem.name in ('div','p'):
             if elem.name == 'p':
-                print('ptext:',elem.text)
+                #print('ptext:',elem.text)
                 self.r_curr_verse_line.append(('p', ''))
                 self.r_is_p = True
             for child in elem.children:

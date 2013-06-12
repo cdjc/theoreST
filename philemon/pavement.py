@@ -19,7 +19,9 @@ import biblepassage
 options(
     setup=dict(
         out = 'out',
-        bible = 'NET'
+        bible = 'KJV',
+        source = 'philemon_end_doctrines.txt'
+        #source = 'philemon.txt'
         )
     )
 
@@ -34,18 +36,16 @@ def ensure_dirs_exists():
 @task
 @needs(['ensure_dirs_exists'])
 def philemon_latex():
-    source = 'philemon.txt'
     dest = path(options.out) / 'philemon.tex'
     #reader = path('.').abspath() / 'bibleref_standalone'
     
     rundoc(writer_name='latex',
-        source_path = source,
+        source_path = options.source,
         destination_path = dest)
 
 @task
 @needs(['ensure_dirs_exists'])
 def philemon_html():
-    source = 'philemon.txt'
     dest = path(options.out) / 'philemon.html'
     #reader = path('.').abspath() / 'bibleref_standalone'
     
@@ -55,7 +55,7 @@ def philemon_html():
     sys.path += ['.']
     
     rundoc(writer_name='html',
-        source_path = source,
+        source_path = options.source,
         destination_path = dest)
 
 @task
@@ -66,14 +66,13 @@ def philemon_pdf():
 
 @task
 def philemon_pseudo():
-    source = 'philemon.txt'
     dest = path(options.out) / 'philemon.pxml'
     reader = path('.').abspath() / 'bibleref_standalone'
 
     sys.path += ['.']
     
     rundoc(writer_name='pseudoxml',
-        source_path = source,
+        source_path = options.source,
         destination_path = dest)
 
 @task

@@ -38,6 +38,9 @@ version_reference_functions = \
 { 'KJV': bibleref_biblegateway_generic('KJV'),
   'ESV': bibleref_biblegateway_generic('ESV'),
   'NET': bibleref_biblegateway_generic('NET'),
+  'HCV': bibleref_biblegateway_generic('HCV'), # Haitian Creole version (Latin alpha)
+  'ICELAND': bibleref_biblegateway_generic('ICELAND'), #(Latin plus extra)
+  'MNT': bibleref_biblegateway_generic('MNT'), # Macedonian (cyrillic)
   'NASB': bibleref_biblegateway_generic('NASB'),
   }
 

@@ -10,13 +10,15 @@ Translation: Interaction with versioning. Automatic via online translation provi
 
 LaTeX: biblepassage footnotes should be directly under the passage, not at the bottom of the page
 
-LaTeX: Use rubber to auto-rerun until references are correct
+DONE: LaTeX: Use rubber to auto-rerun until references are correct
 
-Draft comments
+DONE: Draft comments
 
 Smallcaps LORD in included biblical passages
 
-verse parser to check chapters and verses are within bounds.
+verse parser to check chapters and verses are within bounds
+
+Non-latin languages from biblegateway.com
 
 Editing
 -------

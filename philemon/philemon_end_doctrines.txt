@@ -1,0 +1,191 @@
+.. default-role:: verse
+
+
+==========
+ Philemon
+==========
+
+:Author: Peter Moses
+:Organization: Evangelical Bible College of Western Australia
+
+.. raw:: latex
+
+    \pagebreak
+
+.. include:: ../common/copyright.txt
+
+.. raw:: latex
+
+    \pagebreak
+
+.. contents::
+
+.. raw:: latex
+
+    \pagebreak
+
+.. include:: ../common/preface.txt
+
+.. raw:: latex
+
+    \pagebreak
+
+.. header:: Philemon
+
+.. include:: introduction.txt
+
+.. include:: apostolicgreeting.txt
+
+
+
+Doctrine Links
+~~~~~~~~~~~~~~
+
+- `Positional Truth`_
+
+- `Timothy – Ministry`_
+
+- `The Church`_
+
+- `Soldier: Christian Soldier of Ephesians 6`_
+
+- `Grace`_
+
+- `Peace`_
+
+- `Trinity`_
+
+
+
+.. include:: character_of_philemon.txt
+
+Doctrine Links
+~~~~~~~~~~~~~~
+
+- `Thankfulness`_
+
+- `Prayer`_
+
+- `Love`_
+
+- `Faith`_
+
+- `Saints`_
+
+- `Evangelism`_
+
+- `Positional Truth`_
+
+- `Happiness`_
+
+
+
+.. include:: intercession_for_onesimus.txt
+
+Doctrine Links
+~~~~~~~~~~~~~~
+
+- `Gospel of Salvation`_
+
+- `Salvation`_
+
+- `Effective Calling`_
+
+- `Holy Spirit: Ministry of the Holy Spirit in the Church Age`_
+
+- `Deposits`_
+
+- `Apostleship`_
+
+- `Ambassador`_
+
+- `Free will`_
+
+- `Brotherhood of Believers`_
+
+- `Reconciliation`_
+
+- `Imputation`_
+
+- `Confidence`_
+
+- `Obedience`_
+
+
+.. include:: salutations_and_conclusion.txt
+
+Doctrine Links
+~~~~~~~~~~~~~~
+
+- `Soul and Human Spirit`_
+
+- `Amen`_
+
+
+
+Doctrine Index
+--------------
+
+.. include:: ../common/ambassador.txt
+
+.. include:: ../common/amen.txt
+
+.. include:: ../common/apostleship.txt
+
+.. include:: ../common/brotherhood_of_believers.txt
+
+.. include:: ../common/christian_soldier.txt
+
+.. include:: ../common/confidence.txt
+
+.. include:: ../common/copyright.txt
+
+.. include:: ../common/deposits.txt
+
+.. include:: ../common/effective_calling.txt
+
+.. include:: ../common/evangelism.txt
+
+.. include:: ../common/faith.txt
+
+.. include:: ../common/free_will.txt
+
+.. include:: ../common/gospel_of_salvation.txt
+
+.. include:: ../common/grace.txt
+
+.. include:: ../common/happiness.txt
+
+.. include:: ../common/holy_spirit_church_age.txt
+
+.. include:: ../common/imputation.txt
+
+.. include:: ../common/love.txt
+
+.. include:: ../common/minister.txt
+
+.. include:: ../common/obedience.txt
+
+.. include:: ../common/paul_pressure.txt
+
+.. include:: ../common/peace.txt
+
+.. include:: ../common/positional_truth.txt
+
+.. include:: ../common/prayer.txt
+
+.. include:: ../common/reconciliation.txt
+
+.. include:: ../common/saints.txt
+
+.. include:: ../common/salvation.txt
+
+.. include:: ../common/soul_and_spirit.txt
+
+.. include:: ../common/thankfulness.txt
+
+.. include:: ../common/the_church.txt
+
+.. include:: ../common/timothy_ministry.txt
+
+.. include:: ../common/trinity.txt

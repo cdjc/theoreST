@@ -40,7 +40,7 @@ class BiblePassage(rst.Directive):
         rst = bible.get_passage_as_rst(self.version, vref.book.value,
                                        vref.chapter.value, verse, to_verse,
                                        force=False)
-        print(rst)
+        #print(rst)
         source = 'Bible Passage'
         include_lines = statemachine.string2lines(rst, 0, convert_whitespace=True)
         self.state_machine.insert_input(include_lines, source)
