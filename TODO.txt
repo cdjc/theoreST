@@ -2,7 +2,7 @@
 Core process
 ------------
 
-Greek role for greek words. Hypertext link to online greek dictionary.
+Greek role for greek words. Hypertext link to online greek dictionary. Or mark so that can be hyperlinked later.
 
 Versioning
 

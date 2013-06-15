@@ -14,12 +14,13 @@ from docutils.core import publish_file as rundoc
 
 # my imports
 import verse_role
+import greek_role
 import biblepassage
 
 options(
     setup=dict(
         out = 'out',
-        bible = 'KJV',
+        bible = 'ESV',
         source = 'philemon_end_doctrines.txt'
         #source = 'philemon.txt'
         )
