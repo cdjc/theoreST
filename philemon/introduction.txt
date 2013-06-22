@@ -210,4 +210,5 @@ are to act like it.
     
     The original lists the four sections at this point, but I feel this is redundant,
     as the four sections are clearly listed in the contents, and listing
-    them here does not provide any additional information.
+    them here does not provide any additional information. TODO: Might revisit this
+    decision later, in order for all commentaries to have a uniform structure.
