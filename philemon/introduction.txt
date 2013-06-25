@@ -111,7 +111,7 @@ men women and children.
 Slavery was therefore a very important social issue in Paul’s day not 
 unlike apartheid in recent times.
 
-.. sidebar:: apartheit
+.. sidebar:: apartheid
     :class: comment
     
     Not sure the comparison between slavery in ancient Rome and apartheid

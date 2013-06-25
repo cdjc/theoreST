@@ -8,29 +8,73 @@ Analysis and Background
 
 *verse 4* Philemon is mature. He owns slaves and is a mature believer. Paul is thankful for him. There are many believers whom Paul is not thankful for.
 
-“Thank” is the present active indicative of Eucharisteo, Present tense means that it is a constant thing, active voice Paul does it with the indicative showing the reality of the thankfulness
+.. sidebar:: ...many believers whom Paul is not thankful for
+    :class: comment
+    
+    Remove this sentence, or give some further explanation with references.
 
-Out of respect comes love. Paul thanks “my God” which is the dative singular with the definite article is used for a personal pronoun. This is better translated I thank our God. 
+“Thank” is the present active indicative of :gk:`Eucharisteo`, Present tense means that it is a constant thing, the active voice means Paul does it with the indicative showing the reality of the thankfulness.
 
-Making mention of you at the time of my prayers is the present middle participle of Poieo. The present tense is a descriptive present. He is praying for him still. 
+Out of respect comes love. Paul thanks “my God” which is the dative singular with the definite article used for a personal pronoun. This is better translated "I thank our God". 
 
-Mention is the accusative singular direct object of Mneia which means remembering those who you love.
+.. sidebar:: better translated "I thank our God"
+    :class: comment
+    
+    I checked a few versions (ESV, NET, KJV, NASB, NIV, RSV, Amp), and they all had "my God".
+    If you really want to go against all of those, you'll have to make a better case.
 
-Pantote translated always means that he does this at any time he prays. We are told to pray without ceasing but this really means to pray with the frequency of a hacking cough.
+"Making mention of you at the time of my prayers" is the present middle participle of :gk:`Poieo`. The present tense is a descriptive present. He is praying for him still. 
 
-Epi and Proseuche means ‘at the time of my prayers’ not ‘in my prayers’ which would be the word En rather than Epi.
+.. sidebar:: "Making mention of you at the time of my prayers"
+    :class: comment
+    
+    Ideally, I'd like the commentary to be as bible-version independent as possible.
+    This phrase doesn't appear in the KJV, and is rendered differently (though
+    more-or-less equivalently) in other versions. The difference is enough that
+    a reader not using the KJV might struggle to follow the flow of ideas here.
 
-Translation v 4  – I keep thanking our God at all times making mention of you at the time of my prayers.
+"Mention" is the accusative singular direct object of :gk:`Mneia` which means remembering those whom you love.
+
+:gk:`Pantote` translated "always" means that he does this at any time he prays. We are told to pray without ceasing but this really means to pray with the frequency of a hacking cough.
+
+.. sidebar:: "frequency of a hacking cough"
+    :class: comment
+    
+    I couldn't find anything about hacking coughs related to pantote. Reference? Or just remove it and replace with a more accepted definition.
+
+:gk:`Epi` and :gk:`Proseuche` means "at the time of my prayers" not "in my prayers" which would be the word :gk:`En` rather than :gk:`Epi`.
+
+.. sidebar:: "in my prayers"
+    :class: comment
+    
+    All the versions I checked (ESV, NET, KJV, NASB, NIV, RSV, Amp) translate as "in my prayers". I don't know greek (yet!), but are you sure you're willing to go against all those?
+
+Translation v 4 – "I keep thanking our God at all times making mention of you at the time of my prayers."
 
 *verse 5* In verse 5 we have the love and faith which Philemon has towards two objects, the Lord Jesus Christ and towards the saints.
 
-This is Pros plus the accusative which means face to face with the Lord Jesus Christ. 
+This is :gk:`Pros` plus the accusative which means face to face with the Lord Jesus Christ. 
 
-Towards all saints is the word Eis plus the accusative of Hagios. The object of his love in this case are other believers.
+.. sidebar:: This is "Pros"
+    :class: comment
+    
+    Clarify the first part. It doesn't make sense to me.
 
-*verse 6* Philemon is told in this letter that he is not facing a run away slave but a mature believer now. How is he going to handle this new situation?
+"Towards all saints" is the word :gk:`Eis` plus the accusative of :gk:`Hagios`. The object of his love in this case are other believers.
 
-“That” is the conjunction Hopos which should be translated ‘in order that’
+*verse 6* Philemon is told in this letter that he is not facing a runaway slave but a mature believer now. How is he going to handle this new situation?
+
+.. sidebar:: Philemon is told in this letter...
+    :class: comment
+    
+    There is no clear link between verse 6 and these two sentences.
+
+“That” is the conjunction :gk:`Hopos` which should be translated ‘in order that’
+
+.. sidebar:: 'in order that'
+    :class: comment
+    
+    in the NET bible, ὅπως is translated "so that" 22 times, "so" 5 times, twice "How" or "that", and once "Then what", "In this way", "This", "may", "to", and "as to how". Not "in order that".
 
 Communication is the word Koinonia which means fellowship. This phrase – that our communication should be translated ‘in order that our association’
 

@@ -36,6 +36,15 @@ def ensure_dirs_exists():
 
 @task
 @needs(['ensure_dirs_exists'])
+def philemon_odt():
+    dest = path(options.out) / 'philemon.odt'
+    
+    rundoc(writer_name='odf_odt',
+        source_path = options.source,
+        destination_path = dest)
+    
+@task
+@needs(['ensure_dirs_exists'])
 def philemon_latex():
     dest = path(options.out) / 'philemon.tex'
     #reader = path('.').abspath() / 'bibleref_standalone'
