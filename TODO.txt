@@ -20,6 +20,8 @@ verse parser to check chapters and verses are within bounds
 
 Non-latin languages from biblegateway.com
 
+biblepassage directive to have option to exclude verse numbers.
+
 Editing
 -------
 

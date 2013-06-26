@@ -74,25 +74,45 @@ This is :gk:`Pros` plus the accusative which means face to face with the Lord Je
 .. sidebar:: 'in order that'
     :class: comment
     
-    in the NET bible, ὅπως is translated "so that" 22 times, "so" 5 times, twice "How" or "that", and once "Then what", "In this way", "This", "may", "to", and "as to how". Not "in order that".
+    in the NET bible, ὅπως is translated "so that" 22 times, "so" 5 times, twice "How" or "that", and once "Then what", "In this way", "This", "may", "to", and "as to how". It is not translated "in order that" - though it may be in other versions (I didn't have their details handy).
 
-Communication is the word Koinonia which means fellowship. This phrase – that our communication should be translated ‘in order that our association’
+Communication is the word :gk:`Koinonia` which means fellowship. This phrase – "that our communication" should be translated "in order that our association"
 
-The word Pistis deals with the doctrine which Philemon knows and is able to work on as a mature Christian.
+The word :gk:`Pistis` deals with the doctrine which Philemon knows and is able to work on as a mature Christian.
 
-“May become” is the middle active subjunctive of Ginomai which means to become something that you were not before.
+.. sidebar:: The word :gk:`Pistis` deals with the doctrine...
+    :class: comment
+    
+    I don't understand what is being said in this sentence.
 
-Become effectual is Energes means to be operational.
+“May become” is the middle active subjunctive of :gk:`Ginomai` which means to become something that you were not before.
 
-By the acknowledging is En plus the instrumental of Epignosis.
+"Become effectual" is :gk:`Energes` which means to be operational.
 
-Of every good thing is Pas Agathos which means of all the intrinsic good which is in you.
+"By the acknowledging" is :gk:`En` plus the instrumental of :gk:`Epignosis`.
 
-‘In Christ Jesus’ should be translated ‘towards Christ Jesus’
+"Of every good thing" is :gk:`Pas Agathos` which means of all the intrinsic good which is in you.
 
-Translation – In order that our association with reference to the doctrine that you have in you may become operational towards Christ by means of epignosis of all the intrinsic good in you.
+"In Christ Jesus" should be translated "towards Christ Jesus".
 
-*verse 7* Philemon has doctrine in his soul. The word ‘for we have ’ is Gar plus the singular ingressive aorist of Echo which means ‘for I have come to have’. Epaphras the pastor of the church has brought information about Philemon and that has given great blessing to Paul.
+.. sidebar:: "towards Christ Jesus"
+    :class: comment
+    
+    "for the sake of Christ" is a common translation.
+
+Translation – "In order that our association with reference to the doctrine that you have in you may become operational towards Christ by means of epignosis of all the intrinsic good in you."
+
+.. sidebar:: translation
+    :class: comment
+    
+    This is a very difficult sentence to understand. I'm not sure this translation will help a reader.
+
+*verse 7* Philemon has doctrine in his soul. The word ‘for we have ’ is :gk:`Gar` plus the singular ingressive aorist of :gk:`Echo` which means "for I have come to have". Epaphras the pastor of the church has brought information about Philemon and that has given great blessing to Paul.
+
+.. sidebar:: Philemon has doctrine in his soul
+    :class: comment
+    
+    I'm not sure how you conclude that Philemon has "doctrine in his soul". What do you mean by that?
 
 Great is the accusative singular of Poulos Chara which could be translated much happiness. Paul possesses a happiness of a mature believer plus his happiness which overflows due to his contact with other mature Christians. 
 
@@ -100,15 +120,15 @@ Consolation is the accusative singular of the noun Paraklesis which means encour
 
 ‘Because the bowels of the saints’ is Hote plus Splagchnon is better translated tender affection of the saints.
 
-Refreshed is the aorist passive indicative of Anapauo which means have been refreshed with the passive voice indication receiving of refreshment. 
+"Refreshed" is the aorist passive indicative of :gk:`Anapauo` which means have been refreshed with the passive voice indication receiving of refreshment. 
 
 Philemon, the mature believer has been a great refreshment to all he meets, even his slaves.
 
-‘By thee” is Dia plus the genitive of the pronoun Su which means through you.
+"By thee” is :gk:`Dia` plus the genitive of the pronoun :gk:`Su` which means "through you".
 
-He addresses Philemon by the word Adelphoi as he is taking up a family matter and is not going to use his rank of apostleship.
+He addresses Philemon by the word :gk:`Adelphoi` as he is taking up a family matter and is not going to use his rank of apostleship.
 
-Translation – For I have come to much happiness and encouragement by your love for God because the tender affections of believers has been refreshed through you brother.
+Translation – "For I have come to much happiness and encouragement by your love for God because the tender affections of believers has been refreshed through you brother."
 
 Onesimus is about to appear and this is going to test the maturity of Philemon. The ministry of refreshment is likely to be challenged.
 
@@ -119,19 +139,37 @@ Application
 
 *verse 4* It is to God’s glory that people reach maturity and they have a mutual respect.
 
-We are to love the brethren, we are to have agape type love.
+We are to love the brethren, we are to have :gk:`agape` type love.
+
+.. sidebar:: bretheren
+    :class: comment
+    
+    Replace archaic "bretheren" with "fellow believers" or something? (Further down also)
 
 When you are thankful for someone you pray for them. 
 
 *verse 5* Love for the Lord Jesus Christ and the brethren is the ultimate of maturity in our spiritual life. `1 John 4:20,21,  James 2:8`
 
-If you are occupied with the person of the Lord Jesus Christ you are not going to be too concerned about what believers are doing or not doing or what their attitude is towards you is but you should be concerned for them.
+.. sidebar:: ultimate of maturity
+    :class: comment
+    
+    The wording is a bit awkward
 
-Maturity results in stability towards others and agape love towards them. 
+If you are occupied with the person of the Lord Jesus Christ you are not going to be too concerned about what believers are doing or not doing, or what their attitude is towards you is, but you should be concerned for them.
+
+Maturity results in stability towards others and agape love towards them.
+
+.. sidebar:: stability
+    :class: comment
+    
+    What do you mean by stability?
 
 *verse 6* The doctrine in the Bible must be absorbed by you and turned into working knowledge.
 
-The life of Philemon was a testimony. “Every good thing” was the result of the fact that “  it is God which worketh in you both to will and to do of his good pleasure – `Philippians 2:13`
+The life of Philemon was a testimony. “Every good thing” was the result of the fact that, from `Philippians 2:13`:
+
+.. biblepassage:: Philippians 2:13
+
 
 *verse 7* Do you by your Christian life give happiness to those about you?
 
@@ -147,10 +185,12 @@ If you choose grace you can be refreshing to others.
 
 The principle here is that I would rather choose grace than be “right” according to the law.
 
-Characteristics of a faithful believer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Characteristics of a faithful believer from Philemon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Gives others cause for thanksgiving, verse 4.  Is a source of blessing.
+1. Gives others cause for thanksgiving (verse 4).  Is a source of blessing.
+
+   Prayer:
 
    a. A sacrifice of the Believer-priest, `Hebrews 13:15`.
 
@@ -170,19 +210,25 @@ Characteristics of a faithful believer
 
       #. In the name of the Son
 
-
-
-   Prayer:
-
    When confession is necessary it is the only prayer God will hear, `Psalm 66:18, 1 John 1:9`
 
-#. Takes up cross daily, verse 5. Faith to Christ, love to the saints-  c/f. `Matthew 22:37-40, Luke 9:23`
+.. sidebar:: Prayer
+        :class: comment
+    
+        This section on prayer doesn't seem to fit under point 1. Should it be a point on its own, or just removed?
 
-#. Fellowship/ knowledge are practical.  “Effective” verse 7 knows and uses spiritual resources, `Ephesians 1:3`.
+.. sidebar:: pray to the father, through Holy Spirit, in name of Son
+    :class: comment
+    
+     In Wayne Grudem's book *Systematic Theology*, he gives a well-balanced argument suggesting we need not be legalistic about praying this way - and talking to Jesus or the Holy Spirit can at times be a legitimate way to pray.
 
-#. Edifies fellow Believers, verse 7
+#. Takes up cross daily (verse 5). Faith to Christ, love to the saints, `Matthew 22:37-40, Luke 9:23`.
 
-#. Can be counted on to be obedient and faithful, verses 8-9.
+#. Fellowship/knowledge are practical.  “Effective” (verse 7) knows and uses spiritual resources, `Ephesians 1:3`.
 
-   Principle:  Conformity to Christ,  `Romans 8:29, 12:2, Matthew 10:25`
+#. Edifies fellow Believers (verse 7).
+
+#. Can be counted on to be obedient and faithful (verses 8-9).
+
+   Principle:  Conformity to Christ, `Romans 8:29, 12:2, Matthew 10:25`.
 
