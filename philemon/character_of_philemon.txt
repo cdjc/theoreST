@@ -74,7 +74,7 @@ This is :gk:`Pros` plus the accusative which means face to face with the Lord Je
 .. sidebar:: 'in order that'
     :class: comment
     
-    in the NET bible, ὅπως is translated "so that" 22 times, "so" 5 times, twice "How" or "that", and once "Then what", "In this way", "This", "may", "to", and "as to how". It is not translated "in order that" - though it may be in other versions (I didn't have their details handy).
+    in the NET bible, Hopos is translated "so that" 22 times, "so" 5 times, twice "How" or "that", and once "Then what", "In this way", "This", "may", "to", and "as to how". It is not translated "in order that" - though it may be in other versions (I didn't have their details handy).
 
 Communication is the word :gk:`Koinonia` which means fellowship. This phrase – "that our communication" should be translated "in order that our association"
 

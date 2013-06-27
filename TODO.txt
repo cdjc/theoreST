@@ -22,6 +22,8 @@ Non-latin languages from biblegateway.com
 
 biblepassage directive to have option to exclude verse numbers.
 
+Fix biblepassage footnotes. See Philemon 1:8-21.
+
 Editing
 -------
 

@@ -8,15 +8,28 @@ Analysis and Background
 
 *verse 8* One of the main subjects of this epistle is the crisis of grace. The greatest enemy of Christianity is legalism. When a person does something legalistic they are doing something right, something compatible with self righteousness.
 
+.. sidebar:: Legalism
+    :class: comment
+    
+    I think the sentence defining legalism could be made clearer.
+
 The Colossian church is under two separate attacks, the doctrinal attack of Gnosticism which is refuted by the book of Colossians and the grace attack refuted by the letter to Philemon.
 
-Onesimus ran away as an unbeliever, he returns as a mature believer, a member of the family of God. He is however a slave. 
+.. sidebar:: grace attack
+    :class: comment
+    
+    Do you mean a legalism attack rather than a grace attack? It seems to me too much of a stretch to claim that the Colossian church is under 'attack' based on Philemon.
 
-If Philemon greets his slave in grace and gives him a letter of release he will be one of the great believers of his time. 
+Onesimus ran away as an unbeliever, he returns as a mature believer, a member of the family of God. He is however a slave.
 
-However if he uses his legitimate legal rights he will be tempted to censor and punish, to make Onesimus miserable in some way. 
+.. sidebar:: mature believer
+    :class: comment
+    
+    Onesimus is a believer, but I don't see evidence of him being a *mature* believer. In fact, reading between the lines, it would seem that he is quite a new believer.
 
-Paul failed a similar test as is facing Philemon in the case of John Mark:
+If Philemon greets his slave in grace and gives him a letter of release he will be one of the great believers of his time. However if he uses his legitimate legal rights he will be tempted to censor and punish, to make Onesimus miserable in some way. 
+
+Paul, in the case of John Mark, failed a similar test to the one Philemon is facing:
 
 a. In `Acts 12:25` John Mark was included in Paul’s missionary journey with Barnabas.
 
@@ -28,34 +41,49 @@ a. In `Acts 12:25` John Mark was included in Paul’s missionary journey with Ba
 
 #. Paul failed the grace test and encourages Philemon not to follow that path.
 
+.. sidebar:: the grace test
+    :class: comment
+    
+    Calling it "*the* grace test" makes it sound like there is only one grace test, rather than many throughout our lives.
+
 If Philemon the leader fails the whole church will go down in legalism.
 
-Wherefore is the conjunction ‘Dia’ plus ‘Hos’ which means because of which.
+.. sidebar:: If Philemon fails...
+    :class: comment
+    
+    I don't think this conclusion is justifiable.
 
-Might be is the present active participle of ‘Echo’ which means to have. This is the static present which shows that Paul has the authority to order Philemon to forgive his runaway slave and free him. He would never use it as it would destroy the issue completely.
+"Wherefore" is the conjunction :gk:`Dia` plus :gk:`Hos` which means "because of which".
 
-Paul’s job is to teach doctrine to Philemon which he did. Paul reflects on the fact that he taught Philemon many years ago, that as an apostle he could have used his authority as the highest ranking Christian and order him to do it but he allows him to use his own free will.
+"Might be" is the present active participle of :gk:`Echo` which means "to have". This is the static present which shows that Paul has the authority to order Philemon to forgive his runaway slave and free him. He would never use it as it would destroy the issue completely.
 
-‘Much bold’ is a combination of ‘Polis’ meaning great and ‘Parresia’ means confidence
+Paul’s job is to teach doctrine to Philemon. Paul reflects on the fact that he taught Philemon many years ago, that as an apostle he could have used his authority as the highest ranking Christian and order him to do it but he allows him to use his own free will.
 
-‘In Christ’ should be translated ‘by Christ’ as Paul’s authority came directly from Christ.
+"Much bold" is a combination of :gk:`Polis` meaning great and :gk:`Parresia` means confidence.
 
-‘To enjoin you’ is the present active infinitive of ‘Epitasso’. This is in the customary present which shows that he frequently uses orders to solve problems. Active voice shows that Paul has the authority, the infinitive is the infinitive of perceived result.
+"In Christ" should be translated "by Christ" as Paul’s authority came directly from Christ.
 
-‘That which is convenient’ present active participle of ‘Aneko’ which is used to show something which is fitting or right. Here it is used in the idiomatic sense of doing your duty.
+.. sidebar:: in/by Christ
+    :class: comment
+    
+    All versions that I checked (ESV, KJV, RSV, NASB, NIV, Amplified, Young's Literal) have "in Christ".
 
-‘Therefore though I might have maximum authority by means of Christ to command you to do your duty.’
+"To enjoin you" is the present active infinitive of :gk:`Epitasso`. This is in the customary present which shows that he frequently uses orders to solve problems. Active voice shows that Paul has the authority, the infinitive is the infinitive of perceived result.
 
-The Grace Crisis
-................
+"That which is convenient" is the present active participle of :gk:`Aneko` which is used to show something which is fitting or right. Here it is used in the idiomatic sense of doing your duty.
 
-If Paul orders Philemon, Philemon will act under orders from Paul without making any decision of his own. 
+"Therefore though I might have maximum authority by means of Christ to command you to do your duty."
 
-He therefore loses his ability to function in grace. 
+    **The Grace Crisis**
 
-The believer has to be spiritually independent. Paul cannot be Philemon’s crutch.
 
-Philemon has to choose between grace and legalism and to operate on his own motivation.
+    If Paul orders Philemon, Philemon will act under orders from Paul without making any decision of his own. 
+
+    He therefore loses his ability to function in grace. 
+
+    The believer has to be spiritually independent. Paul cannot be Philemon’s crutch.
+
+    Philemon has to choose between grace and legalism and to operate on his own motivation.
 
 *verse 9* Paul demonstrates full confidence in the doctrine in the soul of Philemon. 
 
