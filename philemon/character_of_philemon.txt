@@ -1,3 +1,5 @@
+.. :mode=rest: (for jEdit edit mode)
+
 *1:4-7* The Character of Philemon
 ---------------------------------
 
@@ -114,13 +116,13 @@ Translation – "In order that our association with reference to the doctrine th
     
     I'm not sure how you conclude that Philemon has "doctrine in his soul". What do you mean by that?
 
-Great is the accusative singular of Poulos Chara which could be translated much happiness. Paul possesses a happiness of a mature believer plus his happiness which overflows due to his contact with other mature Christians. 
+"Great" is the accusative singular of :gk:`Poulos` :gk:`Chara` which could be translated "much happiness". Paul possesses a happiness of a mature believer plus his happiness which overflows due to his contact with other mature Christians. 
 
-Consolation is the accusative singular of the noun Paraklesis which means encouragement
+"Consolation" is the accusative singular of the noun :gk:`Paraklesis` which means "encouragement".
 
-‘Because the bowels of the saints’ is Hote plus Splagchnon is better translated tender affection of the saints.
+"Because the bowels of the saints" is :gk:`Hote` plus :gk:`Splagchnon` is better translated "tender affection of the saints".
 
-"Refreshed" is the aorist passive indicative of :gk:`Anapauo` which means have been refreshed with the passive voice indication receiving of refreshment. 
+"Refreshed" is the aorist passive indicative of :gk:`Anapauo` which "means have been refreshed" with the passive voice indicating receiving of refreshment. 
 
 Philemon, the mature believer has been a great refreshment to all he meets, even his slaves.
 
@@ -128,7 +130,7 @@ Philemon, the mature believer has been a great refreshment to all he meets, even
 
 He addresses Philemon by the word :gk:`Adelphoi` as he is taking up a family matter and is not going to use his rank of apostleship.
 
-Translation – "For I have come to much happiness and encouragement by your love for God because the tender affections of believers has been refreshed through you brother."
+Translation--- "For I have come to much happiness and encouragement by your love for God because the tender affections of believers has been refreshed through you brother."
 
 Onesimus is about to appear and this is going to test the maturity of Philemon. The ministry of refreshment is likely to be challenged.
 

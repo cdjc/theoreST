@@ -1,3 +1,5 @@
+.. :mode=rest: (for jEdit edit mode)
+
 *1:8-21* Intercession For Onesimus
 ----------------------------------
 
@@ -76,7 +78,6 @@ Paul’s job is to teach doctrine to Philemon. Paul reflects on the fact that he
 
     **The Grace Crisis**
 
-
     If Paul orders Philemon, Philemon will act under orders from Paul without making any decision of his own. 
 
     He therefore loses his ability to function in grace. 
@@ -87,33 +88,53 @@ Paul’s job is to teach doctrine to Philemon. Paul reflects on the fact that he
 
 *verse 9* Paul demonstrates full confidence in the doctrine in the soul of Philemon. 
 
-Dia plus the accusative of agape means because of your love
+.. sidebar:: Paul demonstrates...
+    :class: comment
+    
+    This sentence doesn't make sense.
 
-I would rather beseech thee is the present active indicative of parakaleo which means to encourage even more. Paul is being encouraging not only to Philemon but to all who have the grace crisis. 
+:gk:`Dia` plus the accusative of :gk:`agape` means "because of your love".
+
+"I would rather beseech thee" is the present active indicative of :gk:`parakaleo` which means to encourage even more. Paul is being encouraging not only to Philemon but to all who have the grace crisis. 
 
 The present tense is an aoristic present, it is a momentary encouragement as Paul appeals for proper motivation. 
 
-Being is the present active participle of eimi such a person as Paul the aged. Aged is not a good translation. It is presbutes which means an elder statesman. Paul by calling himself a mature Christian put himself on the same level as Philemon. Paul has a superior rank of apostle and is older than Philemon but does not use it, he speaks as to an equal.
+"Being" is the present active participle of :gk:`eimi` such a person as Paul the aged. "Aged" is not a good translation. It is :gk:`presbutes` which means an elder statesman. Paul by calling himself a mature Christian puts himself on the same level as Philemon. Paul has a superior rank of apostle and is older than Philemon but does not use it, he speaks as to an equal.
 
-He calls himself a prisoner which puts Philemon on his own. Esmios means that he is a prisoner of Christ Jesus in Rome. This shows that Paul is unable to do anything else and puts it on both Onesimus and Philemon to sort out their problems.
+.. sidebar:: ...such a person as Paul the aged 
+    :class: comment
+    
+    This needs to be reworded. Doesn't wquite make sense.
+
+He calls himself a prisoner which puts Philemon on his own. :gk:`Esmios` means that he is a prisoner of Christ Jesus in Rome. This shows that Paul is unable to do anything else and puts it on both Onesimus and Philemon to sort out their problems.
 
 *verses 10-12* The grace presentation of the issue.
 
-I beseech is the present active indicative of parakaleo. The present is an aoristic present with the indicative being the reality.
+"I beseech" is the present active indicative of :gk:`parakaleo`. The present is an aoristic present with the indicative being the reality.
+
+.. sidebar:: Indicative being the reality
+    :class: comment
+    
+    I don't know what "indicative being the reality" means.
 
 The decision that Philemon is going to take is one for which he is going to be responsible for the rest of his life.
 
-For my son is peri and the genitive of teknon which means a student or child in relation to his father or mother. This was used for the citizens of the nation but is usually used by Paul of theological students.
+"For my son" is :gk:`peri` and the genitive of :gk:`teknon` which means a student or child in relation to his father or mother. This was used for the citizens of the nation but is usually used by Paul of theological students.
 
-Accusative singular of Onesimos which means profitable or useful. Aorist active indicative of Genneo which means to give birth which for a man means to sire. 
+Accusative singular of :gk:`Onesimos` which means "profitable" or "useful". Aorist active indicative of :gk:`Genneo` which means "to give birth" which for a man means to sire. 
+
+.. sidebar:: sire
+    :class: comment
+    
+    Would "beget" be more accurate then "sire"?
 
 The aorist tense is a constantive aorist which looks at the day of conversion, the days of instruction and the results. The active voice showed that Paul evangelised and taught Philemon and Onesimus. The indicative mood means that Paul is making a simple statement of fact. He has led Onesimus to the Lord and then taught him so that he has grown into a mature believer.
 
-Paul is saying “When you had Profitable you did not have Profitable. Now you do not have Profitable but you are going to have Profitable
+Paul is saying "When you had Profitable you did not have Profitable. Now you do not have Profitable but you are going to have Profitable"
 
-Who I have sent anapempo means to send back. The aorist tense shows that Philemon needs a test and a blessing. He has been a blessing to Paul and he wants him to be a blessing to Philemon.
+"Who I have sent" is :gk:`anapempo` which means "to send back". The aorist tense shows that Philemon needs a test and a blessing. He has been a blessing to Paul and he wants him to be a blessing to Philemon.
 
-Now therefore receive is not found in the text and should be deleted.
+"Now therefore receive" is not found in the text and should be deleted.
 
 Bowels does not mean intestines but means tender affections, it is a demonstrative pronoun and a possessive adjective. In essence he is saying that he is doing the best possible thing for you.
 
