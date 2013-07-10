@@ -136,99 +136,152 @@ Paul is saying "When you had Profitable you did not have Profitable. Now you do 
 
 "Now therefore receive" is not found in the text and should be deleted.
 
+
+.. sidebar:: "Now therefore receive"
+    :class: comment
+    
+    The KJV has "*Thou* therefore receive", not "Now therefore receive". 
+
+
 Bowels does not mean intestines but means tender affections, it is a demonstrative pronoun and a possessive adjective. In essence he is saying that he is doing the best possible thing for you.
 
 *verse 13-15* The Grace status of Onesimus
 
-Whom I would – I would is the imperfect active indicative of boulomai which is a decision made as the basis of very deep thinking. 
+Whom I would – I would is the imperfect active indicative of :gk:`boulomai` which is a decision made as the basis of very deep thinking. 
 
 Paul hates to part with Onesimus so that it is a true statement that Paul desires to retain him.
 
-Retain is the perfect active infinitive of katecho which means to hold down or to detain. This grace crisis cannot be resolved if Paul retains him. Once he reaches maturity Paul knows he has to part with him and cut him loose. This is combined with the accusative pronoun meaning for myself.
+Retain is the perfect active infinitive of :gk:`katecho` which means to hold down or to detain. This grace crisis cannot be resolved if Paul retains him. Once he reaches maturity Paul knows he has to part with him and cut him loose. This is combined with the accusative pronoun meaning for myself.
 
-Minister is the present active subjunctive of *daikoneo*.
+Minister is the present active subjunctive of :gk:`daikoneo`.
 
 Paul then states the goal. He would have liked Onesimus to stay and minister to Paul on behalf of Philemon. Paul really needed him but recognises that he must go to Philemon. 
 
-In my chains of the gospel. In this sense he is able to serve the Lord wherever he is.
+"In my chains of the gospel". In this sense he is able to serve the Lord wherever he is.
+
+.. sidebar:: "In my chains of the gospel". In this sense he is able to serve the Lord wherever he is.
+    :class: comment
+    
+    I don't understand this paragraph
+
 
 It is necessary for there to be a confrontation between the two. The slave represents his master in service to Paul. He indicates that Philemon himself could not serve him better than Onesimus.
 
-The word for mind is gnome which means opinion or consent. Paul indicates that he would not wish to do anything without Philemon’s consent. 
+The word for 'mind' is :gk:`gnome` which means 'opinion' or 'consent'. Paul indicates that he would not wish to do anything without Philemon’s consent. 
 
-Aorist active indicative of theleo which means to desire. This is followed by aorist active infinitive of poieo which shows purpose.
+Aorist active indicative of :gk:`theleo` which means 'to desire'. This is followed by aorist active infinitive of :gk:`poieo` which shows purpose.
 
-Agathos means for his intrinsic good. It is going to be for Philemon’s benefit to be tested in this manner. He further notes that this should not be from compulsion but from his own free will.
+:gk:`Agathos` means 'for his intrinsic good'. It is going to be for Philemon’s benefit to be tested in this manner. He further notes that this should not be from compulsion but from his own free will.
 
-*verse 15* he dynamics of facing the problem. 
+*verse 15* the dynamics of facing the problem. 
 
-Therefore is dia plus houtos followed by the aorist passive indicative of chorizo means that he was taken away from you Philemon for a season so that he could be with you forever . 
+'Therefore' is :gk:`dia` plus :gk:`houtos` followed by the aorist passive indicative of :gk:`chorizo` means that he was taken away from you Philemon for a season so that he could be with you forever . 
 
 Philemon probably thought that Onesimus was gone for good. 
 
-Season is the accusative singular of Hora which means an hour. 
+'Season' is the accusative singular of :gk:`Hora` which means 'an hour'. 
 
 Paul says for Philemon to think of the period that Onesimus has been gone as just an hour. The time is short if the results are positive. He returns to you as a mature believer rather than an unregenerated slave. When you compare two years absence with eternity it is nothing.
 
 That introduces a purpose clause thou shouldest receive is the present active subjunctive of echo. This means to have and to hold or receive back Onesimus forever.
 
-Believers must mature while they have the opportunity to so that you can be self sustaining. The moral order of a nation sustains the social order of a nation. 
+.. sidebar:: That introduces a purpose clause thou shouldest receive...
+    :class: comment
+    
+    Sentence doesn't make sense
 
-*verse 16-25* The Crisis Of Grace
 
-*Philemon’s dilemma - verses 16-17*
+Believers must mature while they have the opportunity to so that you can be self-sustaining. The moral order of a nation sustains the social order of a nation. 
 
-Ouketia Hos Doulos – no longer as a slave but more than a slave, 
+Verses 16-25 The Crisis Of Grace
+.................................
 
-Huper plus the accusative of Doulos, a brother beloved. He is respected by the believers in Rome.
+**Philemon’s dilemma - verses 16-17**
 
-Specially to me – Melista Emoi means most of all to me, but how much more to you. You have the privilege of receiving him back as a believer both in the flesh and in the Lord.
+.. sidebar:: The Crisis Of Grace
+    :class: comment
+    
+    Is this supposed to tie in with "The Grace Crisis" subsection from verse 8?
 
-No longer a slave but more than a slave, a beloved brother first of all to me but how much more to you both in the flesh and in the Lord.
+
+:gk:`Ouketia Hos Doulos` – no longer as a slave but more than a slave, 
+
+:gk:`Huper` plus the accusative of :gk:`Doulos`, 'a brother beloved'. He is respected by the believers in Rome.
+
+'Specially to me' – :gk:`Melista Emoi` means 'most of all to me, but how much more to you'. You have the privilege of receiving him back as a believer both in the flesh and in the Lord.
+
+Translation: 'No longer a slave but more than a slave, a beloved brother first of all to me but how much more to you both in the flesh and in the Lord.'
 
 Verses 16 and 17 give one of the best illustrations of full substitution and imputation. Behind Paul’s plea is Christ’s plea to the Father on behalf of the sinner who trusts Christ as the Saviour. That sinner is received on the same standing that Christ is received. We are accepted in the beloved – `Ephesians 1:6` 
 
-*verse 17* – Present active indicative of Echo which means to have and not to count.
+*verse 17* – Present active indicative of :gk:`Echo` which means 'to have and not to count'.
 
-If you have me as a partner, Koinoina. 
+'If you have me as a partner', :gk:`Koinonia`. 
 
-Receive him is the aorist middle imperative of Proslambano. The active voice means to take advantage of someone whereas in the middle voice it means to accept into one’s society. The imperative mood is the imperative of entreaty and has the force of a request and not a command.
+'Receive him' is the aorist middle imperative of :gk:`Proslambano`. The active voice means 'to take advantage of someone' whereas in the middle voice it means 'to accept into one’s society'. The imperative mood is the imperative of entreaty and has the force of a request and not a command.
 
-Paul then uses the accusative singular direct object of the intensive pronoun Autos which emphasises someone in the passage being very special which in this case is Onesimus.
+Paul then uses the accusative singular direct object of the intensive pronoun :gk:`Autos` which emphasises someone in the passage being very special which in this case is Onesimus.
 
-*The case for grace - verses 18-19*
+**The case for grace - verses 18-19**
 
-If is in the first class condition. If he has wronged you and he has. Paul does not downgrade Onesimus running away with money that he stole. Wrong is the constantive aorist which means the constant wronging of Philemon. Active voice indicates Onesimus produced the action, the indicative mood is the reality of the wrong done by him.
+'If' is in the first class condition: 'If he has wronged you and he has'. Paul does not downgrade Onesimus' running away with money that he stole. :gk:`Wrong` is the constantive aorist which means 'the constant wronging' of Philemon. Active voice indicates Onesimus produced the action, the indicative mood is the reality of the wrong done by him.
 
-Paul acknowledges that Onesimus was totally wrong and Philemon was totally right
+Paul acknowledges that Onesimus was totally wrong and Philemon was totally right.
 
-You have me as a partner receive Onesimus as you would receive me.
+Translation: 'You have me as a partner receive Onesimus as you would receive me.'
 
-“Or oweth thee ought, and he does. It is a hopeless debt. Put it on my account present active imperative of Ellogoe which means to impute or charge to an account. This is a grace credit system. You have receive grace and therefore you should be gracious to others.
+'Or oweth thee ought', and he does. It is a hopeless debt. 'Put it on my account' present active imperative of :gk:`Ellogoe` which means to impute or charge to an account. This is a grace credit system. You have received grace and therefore you should be gracious to others.
 
 Paul led Philemon to the Lord and spent time teaching him so that he could mature.
 
-Repay is Apotino which means to pay damages. It is in the future active indicative.
+'Repay' is :gk:`Apotino` which means to pay damages. It is in the future active indicative.
 
-I Paul by my own hand which is a dramatic aorist, I will pay you the damages.
+'I Paul by my own hand' which is a dramatic aorist, I will pay you the damages.
 
-Albeit is the conjunction Hina which means so that.
+'Albeit' is the conjunction :gk:`Hina` which means 'so that'.
 
-Present active subjunctive of Lego plus the negative Ne. I will not need to mention that you owe me yourself. Paul indicates that he would rather pay off the debt of Onesimus rather than to mention that Philemon owes him a greater debt. It is to Philemon’s advantage not to be reminded how much he owes Paul.
+Present active subjunctive of 'Lego' plus the negative 'Ne'. I will not need to mention that you owe me yourself. Paul indicates that he would rather pay off the debt of Onesimus rather than to mention that Philemon owes him a greater debt. It is to Philemon’s advantage not to be reminded how much he owes Paul.
 
-Prosopheilo  to owe. Paul is saying that Philemon owes him his life but he would hate to mention that. This is a subtle and sarcastic way of saying it.
 
-*verse 20* Brother let me joy, let me have joy “Onemi” which is the basis of Onesimus which means to profit or benefit. Let me have benefit from you. 
+.. sidebar:: Lego ... Ne
+    :class: comment
+    
+    Not clear how these two words fit with the sentence following them.
+
+
+:gk:`Prosopheilo` to owe. Paul is saying that Philemon owes him his life but he would hate to mention that. This is a subtle and sarcastic way of saying it.
+
+*verse 20* Brother let me joy, let me have joy :gk:`Onemi` which is the basis of Onesimus which means to profit or benefit: 'Let me have benefit from you'. 
+
+.. sidebar:: Onemi
+    :class: comment
+    
+    Not sure how joy fits in here. Reword and re-punctuate?
 
 This is permissive and is an expression of a wish. He must do it from his own free will.
 
-In the Lord is en plus the instrumental which means because of the Lord. As we have been treated in Christ so we must trust others.
+'In the Lord' is :gk:`en` plus the instrumental which means 'because of the Lord'. As we have been treated in Christ so we must trust others.
 
-Refreshed is the word Anapauo which means to give rest again, which again is in the imperative of entreaty, a request. My deep affection is the meaning of bowels. No one ever loses with grace.
+.. sidebar:: in/because of the Lord
+    :class: comment
+    
+    Versions I checked (NASB, NIV, NET, ESV, and AMP) all have 'in the Lord'
+
+'Refreshed' is the word :gk:`Anapauo` which means 'to give rest again', which again is in the imperative of entreaty, a request. 'My deep affection' is the meaning of 'bowels'. No one ever loses with grace.
+
+.. sidebar:: bowels
+    :class: comment
+    
+    All modern translations that I could find translate 'bowels' as 'heart' as the greek meaning for 'bowels' in this context is similar to our meaning of 'heart'.
 
 Paul is not confident in Philemon but confident of the doctrine within Philemon.
 
 At the same time also prepare me a lodging for I hope that through your prayers I will be graciously given to you. 
+
+.. sidebar:: At the same time...
+    :class: comment
+    
+    This is a translation of verse 22, but this section title is 'v8-21' (but this section actually stops at v20)
 
 Application
 ~~~~~~~~~~~
