@@ -1,12 +1,17 @@
+.. :mode=rest: (for jEdit edit mode)
+
 .. default-role:: verse
 
+.. |date| date:: %Y-%m-%d
+.. |title| replace:: Philemon
 
-==========
- Philemon
-==========
+=========
+ |title|
+=========
 
 :Author: Peter Moses
 :Organization: Evangelical Bible College of Western Australia
+:Date: |date|
 
 .. raw:: latex
 
@@ -30,7 +35,7 @@
 
     \pagebreak
 
-.. header:: Philemon
+.. header:: |title|
 
 .. include:: introduction.txt
 
@@ -38,88 +43,154 @@
 
 
 
-Doctrines
----------
+Doctrine Links
+~~~~~~~~~~~~~~
 
-.. include:: ../common/paul_pressure.txt
+- `Positional Truth`_
 
-.. include:: ../common/timothy_ministry.txt
+- `Timothy – Ministry`_
 
-.. include:: ../common/the_church.txt
+- `The Church`_
 
-.. include:: ../common/christian_soldier.txt
+- `Soldier: Christian Soldier of Ephesians 6`_
 
-.. include:: ../common/grace.txt
+- `Grace`_
 
-.. include:: ../common/peace.txt
+- `Peace`_
 
-.. include:: ../common/trinity.txt
+- `Trinity`_
 
 
 
 .. include:: character_of_philemon.txt
 
-Doctrines
----------
+Doctrine Links
+~~~~~~~~~~~~~~
 
-.. include:: ../common/thankfulness.txt
+- `Thankfulness`_
 
-.. include:: ../common/prayer.txt
+- `Prayer`_
 
-.. include:: ../common/love.txt
+- `Love`_
 
-.. include:: ../common/faith.txt
+- `Faith`_
 
-.. include:: ../common/saints.txt
+- `Saints`_
 
-.. include:: ../common/evangelism.txt
+- `Evangelism`_
 
-.. include:: ../common/positional_truth.txt
+- `Positional Truth`_
 
-.. include:: ../common/happiness.txt
+- `Happiness`_
 
 
 
 .. include:: intercession_for_onesimus.txt
 
-Doctrines
----------
+Doctrine Links
+~~~~~~~~~~~~~~
 
-.. include:: ../common/gospel_of_salvation.txt
+- `Gospel of Salvation`_
 
-.. include:: ../common/salvation.txt
+- `Salvation`_
 
-.. include:: ../common/effective_calling.txt
+- `Effective Calling`_
 
-.. include:: ../common/holy_spirit_church_age.txt
+- `Holy Spirit: Ministry of the Holy Spirit in the Church Age`_
 
-.. include:: ../common/deposits.txt
+- `Deposits`_
 
-.. include:: ../common/apostleship.txt
+- `Apostleship`_
 
-.. include:: ../common/ambassador.txt
+- `Ambassador`_
 
-.. include:: ../common/minister.txt
+- `Free will`_
 
-.. include:: ../common/free_will.txt
+- `Brotherhood of Believers`_
 
-.. include:: ../common/brotherhood_of_believers.txt
+- `Reconciliation`_
 
-.. include:: ../common/reconciliation.txt
+- `Imputation`_
 
-.. include:: ../common/imputation.txt
+- `Confidence`_
 
-.. include:: ../common/confidence.txt
-
-.. include:: ../common/obedience.txt
-
+- `Obedience`_
 
 
 .. include:: salutations_and_conclusion.txt
 
-Doctrines
----------
+Doctrine Links
+~~~~~~~~~~~~~~
+
+- `Soul and Human Spirit`_
+
+- `Amen`_
+
+
+
+Doctrine Index
+--------------
+
+.. include:: ../common/ambassador.txt
+
+.. include:: ../common/amen.txt
+
+.. include:: ../common/apostleship.txt
+
+.. include:: ../common/brotherhood_of_believers.txt
+
+.. include:: ../common/christian_soldier.txt
+
+.. include:: ../common/confidence.txt
+
+.. include:: ../common/copyright.txt
+
+.. include:: ../common/deposits.txt
+
+.. include:: ../common/effective_calling.txt
+
+.. include:: ../common/evangelism.txt
+
+.. include:: ../common/faith.txt
+
+.. include:: ../common/free_will.txt
+
+.. include:: ../common/gospel_of_salvation.txt
+
+.. include:: ../common/grace.txt
+
+.. include:: ../common/happiness.txt
+
+.. include:: ../common/holy_spirit_church_age.txt
+
+.. include:: ../common/imputation.txt
+
+.. include:: ../common/love.txt
+
+.. include:: ../common/minister.txt
+
+.. include:: ../common/obedience.txt
+
+.. include:: ../common/paul_pressure.txt
+
+.. include:: ../common/peace.txt
+
+.. include:: ../common/positional_truth.txt
+
+.. include:: ../common/prayer.txt
+
+.. include:: ../common/reconciliation.txt
+
+.. include:: ../common/saints.txt
+
+.. include:: ../common/salvation.txt
 
 .. include:: ../common/soul_and_spirit.txt
 
-.. include:: ../common/amen.txt
+.. include:: ../common/thankfulness.txt
+
+.. include:: ../common/the_church.txt
+
+.. include:: ../common/timothy_ministry.txt
+
+.. include:: ../common/trinity.txt

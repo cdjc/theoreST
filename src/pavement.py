@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import sys
+import sys, os
 
 sys.path += ['.', '../src']
 
@@ -12,27 +12,38 @@ from paver.path import pushd
 # docutils imports
 from docutils.core import publish_file as rundoc
 
-# my imports
-import verse_role
-import greek_role
-import biblepassage
-
 options(
     setup=dict(
         out = 'out',
         bible = 'ESV',
-        source = 'philemon_end_doctrines.txt'
-        #source = 'philemon.txt'
+        #source = 'philemon.txt',
+        draft = True
         )
     )
+
+# my imports
+import verse_role
+import greek_role
+import biblepassage
+import utils
 
 verse_role.set_version(options.bible)
 biblepassage.set_version(options.bible)
 
+
+docutil_settings = {}
+
+if not options.draft:
+    docutil_settings['strip_elements_with_classes'] = ['comment']
+
 @task
 def ensure_dirs_exists():
-    if not path.exists(options.out):
-        path.mkdir(options.out)
+    dirs = [options.out,
+            os.path.join(options.out, 'html')]
+    for path in dirs:
+        if not os.path.exists(path):
+            os.mkdir(path)
+    
 
 @task
 @needs(['ensure_dirs_exists'])
@@ -41,32 +52,46 @@ def philemon_odt():
     
     rundoc(writer_name='odf_odt',
         source_path = options.source,
+        settings_overrides=docutil_settings,
         destination_path = dest)
     
 @task
 @needs(['ensure_dirs_exists'])
 def philemon_latex():
     dest = path(options.out) / 'philemon.tex'
-    #reader = path('.').abspath() / 'bibleref_standalone'
     
     rundoc(writer_name='latex',
         source_path = options.source,
+        settings_overrides=docutil_settings,
         destination_path = dest)
 
 @task
 @needs(['ensure_dirs_exists'])
-def philemon_html():
-    dest = path(options.out) / 'philemon.html'
-    #reader = path('.').abspath() / 'bibleref_standalone'
-    
-    #import traceback
-    #traceback.print_stack()
+@consume_args
+def html(args):
+    print('args',args)
+    opts = utils.parse_options(args)
 
-    sys.path += ['.']
+    if opts['bible_version'] != None:
+        options.bible = opts['bible_version']
+        verse_role.set_version(options.bible)
+        biblepassage.set_version(options.bible)
+
+    if opts['draft']:
+        docutil_settings['strip_elements_with_classes'] = ['comment']
+
+    for book in opts['books']:
+        source = os.path.join('..',book,book+'.txt')
+        dest = os.path.join(options.out, 'html', book+'.html')
+                              
+        #dest = path(options.out) / 'philemon.html'
     
-    rundoc(writer_name='html',
-        source_path = options.source,
-        destination_path = dest)
+        #sys.path += ['.']
+        
+        rundoc(writer_name='html',
+            source_path = source,
+            settings_overrides=docutil_settings,
+            destination_path = dest)
 
 @task
 @needs(['philemon_latex'])
@@ -83,6 +108,7 @@ def philemon_pseudo():
     
     rundoc(writer_name='pseudoxml',
         source_path = options.source,
+        settings_overrides=docutil_settings,
         destination_path = dest)
 
 @task
