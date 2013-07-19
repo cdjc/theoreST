@@ -24,10 +24,14 @@ biblepassage directive to have option to exclude verse numbers.
 
 Fix biblepassage footnotes. See Philemon 1:8-21.
 
+Fix references to whole chapters (currently just points to first verse)
+
 Editing
 -------
 
 Remove KJV-isms. Useful to ease automatic translations.
+
+Create style guide.
 
 Pre-existing Bugs
 -----------------

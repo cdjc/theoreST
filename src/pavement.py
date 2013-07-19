@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sys, os
+import shutil
 
 sys.path += ['.', '../src']
 
@@ -16,8 +17,7 @@ options(
     setup=dict(
         out = 'out',
         bible = 'ESV',
-        #source = 'philemon.txt',
-        draft = True
+        draft = False
         )
     )
 
@@ -30,96 +30,103 @@ import utils
 verse_role.set_version(options.bible)
 biblepassage.set_version(options.bible)
 
-
 docutil_settings = {}
 
-if not options.draft:
-    docutil_settings['strip_elements_with_classes'] = ['comment']
+def handle_options(args):
+    utils.parse_options(options, args)
 
+    print(options)
+    if options.bible != None:
+        verse_role.set_version(options.bible)
+        biblepassage.set_version(options.bible)
+
+    if not options.draft:
+        #print('NOT DRAFT')
+        docutil_settings['strip_elements_with_classes'] = ['comment']
+    else:
+        #print('DRAFT')
+        if 'strip_elements_with_classes' in docutil_settings:
+            del docutil_settings['strip_elements_with_classes']
+    
 @task
 def ensure_dirs_exists():
     dirs = [options.out,
-            os.path.join(options.out, 'html')]
+            os.path.join(options.out, 'html'),
+            os.path.join(options.out, 'tex'),
+            os.path.join(options.out, 'pdf')
+            ]
     for path in dirs:
         if not os.path.exists(path):
             os.mkdir(path)
-    
 
+#@task
+#@needs(['ensure_dirs_exists'])
+#def philemon_odt():
+    #dest = path(options.out) / 'philemon.odt'
+    
+    #rundoc(writer_name='odf_odt',
+        #source_path = options.source,
+        #settings_overrides=docutil_settings,
+        #destination_path = dest)
+    
 @task
 @needs(['ensure_dirs_exists'])
-def philemon_odt():
-    dest = path(options.out) / 'philemon.odt'
+@consume_args
+def latex(args):
+    handle_options(args)
     
-    rundoc(writer_name='odf_odt',
-        source_path = options.source,
-        settings_overrides=docutil_settings,
-        destination_path = dest)
-    
-@task
-@needs(['ensure_dirs_exists'])
-def philemon_latex():
-    dest = path(options.out) / 'philemon.tex'
-    
-    rundoc(writer_name='latex',
-        source_path = options.source,
-        settings_overrides=docutil_settings,
-        destination_path = dest)
+    for book in options.books:
+        print('---',book,'---')
+        source = os.path.join('..',book,book+'.txt')
+        dest = os.path.join(options.out, 'tex', book+'.tex')
+
+        rundoc(writer_name='latex',
+               source_path = source,
+               settings_overrides=docutil_settings,
+               destination_path = dest)
 
 @task
 @needs(['ensure_dirs_exists'])
 @consume_args
 def html(args):
-    print('args',args)
-    opts = utils.parse_options(args)
+    handle_options(args)
 
-    if opts['bible_version'] != None:
-        options.bible = opts['bible_version']
-        verse_role.set_version(options.bible)
-        biblepassage.set_version(options.bible)
-
-    if opts['draft']:
-        docutil_settings['strip_elements_with_classes'] = ['comment']
-
-    for book in opts['books']:
+    for book in options.books:
+        print('---',book,'---')
         source = os.path.join('..',book,book+'.txt')
         dest = os.path.join(options.out, 'html', book+'.html')
                               
-        #dest = path(options.out) / 'philemon.html'
-    
-        #sys.path += ['.']
-        
         rundoc(writer_name='html',
             source_path = source,
             settings_overrides=docutil_settings,
             destination_path = dest)
 
 @task
-@needs(['philemon_latex'])
-def philemon_pdf():
-    with pushd(options.out) as old_dir:
-        sh('rubber --pdf philemon.tex')
-
-@task
-def philemon_pseudo():
-    dest = path(options.out) / 'philemon.pxml'
-    reader = path('.').abspath() / 'bibleref_standalone'
-
-    sys.path += ['.']
-    
-    rundoc(writer_name='pseudoxml',
-        source_path = options.source,
-        settings_overrides=docutil_settings,
-        destination_path = dest)
-
-@task
-@needs(['philemon_pdf', 'philemon_html'])
-def philemon():
-    pass
-
-@task
+@needs(['latex'])
 @consume_args
-def pdf(args, help_function):
-    print(args)
+def pdf(args):
+    texdir = os.path.join(options.out, 'tex')
+    pdfdir = os.path.join('..', 'pdf')
+    for book in options.books:
+        with pushd(texdir) as old_dir:
+            texfile = book+'.tex'
+            pdffile = book+'.pdf'
+            sh('rubber --pdf '+texfile)
+            if os.path.isfile(pdffile):
+                shutil.copy(pdffile, pdfdir)
+
+#@task
+#def philemon_pseudo():
+    #dest = path(options.out) / 'philemon.pxml'
+    #reader = path('.').abspath() / 'bibleref_standalone'
+
+    #sys.path += ['.']
+    
+    #rundoc(writer_name='pseudoxml',
+        #source_path = options.source,
+        #settings_overrides=docutil_settings,
+        #destination_path = dest)
+
 
 
 if __name__ == '__main__':
