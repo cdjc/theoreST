@@ -39,7 +39,7 @@
 
 .. include:: introduction.txt
 
-.. include:: apostolicgreeting.txt
+.. include:: ../philemon/apostolicgreeting.txt
 
 
 
@@ -62,7 +62,7 @@ Doctrine Links
 
 
 
-.. include:: character_of_philemon.txt
+.. include:: ../philemon/character_of_philemon.txt
 
 Doctrine Links
 ~~~~~~~~~~~~~~
@@ -85,7 +85,7 @@ Doctrine Links
 
 
 
-.. include:: intercession_for_onesimus.txt
+.. include:: ../philemon/intercession_for_onesimus.txt
 
 Doctrine Links
 ~~~~~~~~~~~~~~
@@ -117,7 +117,7 @@ Doctrine Links
 - `Obedience`_
 
 
-.. include:: salutations_and_conclusion.txt
+.. include:: ../philemon/salutations_and_conclusion.txt
 
 Doctrine Links
 ~~~~~~~~~~~~~~
