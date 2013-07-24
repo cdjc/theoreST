@@ -80,3 +80,8 @@ Falling From Grace
 
 #. The same is seen in the church of Ephesus, `Revelation 2:5`.
 
+... toctree::
+
+    common/soul_and_spirit
+    common/amen
+

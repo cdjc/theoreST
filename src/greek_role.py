@@ -5,4 +5,4 @@ from docutils import nodes
 
 role = roles.GenericRole('gk', nodes.emphasis)
 
-roles.register_local_role('gk', role)
+#roles.register_local_role('gk', role)

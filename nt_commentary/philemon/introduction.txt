@@ -8,7 +8,7 @@ Overview
 This letter was written together with Ephesians, Philippians and Colossians during Paul’s
 first Roman imprisonment. Its position in the Bible was chosen by the Church Fathers who saw
 that it was like Timothy and Titus, a letter to an individual, rather than an epistle to a
-corporate group as were the other prison epistles.
+corporate group as were the other prison epistles. :ref:`Amen`
 
 Background
 ----------
@@ -122,7 +122,8 @@ unlike apartheid in recent times.
 It is of note that one thing Paul does not do is to ask Philemon to set 
 the slaves free. Paul is working from within the institution to humanise 
 it from within. From a Scriptural viewpoint slavery is dealt with in 
-`1 Corinthians 7:20-22`.
+:verse:`1 Corinthians 7:20-22`.
+
 
 Here we see that a free man who was converted became a slave of Christ
 while a slave who was converted was seen to be free in Christ. Slavery

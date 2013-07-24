@@ -234,3 +234,13 @@ Characteristics of a faithful believer from Philemon
 
    Principle:  Conformity to Christ, `Romans 8:29, 12:2, Matthew 10:25`.
 
+... toctree::
+
+    common/thankfulness
+    common/prayer
+    common/love
+    common/faith
+    common/saints
+    common/evangelism
+    common/positional_truth
+    common/happiness

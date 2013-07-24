@@ -1,13 +1,26 @@
-#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#python imports
 import sys
 
+#docutils imports
+from docutils.parsers.rst import roles, Directive
+from docutils import nodes
+from docutils import statemachine
+
+#sphix imports
+from sphinx.domains import Domain
+from sphinx.roles import XRefRole
+from sphinx.directives import ObjectDescription
+
+#my imports
 import bible
 import verse_parser
 
-from docutils.parsers import rst
-from docutils import statemachine
+import verse_role
 
-class BiblePassage(rst.Directive):
+greek_role = roles.GenericRole('gk', nodes.emphasis)
+
+class BiblePassage(Directive):
     required_arguments = 1
     optional_aguments = 0
     final_argument_whitespace = True
@@ -16,7 +29,10 @@ class BiblePassage(rst.Directive):
     def run(self):
         '''
         '''
-        if self.version == None:
+        env = self.state.document.settings.env
+        #version = env.config.bible_version
+        #print(dir(env.config), file=sys.stderr)
+        if 'bible_version' not in env.config:
             raise self.error("BiblePassage: no bible version. Call set_version() after biblepassage import")
         ref = self.arguments[0]
 
@@ -35,7 +51,7 @@ class BiblePassage(rst.Directive):
         verse = vref.verse.value if vref.verse else None
         to_verse = vref.to_verse.value if vref.to_verse else None
 
-        rst = bible.get_passage_as_rst(self.version, vref.book.value,
+        rst = bible.get_passage_as_rst(env.config.bible_version, vref.book.value,
                                        vref.chapter.value, verse, to_verse,
                                        force=False)
         #print(rst)
@@ -44,28 +60,21 @@ class BiblePassage(rst.Directive):
         self.state_machine.insert_input(include_lines, source)
         return []
 
-rst.directives.register_directive('biblepassage', BiblePassage)
-
-def set_version(version):
-    BiblePassage.version = version
-
-if __name__ == '__main__':
-    if len(sys.argv) != 2:
-        print('Usage: '+sys.argv[0]+' reference', file=sys.stderr)
-        sys.exit(1)
-    ref = sys.argv[1]
-    vp = verse_parser.Parser(ref)
-    try:
-        vrefs = vp.parse_verse_references()
-    except verse_parser.ParseException as pe:
-        raise self.error("BiblePassage: parse verse ref error: "+str(pe))
-    if len(vrefs) != 1:
-        raise self.error("BiblePassage: One, and only one, verse reference allowed")
-    vref = vrefs[0]
-    verse = vref.verse.value if vref.verse else None
-    to_verse = vref.to_verse.value if vref.to_verse else None
-
-    rst = bible.get_passage_as_rst('KJV', vref.book.value,
-                                   vref.chapter.value, verse, to_verse,
-                                   force=True)
-    print(rst)
+class BibleDomain(Domain):
+    
+    name = 'bible'
+    label = 'Bible'
+    
+    object_types = {}
+    
+    directives = {'biblepassage' : BiblePassage}
+    
+    roles = {'gk' : greek_role,
+             'verse' : verse_role.verse_reference_role}
+    
+    initial_data = {}
+    
+def setup(app):
+    app.add_domain(BibleDomain)
+    app.add_config_value('bible_version','KJV', 'env')
+    
