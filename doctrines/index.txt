@@ -2,6 +2,7 @@ Doctrines
 =========
 
 .. toctree::
+    
 
     ambassador
     amen
