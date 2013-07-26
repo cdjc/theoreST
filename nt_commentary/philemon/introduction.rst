@@ -8,7 +8,7 @@ Overview
 This letter was written together with Ephesians, Philippians and Colossians during Paul’s
 first Roman imprisonment. Its position in the Bible was chosen by the Church Fathers who saw
 that it was like Timothy and Titus, a letter to an individual, rather than an epistle to a
-corporate group as were the other prison epistles. :ref:`Amen`
+corporate group as were the other prison epistles.
 
 Background
 ----------

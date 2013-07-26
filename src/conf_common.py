@@ -37,7 +37,7 @@ primary_domain = 'bible'
 bible_version = 'ESV'
 
 # The suffix of source filenames.
-source_suffix = '.txt'
+source_suffix = '.rst'
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
@@ -250,5 +250,5 @@ texinfo_documents = [
 
 # Example configuration for intersphinx: refer to the Python standard library.
 #intersphinx_mapping = {'http://docs.python.org/': None}
-intersphinx_mapping = {'doctrines' : ('../../doctrines/_build/singlehtml/', None)}
-intersphinx_cache_limit = 0
+#intersphinx_mapping = {'doctrines' : ('../../doctrines/_build/singlehtml/', None)}
+#intersphinx_cache_limit = 0

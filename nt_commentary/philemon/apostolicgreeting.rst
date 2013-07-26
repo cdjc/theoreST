@@ -193,13 +193,11 @@ It is a command - `2 Peter 3:18`. See `2 Peter 1:5-7, Hebrews 5:11-14`
 Doctrines
 ~~~~~~~~~
 
-... toctree::
+- :doc:`/doctrines/paul_pressure`
+- :doc:`/doctrines/timothy_ministry`    
+- :doc:`/doctrines/the_church`    
+- :doc:`/doctrines/christian_soldier`
+- :doc:`/doctrines/grace`
+- :doc:`/doctrines/peace`
+- :doc:`/doctrines/trinity`
 
-    common/paul_pressure
-    common/timothy_ministry
-    common/the_church
-    common/christian_soldier
-    common/grace
-    common/peace
-    common/trinity
-    
