@@ -6,4 +6,4 @@ New Testament Commentaries
     :maxdepth: 1
 
     philemon/index
-    jude/jude
+    jude/index

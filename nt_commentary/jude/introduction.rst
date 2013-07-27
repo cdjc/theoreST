@@ -3,7 +3,7 @@
 Introduction
 ------------
 
-Jude is :bible:gk:`the`  epistle on :gk:`apostasy`. It is very appropriate nowadays as many churches are subject to false doctrine and practices, and Jude stands as a reminder of the dangers of false teachers and teaching.
+Jude is the epistle on apostasy. It is very appropriate nowadays as many churches are subject to false doctrine and practices, and Jude stands as a reminder of the dangers of false teachers and teaching.
 
 Jude divides into four sections
 

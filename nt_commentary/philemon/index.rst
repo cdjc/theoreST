@@ -23,10 +23,6 @@
 
     \pagebreak
 
-.. raw:: latex
-
-    \pagebreak
-
 .. header:: |title|
 
 .. toctree::

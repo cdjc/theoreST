@@ -17,25 +17,9 @@
 
     \pagebreak
 
-.. include:: ../common/copyright.txt
-
-.. raw:: latex
-
-    \pagebreak
-
-.. contents::
-
-.. raw:: latex
-
-    \pagebreak
-
-.. include:: ../common/preface.txt
-
-.. raw:: latex
-
-    \pagebreak
-
 .. header:: |title|
 
-.. include:: introduction.txt
+.. toctree::
+
+    introduction
 

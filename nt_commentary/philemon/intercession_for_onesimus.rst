@@ -461,21 +461,21 @@ Verses 10-20  A Reflection of Christ
 
    #. Thus as believers we owe to Him all we are and have, verse 19. `2 Corinthians 5:14,15, Romans 12:1,2` “freed from sin, enslaved to God”, `Romans 6:22`.
 
+Doctrines
+~~~~~~~~~
 
-... toctree::
-
-    common/gospel_of_salvation
-    common/salvation
-    common/effective_calling
-    common/holy_spirit_church_age
-    common/deposits
-    common/apostleship
-    common/ambassador
-    common/minister
-    common/free_will
-    common/brotherhood_of_believers
-    common/reconciliation
-    common/imputation
-    common/confidence
-    common/obedience
+- :doc:`/doctrines/gospel_of_salvation`
+- :doc:`/doctrines/salvation`
+- :doc:`/doctrines/effective_calling`
+- :doc:`/doctrines/holy_spirit_church_age`
+- :doc:`/doctrines/deposits`
+- :doc:`/doctrines/apostleship`
+- :doc:`/doctrines/ambassador`
+- :doc:`/doctrines/minister`
+- :doc:`/doctrines/free_will`
+- :doc:`/doctrines/brotherhood_of_believers`
+- :doc:`/doctrines/reconciliation`
+- :doc:`/doctrines/imputation`
+- :doc:`/doctrines/confidence`
+- :doc:`/doctrines/obedience`
 

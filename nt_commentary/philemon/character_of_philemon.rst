@@ -215,14 +215,14 @@ Characteristics of a faithful believer from Philemon
    When confession is necessary it is the only prayer God will hear, `Psalm 66:18, 1 John 1:9`
 
 .. sidebar:: Prayer
-        :class: comment
-    
-        This section on prayer doesn't seem to fit under point 1. Should it be a point on its own, or just removed?
+    :class: comment
+
+    This section on prayer doesn't seem to fit under point 1. Should it be a point on its own, or just removed?
 
 .. sidebar:: pray to the father, through Holy Spirit, in name of Son
     :class: comment
     
-     In Wayne Grudem's book *Systematic Theology*, he gives a well-balanced argument suggesting we need not be legalistic about praying this way - and talking to Jesus or the Holy Spirit can at times be a legitimate way to pray.
+    In Wayne Grudem's book *Systematic Theology*, he gives a well-balanced argument suggesting we need not be legalistic about praying this way - and talking to Jesus or the Holy Spirit can at times be a legitimate way to pray.
 
 #. Takes up cross daily (verse 5). Faith to Christ, love to the saints, `Matthew 22:37-40, Luke 9:23`.
 
@@ -234,13 +234,15 @@ Characteristics of a faithful believer from Philemon
 
    Principle:  Conformity to Christ, `Romans 8:29, 12:2, Matthew 10:25`.
 
-... toctree::
+Doctrines
+~~~~~~~~~
 
-    common/thankfulness
-    common/prayer
-    common/love
-    common/faith
-    common/saints
-    common/evangelism
-    common/positional_truth
-    common/happiness
+- :doc:`/doctrines/thankfulness`
+- :doc:`/doctrines/prayer`
+- :doc:`/doctrines/love`
+- :doc:`/doctrines/faith`
+- :doc:`/doctrines/saints`
+- :doc:`/doctrines/evangelism`
+- :doc:`/doctrines/positional_truth`
+- :doc:`/doctrines/happiness`
+
