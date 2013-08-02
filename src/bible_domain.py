@@ -3,7 +3,7 @@
 import sys
 
 #docutils imports
-from docutils.parsers.rst import roles, Directive
+from docutils.parsers.rst import roles, Directive, directives
 from docutils import nodes
 from docutils import statemachine
 
@@ -60,6 +60,18 @@ class BiblePassage(Directive):
         self.state_machine.insert_input(include_lines, source)
         return []
 
+class DraftComment(directives.body.Sidebar):
+    
+    def run(self):
+        print('DraftComment')
+        env = self.state.document.settings.env
+        if env.config.draft:
+            print('Draft!')
+            return directives.body.Sidebar.run(self)
+        else:
+            print('No draft...')
+            return []
+
 class BibleDomain(Domain):
     
     name = 'bible'
@@ -67,7 +79,8 @@ class BibleDomain(Domain):
     
     object_types = {}
     
-    directives = {'biblepassage' : BiblePassage}
+    directives = {'biblepassage' : BiblePassage,
+                  'draftcomment' : DraftComment}
     
     roles = {'gk' : greek_role,
              'verse' : verse_role.verse_reference_role}
@@ -77,4 +90,5 @@ class BibleDomain(Domain):
 def setup(app):
     app.add_domain(BibleDomain)
     app.add_config_value('bible_version','KJV', 'env')
+    app.add_config_value('draft',False,'env')
     

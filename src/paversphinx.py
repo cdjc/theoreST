@@ -10,86 +10,13 @@ You can also develop your own tasks by calling ``run_sphinx()``
 directly.
 """
 
+import os
+
 __author__ = 'Doug Hellmann <doug.hellmann@gmail.com>'
 
 from paver.easy import *
 import sphinx
 import textwrap
-
-@task
-def html(options):
-    """Build HTML documentation using Sphinx. 
-    
-    This task uses the following options, searching first in the 
-    "html" then "sphinx" section of the options.
-    
-    docroot
-      the root under which Sphinx will be working.
-      default: docs
-    builddir
-      directory under the docroot where the resulting files are put.
-      default: build
-    sourcedir
-      directory under the docroot for the source files
-      default: (empty string)
-    doctrees
-      the location of the cached doctrees
-      default: $builddir/doctrees
-    confdir
-      the location of the sphinx conf.py
-      default: $sourcedir
-    outdir
-      the location of the generated output files
-      default: $builddir/$builder
-    builder
-      the name of the sphinx builder to use
-      default: html
-    template_args
-      dictionary of values to be passed as name-value pairs to the HTML builder
-      default: {}
-    """
-    run_sphinx(options, 'html')
-    return
-
-
-@task
-def pdf(options):
-    """Generate PDF output.
-    
-    Use Sphinx to produce LaTeX, then use external tools such as 
-    TeXLive to convert the .tex file to a PDF.
-
-    This task uses the following options, searching first in the 
-    "pdf" then "sphinx" section of the options.
-
-    docroot
-      the root under which Sphinx will be working.
-      default: docs
-    builddir
-      directory under the docroot where the resulting files are put.
-      default: build
-    sourcedir
-      directory under the docroot for the source files
-      default: (empty string)
-    doctrees
-      the location of the cached doctrees
-      default: $builddir/doctrees
-    confdir
-      the location of the sphinx conf.py
-      default: $sourcedir
-    outdir
-      the location of the generated output files
-      default: $builddir/$builder
-    builder
-      the name of the sphinx builder to use
-      default: pdf
-    """
-    run_sphinx(options, 'pdf')
-    options.order('pdf')
-    paths = _get_paths(options)
-    latex_dir = paths.builddir / options.builder
-    sh('cd %s; make' % latex_dir)
-    return
 
 
 def run_sphinx(options, *option_sets):
@@ -128,6 +55,12 @@ def run_sphinx(options, *option_sets):
     template_args
       dictionary of values to be passed as name-value pairs to the HTML builder
       default: {}
+    conf_overrides
+      dictionary of values to override values in conf.py
+      default: {}
+    tags
+      list of tags to add
+      default: []
     """
     if 'sphinx' not in option_sets:
         option_sets += ('sphinx',)
@@ -137,17 +70,26 @@ def run_sphinx(options, *option_sets):
     options.order(*option_sets, **kwds)
     
     paths = _get_and_create_paths(options)
+    
     template_args = [ '-A%s=%s' % (name, value)
                       for (name, value) in list(getattr(options, 'template_args', {}).items()) 
                       ]
+    override_args = [ '-D%s=%s' % (name,value)
+                      for name,value in list(getattr(options, 'conf_overrides', {}).items())]
+    tags = [ '-t%s' % tag for tag in list(getattr(options, 'tags', [])) ]
     sphinxopts = ['', 
+                  #'-E',
                   '-b', options.get('builder', 'html'), 
                   '-d', paths.doctrees, 
                   '-c', paths.confdir,
                   ]
     sphinxopts.extend(template_args)
+    sphinxopts.extend(override_args)
+    sphinxopts.extend(tags)
     sphinxopts.extend([paths.srcdir, paths.outdir])
-    dry("sphinx-build %s" % (" ".join(sphinxopts),), sphinx.main, sphinxopts)
+    cmd = "sphinx-build %s" % (" ".join(sphinxopts),)
+    #rint(cmd, sphinx.main, sphinxopts)
+    dry(cmd, sphinx.main, sphinxopts)
     
     options.order()
     return
@@ -158,9 +100,13 @@ def _get_and_create_paths(options):
     Returns a Bundle with the required values filled in.
     """
     paths = _get_paths(options)
-    paths.builddir.mkdir()
-    paths.outdir.mkdir()
-    paths.doctrees.mkdir()
+    if not os.path.exists(paths.builddir):
+        paths.builddir.mkdir()
+    if not os.path.exists(paths.outdir):
+        paths.outdir.mkdir()
+    if not os.path.exists(paths.doctrees):
+        paths.doctrees.mkdir()
+    #print('paths:',paths)
     return paths
 
 def _get_paths(options):
@@ -169,8 +115,11 @@ def _get_paths(options):
     Returns a Bundle with the required values filled in.
     """
     opts = options
+
     
     docroot = path(opts.get('docroot', 'docs'))
+    #print('docroot:',docroot)
+
     if not docroot.exists():
         raise BuildFailure("Sphinx documentation root (%s) does not exist."
                            % docroot)
@@ -241,7 +190,7 @@ def adjust_line_widths(lines, break_lines_at, line_break_mode):
 
 
 def run_script(input_file, script_name, 
-               interpreter='python',
+               interpreter='python3',
                include_prefix=True, 
                ignore_error=False, 
                trailing_newlines=True,
