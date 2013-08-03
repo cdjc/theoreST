@@ -12,7 +12,7 @@ is an apostle is not going to claim rank over a mature believer
 in Philemon. This is going to allow Philemon to act on the basis 
 of his own unhindered free will in relation to Onesimus.
 
-.. sidebar:: claim rank
+.. draftcomment:: claim rank
     :class: comment
     
     I think 'claim rank' is a bit too colloquial. Also, it might not
@@ -28,14 +28,14 @@ Yet Paul in verse 13 advocates capital punishment.
 Both the Lord Jesus Christ and Paul died as innocent people 
 by capital punishment but both advocated it.
 
-.. sidebar:: ...not a prisoner of Nero...
+.. draftcomment:: ...not a prisoner of Nero...
     :class: comment
 
     Well, he *is* a prisoner of Nero too. Perhaps this should be reworded
     to something like "Though he is a prisoner of Nero,
     he identifies himself as a prisoner of Jesus Christ."
     
-.. sidebar:: advocating capital punishment
+.. draftcomment:: advocating capital punishment
     :class: comment
     
     I'm not convinced. On the spectrum *accept - agree - advocate*, 
@@ -53,7 +53,7 @@ different people addressed in different ways showing different
 works in the body of Christ. Here we see the wife and son of 
 Philemon addressed and it is further expanded to the entire church at Colossae.
 
-.. sidebar:: wife and son
+.. draftcomment:: wife and son
     :class: comment
     
     I don't think we are certain that Philemon's wife and son are the
@@ -69,7 +69,7 @@ is slavery which he addresses in this letter.
 *verse 2* Philemon is a fellow worker. He is not a pastor, 
 whereas Archippus is a fellow soldier, a fellow pastor.
 
-.. sidebar:: fellow soldier
+.. draftcomment:: fellow soldier
     :class: comment
     
     I'm not convinced that 'fellow soldier' *necessarily* implies pastor.
@@ -82,7 +82,7 @@ Philemon is a wealthy mature believer and one of the leaders in
 the church at Colossae. Onesimus however is a run-away unbelieving 
 slave who has stolen a large sum of money.
 
-.. sidebar:: large sum of money
+.. draftcomment:: large sum of money
     :class: comment
     
     How do we know? I don't think v 18-19 necessarily imply that
@@ -93,7 +93,7 @@ and peace opening the letter. It is noted that the grace and peace
 is from God the Father and the Son and not from the Holy Spirit.
 The entire work for the Holy Spirit is to glorify Christ.
 
-.. sidebar:: holy spirit
+.. draftcomment:: holy spirit
     :class: comment
     
     This is painting with a very broad brush, and I think it may give
@@ -125,7 +125,7 @@ What kind of people make up the body of Christ?
 - A sister- Apphia  (Probably Philemon’s wife) - Women have equal standing in Christ. 
   While Philemon was a Greek name and he was a citizen of Collosae, Apphia is a Phrygian name.
   
-.. sidebar:: Apphia
+.. draftcomment:: Apphia
     :class: comment
     
     Inserted 'Probably'.
@@ -137,14 +137,14 @@ What kind of people make up the body of Christ?
   of the word of God.  The life of faith is a warfare. `Ephesians 6:10-18`,  
   The good fight. `1 Timothy 1:13, 6:12`, The good soldier.  `2 Timothy 2:2`
   
-.. sidebar:: 1 Timothy 1:13
+.. draftcomment:: 1 Timothy 1:13
     :class: comment
     
     Is this verse reference correct?
 
 And to the church in thy house indicates that the church at Colossae met at Philemon’s house. It was the practice to meet in houses for the first two hundred years of the Church Age.
 
-.. sidebar:: Church Age
+.. draftcomment:: Church Age
     :class: comment
     
     'Age' seems redundant here, and capitalisation unnecessary.
@@ -179,7 +179,7 @@ It is a command - `2 Peter 3:18`. See `2 Peter 1:5-7, Hebrews 5:11-14`
    #. New creature `2 Corinthians 5:17, 1 Corinthians 6:14, 11:1`
    #. Steps of growth `2 Peter 1:5-7`. 
 
-.. sidebar:: Spritual Growth
+.. draftcomment:: Spritual Growth
     :class: comment
     
     Rethink the structure of this section.

@@ -104,7 +104,7 @@ html_theme = 'sphinxdoc'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+#html_theme_options = {'nosidebar':True}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
@@ -138,6 +138,7 @@ html_static_path = ['_static']
 # typographically correct entities.
 html_use_smartypants = True
 
+html_add_permalinks = None
 # Custom sidebar templates, maps document names to template names.
 #html_sidebars = {}
 
@@ -201,10 +202,10 @@ latex_documents = [
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
-#latex_use_parts = False
+latex_use_parts = False
 
 # If true, show page references after internal links.
-#latex_show_pagerefs = False
+latex_show_pagerefs = True
 
 # If true, show URL addresses after external links.
 #latex_show_urls = False

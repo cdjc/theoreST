@@ -2,16 +2,13 @@
 Introduction
 ------------
 
-Overview
-~~~~~~~~
-
 This letter was written together with Ephesians, Philippians and Colossians during Paul’s
 first Roman imprisonment. Its position in the Bible was chosen by the Church Fathers who saw
 that it was like Timothy and Titus, a letter to an individual, rather than an epistle to a
 corporate group as were the other prison epistles.
 
 Background
-----------
+==========
 
 Geographical
 ~~~~~~~~~~~~
@@ -103,7 +100,7 @@ very cruel master had been killed by a slave and protected by his fellow
 slaves. After days of debate all the 300 slaves were killed, 
 men women and children.
 
-.. sidebar:: 300 slaves killed
+.. draftcomment:: 300 slaves killed
     :class: comment
     
     Reference would be good.
@@ -111,7 +108,7 @@ men women and children.
 Slavery was therefore a very important social issue in Paul’s day not 
 unlike apartheid in recent times.
 
-.. sidebar:: apartheid
+.. draftcomment:: apartheid
     :class: comment
     
     Not sure the comparison between slavery in ancient Rome and apartheid
@@ -130,7 +127,7 @@ while a slave who was converted was seen to be free in Christ. Slavery
 was neither commended nor condemned by the early church.
 The issue is "What do you think of Christ?"
 
-.. sidebar:: "What think ye of Christ"
+.. draftcomment:: "What think ye of Christ"
     :class: comment
     
     Reworded to: "What do you think of Christ?"
@@ -141,7 +138,7 @@ A modern Example
 When the evil is abolished society will not fall apart with it. However
 with force or a revolution there are no winners but many losers.
 
-.. sidebar:: When the evil is abolished...
+.. draftcomment:: When the evil is abolished...
     :class: comment
     
     This sentence doesn't really make sense to me. Suggest rewording.
@@ -156,7 +153,7 @@ slaves and their children Bible Class. He looked upon his slaves as
 his children, his responsibility, so that they had food, clothing and 
 the gospel.
 
-.. sidebar:: Stonewall Jackson
+.. draftcomment:: Stonewall Jackson
     :class: comment
     
     I don't think he took time off during the war, but earlier.
@@ -169,7 +166,7 @@ Evil is in the world when we are born and will
 still be here after we leave. Social reform will come naturally with 
 the spread of biblical principles in a nation.
 
-.. sidebar:: Slavery
+.. draftcomment:: Slavery
     :class: comment
     
     I think this section needs to be more unambiguously anti-slavery. I don't
@@ -206,7 +203,7 @@ belonging to two different classes in the Roman Empire, hating each
 other and hurting each other, are now brothers in Christ, and they 
 are to act like it.
 
-.. sidebar:: Division of the book
+.. draftcomment:: Division of the book
     :class: comment
     
     The original lists the four sections at this point, but I feel this is redundant,

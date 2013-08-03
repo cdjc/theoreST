@@ -10,7 +10,7 @@ Analysis and Background
 
 *verse 4* Philemon is mature. He owns slaves and is a mature believer. Paul is thankful for him. There are many believers whom Paul is not thankful for.
 
-.. sidebar:: ...many believers whom Paul is not thankful for
+.. draftcomment:: ...many believers whom Paul is not thankful for
     :class: comment
     
     Remove this sentence, or give some further explanation with references.
@@ -19,7 +19,7 @@ Analysis and Background
 
 Out of respect comes love. Paul thanks “my God” which is the dative singular with the definite article used for a personal pronoun. This is better translated "I thank our God". 
 
-.. sidebar:: better translated "I thank our God"
+.. draftcomment:: better translated "I thank our God"
     :class: comment
     
     I checked a few versions (ESV, NET, KJV, NASB, NIV, RSV, Amp), and they all had "my God".
@@ -27,7 +27,7 @@ Out of respect comes love. Paul thanks “my God” which is the dative singular
 
 "Making mention of you at the time of my prayers" is the present middle participle of :gk:`Poieo`. The present tense is a descriptive present. He is praying for him still. 
 
-.. sidebar:: "Making mention of you at the time of my prayers"
+.. draftcomment:: "Making mention of you at the time of my prayers"
     :class: comment
     
     Ideally, I'd like the commentary to be as bible-version independent as possible.
@@ -39,14 +39,14 @@ Out of respect comes love. Paul thanks “my God” which is the dative singular
 
 :gk:`Pantote` translated "always" means that he does this at any time he prays. We are told to pray without ceasing but this really means to pray with the frequency of a hacking cough.
 
-.. sidebar:: "frequency of a hacking cough"
+.. draftcomment:: "frequency of a hacking cough"
     :class: comment
     
     I couldn't find anything about hacking coughs related to pantote. Reference? Or just remove it and replace with a more accepted definition.
 
 :gk:`Epi` and :gk:`Proseuche` means "at the time of my prayers" not "in my prayers" which would be the word :gk:`En` rather than :gk:`Epi`.
 
-.. sidebar:: "in my prayers"
+.. draftcomment:: "in my prayers"
     :class: comment
     
     All the versions I checked (ESV, NET, KJV, NASB, NIV, RSV, Amp) translate as "in my prayers". I don't know greek (yet!), but are you sure you're willing to go against all those?
@@ -57,7 +57,7 @@ Translation v 4 – "I keep thanking our God at all times making mention of you 
 
 This is :gk:`Pros` plus the accusative which means face to face with the Lord Jesus Christ. 
 
-.. sidebar:: This is "Pros"
+.. draftcomment:: This is "Pros"
     :class: comment
     
     Clarify the first part. It doesn't make sense to me.
@@ -66,14 +66,14 @@ This is :gk:`Pros` plus the accusative which means face to face with the Lord Je
 
 *verse 6* Philemon is told in this letter that he is not facing a runaway slave but a mature believer now. How is he going to handle this new situation?
 
-.. sidebar:: Philemon is told in this letter...
+.. draftcomment:: Philemon is told in this letter...
     :class: comment
     
     There is no clear link between verse 6 and these two sentences.
 
 “That” is the conjunction :gk:`Hopos` which should be translated ‘in order that’
 
-.. sidebar:: 'in order that'
+.. draftcomment:: 'in order that'
     :class: comment
     
     in the NET bible, Hopos is translated "so that" 22 times, "so" 5 times, twice "How" or "that", and once "Then what", "In this way", "This", "may", "to", and "as to how". It is not translated "in order that" - though it may be in other versions (I didn't have their details handy).
@@ -82,7 +82,7 @@ Communication is the word :gk:`Koinonia` which means fellowship. This phrase –
 
 The word :gk:`Pistis` deals with the doctrine which Philemon knows and is able to work on as a mature Christian.
 
-.. sidebar:: The word :gk:`Pistis` deals with the doctrine...
+.. draftcomment:: The word :gk:`Pistis` deals with the doctrine...
     :class: comment
     
     I don't understand what is being said in this sentence.
@@ -97,21 +97,21 @@ The word :gk:`Pistis` deals with the doctrine which Philemon knows and is able t
 
 "In Christ Jesus" should be translated "towards Christ Jesus".
 
-.. sidebar:: "towards Christ Jesus"
+.. draftcomment:: "towards Christ Jesus"
     :class: comment
     
     "for the sake of Christ" is a common translation.
 
 Translation – "In order that our association with reference to the doctrine that you have in you may become operational towards Christ by means of epignosis of all the intrinsic good in you."
 
-.. sidebar:: translation
+.. draftcomment:: translation
     :class: comment
     
     This is a very difficult sentence to understand. I'm not sure this translation will help a reader.
 
 *verse 7* Philemon has doctrine in his soul. The word ‘for we have ’ is :gk:`Gar` plus the singular ingressive aorist of :gk:`Echo` which means "for I have come to have". Epaphras the pastor of the church has brought information about Philemon and that has given great blessing to Paul.
 
-.. sidebar:: Philemon has doctrine in his soul
+.. draftcomment:: Philemon has doctrine in his soul
     :class: comment
     
     I'm not sure how you conclude that Philemon has "doctrine in his soul". What do you mean by that?
@@ -143,7 +143,7 @@ Application
 
 We are to love the brethren, we are to have :gk:`agape` type love.
 
-.. sidebar:: bretheren
+.. draftcomment:: bretheren
     :class: comment
     
     Replace archaic "bretheren" with "fellow believers" or something? (Further down also)
@@ -152,7 +152,7 @@ When you are thankful for someone you pray for them.
 
 *verse 5* Love for the Lord Jesus Christ and the brethren is the ultimate of maturity in our spiritual life. `1 John 4:20,21,  James 2:8`
 
-.. sidebar:: ultimate of maturity
+.. draftcomment:: ultimate of maturity
     :class: comment
     
     The wording is a bit awkward
@@ -161,7 +161,7 @@ If you are occupied with the person of the Lord Jesus Christ you are not going t
 
 Maturity results in stability towards others and agape love towards them.
 
-.. sidebar:: stability
+.. draftcomment:: stability
     :class: comment
     
     What do you mean by stability?
@@ -214,12 +214,12 @@ Characteristics of a faithful believer from Philemon
 
    When confession is necessary it is the only prayer God will hear, `Psalm 66:18, 1 John 1:9`
 
-.. sidebar:: Prayer
+.. draftcomment:: Prayer
     :class: comment
 
     This section on prayer doesn't seem to fit under point 1. Should it be a point on its own, or just removed?
 
-.. sidebar:: pray to the father, through Holy Spirit, in name of Son
+.. draftcomment:: pray to the father, through Holy Spirit, in name of Son
     :class: comment
     
     In Wayne Grudem's book *Systematic Theology*, he gives a well-balanced argument suggesting we need not be legalistic about praying this way - and talking to Jesus or the Holy Spirit can at times be a legitimate way to pray.

@@ -45,7 +45,7 @@ Timothy – Ministry
    #. The minister should emphasise to the materially rich that they should not trust in their riches, but in God, the source of spiritual richness (`1 Timothy 6:17-19`).
 
 
-.. sidebar:: Minster
+.. draftcomment:: Minster
    :class: comment
    
    This should be consistent with the 'Minister' doctrine.

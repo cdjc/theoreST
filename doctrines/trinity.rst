@@ -35,3 +35,6 @@ Trinity
 
    #. Spirit - calorific - that part of light which is not seen but felt.
 
+.. draftcomment:: light as actinic, luminiferous, calorific
+
+    No. This is pseudo-scientific nonsense. Remove. Every analogy of the trinity will have some deficiency in representing the trinity, but the analogy itself should at least make sense. I would bet there's not a physicist alive who thinks this one makes sense.

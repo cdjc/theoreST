@@ -61,6 +61,9 @@ def run_sphinx(options, *option_sets):
     tags
       list of tags to add
       default: []
+    force
+      force run (-E option )
+      default: False
     """
     if 'sphinx' not in option_sets:
         option_sets += ('sphinx',)
@@ -78,11 +81,13 @@ def run_sphinx(options, *option_sets):
                       for name,value in list(getattr(options, 'conf_overrides', {}).items())]
     tags = [ '-t%s' % tag for tag in list(getattr(options, 'tags', [])) ]
     sphinxopts = ['', 
-                  #'-E',
                   '-b', options.get('builder', 'html'), 
                   '-d', paths.doctrees, 
                   '-c', paths.confdir,
                   ]
+    if getattr(options, 'force', False):
+        sphinxopts.append('-E')
+        
     sphinxopts.extend(template_args)
     sphinxopts.extend(override_args)
     sphinxopts.extend(tags)

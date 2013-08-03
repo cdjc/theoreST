@@ -10,21 +10,21 @@ Analysis and Background
 
 *verse 8* One of the main subjects of this epistle is the crisis of grace. The greatest enemy of Christianity is legalism. When a person does something legalistic they are doing something right, something compatible with self righteousness.
 
-.. sidebar:: Legalism
+.. draftcomment:: Legalism
     :class: comment
     
     I think the sentence defining legalism could be made clearer.
 
 The Colossian church is under two separate attacks, the doctrinal attack of Gnosticism which is refuted by the book of Colossians and the grace attack refuted by the letter to Philemon.
 
-.. sidebar:: grace attack
+.. draftcomment:: grace attack
     :class: comment
     
     Do you mean a legalism attack rather than a grace attack? It seems to me too much of a stretch to claim that the Colossian church is under 'attack' based on Philemon.
 
 Onesimus ran away as an unbeliever, he returns as a mature believer, a member of the family of God. He is however a slave.
 
-.. sidebar:: mature believer
+.. draftcomment:: mature believer
     :class: comment
     
     Onesimus is a believer, but I don't see evidence of him being a *mature* believer. In fact, reading between the lines, it would seem that he is quite a new believer.
@@ -43,14 +43,14 @@ a. In `Acts 12:25` John Mark was included in Paul’s missionary journey with Ba
 
 #. Paul failed the grace test and encourages Philemon not to follow that path.
 
-.. sidebar:: the grace test
+.. draftcomment:: the grace test
     :class: comment
     
     Calling it "*the* grace test" makes it sound like there is only one grace test, rather than many throughout our lives.
 
 If Philemon the leader fails the whole church will go down in legalism.
 
-.. sidebar:: If Philemon fails...
+.. draftcomment:: If Philemon fails...
     :class: comment
     
     I don't think this conclusion is justifiable.
@@ -65,7 +65,7 @@ Paul’s job is to teach doctrine to Philemon. Paul reflects on the fact that he
 
 "In Christ" should be translated "by Christ" as Paul’s authority came directly from Christ.
 
-.. sidebar:: in/by Christ
+.. draftcomment:: in/by Christ
     :class: comment
     
     All versions that I checked (ESV, KJV, RSV, NASB, NIV, Amplified, Young's Literal) have "in Christ".
@@ -88,7 +88,7 @@ Paul’s job is to teach doctrine to Philemon. Paul reflects on the fact that he
 
 *verse 9* Paul demonstrates full confidence in the doctrine in the soul of Philemon. 
 
-.. sidebar:: Paul demonstrates...
+.. draftcomment:: Paul demonstrates...
     :class: comment
     
     This sentence doesn't make sense.
@@ -101,7 +101,7 @@ The present tense is an aoristic present, it is a momentary encouragement as Pau
 
 "Being" is the present active participle of :gk:`eimi` such a person as Paul the aged. "Aged" is not a good translation. It is :gk:`presbutes` which means an elder statesman. Paul by calling himself a mature Christian puts himself on the same level as Philemon. Paul has a superior rank of apostle and is older than Philemon but does not use it, he speaks as to an equal.
 
-.. sidebar:: ...such a person as Paul the aged 
+.. draftcomment:: ...such a person as Paul the aged 
     :class: comment
     
     This needs to be reworded. Doesn't wquite make sense.
@@ -112,7 +112,7 @@ He calls himself a prisoner which puts Philemon on his own. :gk:`Esmios` means t
 
 "I beseech" is the present active indicative of :gk:`parakaleo`. The present is an aoristic present with the indicative being the reality.
 
-.. sidebar:: Indicative being the reality
+.. draftcomment:: Indicative being the reality
     :class: comment
     
     I don't know what "indicative being the reality" means.
@@ -123,7 +123,7 @@ The decision that Philemon is going to take is one for which he is going to be r
 
 Accusative singular of :gk:`Onesimos` which means "profitable" or "useful". Aorist active indicative of :gk:`Genneo` which means "to give birth" which for a man means to sire. 
 
-.. sidebar:: sire
+.. draftcomment:: sire
     :class: comment
     
     Would "beget" be more accurate then "sire"?
@@ -137,7 +137,7 @@ Paul is saying "When you had Profitable you did not have Profitable. Now you do 
 "Now therefore receive" is not found in the text and should be deleted.
 
 
-.. sidebar:: "Now therefore receive"
+.. draftcomment:: "Now therefore receive"
     :class: comment
     
     The KJV has "*Thou* therefore receive", not "Now therefore receive". 
@@ -159,7 +159,7 @@ Paul then states the goal. He would have liked Onesimus to stay and minister to 
 
 "In my chains of the gospel". In this sense he is able to serve the Lord wherever he is.
 
-.. sidebar:: "In my chains of the gospel". In this sense he is able to serve the Lord wherever he is.
+.. draftcomment:: "In my chains of the gospel". In this sense he is able to serve the Lord wherever he is.
     :class: comment
     
     I don't understand this paragraph
@@ -185,7 +185,7 @@ Paul says for Philemon to think of the period that Onesimus has been gone as jus
 
 That introduces a purpose clause thou shouldest receive is the present active subjunctive of echo. This means to have and to hold or receive back Onesimus forever.
 
-.. sidebar:: That introduces a purpose clause thou shouldest receive...
+.. draftcomment:: That introduces a purpose clause thou shouldest receive...
     :class: comment
     
     Sentence doesn't make sense
@@ -198,7 +198,7 @@ Verses 16-25 The Crisis Of Grace
 
 **Philemon’s dilemma - verses 16-17**
 
-.. sidebar:: The Crisis Of Grace
+.. draftcomment:: The Crisis Of Grace
     :class: comment
     
     Is this supposed to tie in with "The Grace Crisis" subsection from verse 8?
@@ -243,7 +243,7 @@ Paul led Philemon to the Lord and spent time teaching him so that he could matur
 Present active subjunctive of 'Lego' plus the negative 'Ne'. I will not need to mention that you owe me yourself. Paul indicates that he would rather pay off the debt of Onesimus rather than to mention that Philemon owes him a greater debt. It is to Philemon’s advantage not to be reminded how much he owes Paul.
 
 
-.. sidebar:: Lego ... Ne
+.. draftcomment:: Lego ... Ne
     :class: comment
     
     Not clear how these two words fit with the sentence following them.
@@ -253,7 +253,7 @@ Present active subjunctive of 'Lego' plus the negative 'Ne'. I will not need to 
 
 *verse 20* Brother let me joy, let me have joy :gk:`Onemi` which is the basis of Onesimus which means to profit or benefit: 'Let me have benefit from you'. 
 
-.. sidebar:: Onemi
+.. draftcomment:: Onemi
     :class: comment
     
     Not sure how joy fits in here. Reword and re-punctuate?
@@ -262,14 +262,14 @@ This is permissive and is an expression of a wish. He must do it from his own fr
 
 'In the Lord' is :gk:`en` plus the instrumental which means 'because of the Lord'. As we have been treated in Christ so we must trust others.
 
-.. sidebar:: in/because of the Lord
+.. draftcomment:: in/because of the Lord
     :class: comment
     
     Versions I checked (NASB, NIV, NET, ESV, and AMP) all have 'in the Lord'
 
 'Refreshed' is the word :gk:`Anapauo` which means 'to give rest again', which again is in the imperative of entreaty, a request. 'My deep affection' is the meaning of 'bowels'. No one ever loses with grace.
 
-.. sidebar:: bowels
+.. draftcomment:: bowels
     :class: comment
     
     All modern translations that I could find translate 'bowels' as 'heart' as the greek meaning for 'bowels' in this context is similar to our meaning of 'heart'.
@@ -278,7 +278,7 @@ Paul is not confident in Philemon but confident of the doctrine within Philemon.
 
 At the same time also prepare me a lodging for I hope that through your prayers I will be graciously given to you. 
 
-.. sidebar:: At the same time...
+.. draftcomment:: At the same time...
     :class: comment
     
     This is a translation of verse 22, but this section title is 'v8-21' (but this section actually stops at v20)
@@ -292,7 +292,7 @@ If the leader fails in the area of legalism the whole church will go down in leg
 
 In a grace crisis you are on your own. You are to consult with no one. You are to consult with the Biblical treasures you have within you. Paul therefore restrains himself from using his apostolic authority.
 
-.. sidebar:: In a grace crisis you are on your own. You are to consult with no one.
+.. draftcomment:: In a grace crisis you are on your own. You are to consult with no one.
     :class: comment
     
     Are you really willing to say that unequivocally?
@@ -300,7 +300,7 @@ In a grace crisis you are on your own. You are to consult with no one. You are t
 
 The principle is that social ills cannot be solved by force or coercion.
 
-.. sidebar:: This principle....
+.. draftcomment:: This principle....
     :class: comment
     
     Do you mean for this to connect with the 'grace crisis' theme of the previous paragraph, or are you talking about something new?
@@ -317,14 +317,14 @@ Progress is only made where you have Christian maturity or an unbeliever who wor
 
 Onesimus a slave in Philemon’s house would not respond to Philemon. 
 
-.. sidebar:: Onesimus a slave in Philemon’s house...
+.. draftcomment:: Onesimus a slave in Philemon’s house...
     :class: comment
     
     Not sure what you mean by this sentence. Surely Onesimus *would* have responded to Philemon as a slave in his house.
 
 Before Onesimus responded he had to be in abject poverty and hopelessness.
 
-.. sidebar:: Before Onesimus responded... 
+.. draftcomment:: Before Onesimus responded... 
     :class: comment
     
     What do you mean by responded here? Responded to the gospel, or grace, or the Holy Spirit? It isn't clear.
@@ -335,7 +335,7 @@ By leaving the security of Philemon it brought about a state of destitution and 
 
 Onesimus had to come to the end of himself before he could ever come to understand grace which is what he did as a fugitive in Rome.
 
-.. sidebar:: Onesimus had to come to the end of himself...
+.. draftcomment:: Onesimus had to come to the end of himself...
     :class: comment
     
     Is this an assumption, or do we have evidence?
@@ -347,7 +347,7 @@ Onesimus the runaway slave is now useful. Paul says that he is sending him to Ph
 What makes the difference? First his salvation, and secondly growth and grace. This is going to bring a dilemma which requires a decision.
 
 
-.. sidebar:: What makes the difference? ...
+.. draftcomment:: What makes the difference? ...
     :class: comment
     
     I've added in some punctuation to help me understand. But you have a 'firstly' and a 'secondly' in a sentence containing three things: salvation, growth, and grace. 
@@ -355,7 +355,7 @@ What makes the difference? First his salvation, and secondly growth and grace. T
 
 Principle - Though still a slave Onesimus is equal to his master Philemon in spiritual matters.
 
-.. sidebar::  Onesimus is equal to his master Philemon in spiritual matters.
+.. draftcomment::  Onesimus is equal to his master Philemon in spiritual matters.
     :class: comment
     
     I'm not sure we know enough about both of them to make this statement.

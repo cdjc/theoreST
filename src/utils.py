@@ -44,6 +44,8 @@ def parse_options(options, ls):
         elif opt == 'draft':
             options.conf_overrides['draft'] = True
             #print('DRAFT')
+        elif opt == 'force':
+            options.force = True
         else:
             print("Unknown option '"+opt+"'")
             sys.exit(1)

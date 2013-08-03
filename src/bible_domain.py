@@ -63,13 +63,13 @@ class BiblePassage(Directive):
 class DraftComment(directives.body.Sidebar):
     
     def run(self):
-        print('DraftComment')
+        #print('DraftComment')
         env = self.state.document.settings.env
         if env.config.draft:
-            print('Draft!')
+            #print('Draft!')
             return directives.body.Sidebar.run(self)
         else:
-            print('No draft...')
+            #print('No draft...')
             return []
 
 class BibleDomain(Domain):

@@ -14,7 +14,7 @@ John Mark’s house was the place where the first church met. He accompanied Bar
 
 Marcus is John Mark who had been eligible for the Levitical priesthood but he cut off the tip of his finger so that he was not physically perfect and could not function in the priesthood.
 
-.. sidebar:: ...cut off the tip of his finger...
+.. draftcomment:: ...cut off the tip of his finger...
     :class: comment
     
     Reference?
@@ -29,7 +29,7 @@ He was influenced by Bible truths rather than evil.
 
 Both Paul and Aristarchus were consistent in their Christian life.
 
-.. sidebar:: Both Paul and Aristarchus were consistent in their Christian life.
+.. draftcomment:: Both Paul and Aristarchus were consistent in their Christian life.
     :class: comment
     
     A couple of paragraphs ago, Paul 'failed' in his test. What do you mean here by 'consistent'
