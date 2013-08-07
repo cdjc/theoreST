@@ -9,15 +9,13 @@
  |title|
 =========
 
-:Author: Peter Moses
-:Organization: Evangelical Bible College of Western Australia
-:Date: |date|
-
-.. XXX raw:: latex
+.. raw:: latex
 
     \pagebreak
 
-    .. include:: common/copyright
+.. only:: latex
+
+    .. include:: ../../common_rest/copyright.rst
 
 .. raw:: latex
 
@@ -46,7 +44,6 @@
         doctrines/brotherhood_of_believers
         doctrines/christian_soldier
         doctrines/confidence
-        doctrines/conf
         doctrines/deposits
         doctrines/effective_calling
         doctrines/evangelism
@@ -58,7 +55,6 @@
         doctrines/holy_spirit_church_age
         doctrines/imputation
         doctrines/love
-        doctrines/Makefile
         doctrines/minister
         doctrines/obedience
         doctrines/paul_pressure

@@ -3,6 +3,7 @@
 import sys,os,shutil,glob
 
 from paver.easy import *
+import paver.doctools
 
 sys.path.insert(0,'.')
 
@@ -31,8 +32,18 @@ def pdf(args):
         book_options = options
         book_options.docroot = bookdir
         book_options.conf_overrides['project'] = book
+        conf_override(bookdir)
         paversphinx.run_sphinx(options)
-    
+
+def conf_override(bookdir):
+    conf_override_path = os.path.join(bookdir,'conf_override.py')
+    #print('over path:',conf_override_path)
+    if os.path.exists(conf_override_path):
+        options.cog = Bunch(basedir=bookdir,
+                            pattern='conf.py',
+                            includedir=bookdir)
+        paver.doctools.cog(options)    
+
 @task
 @consume_args
 def single(args):
@@ -52,6 +63,9 @@ def single(args):
         book_options = options
         book_options.docroot = bookdir
         book_options.conf_overrides['project'] = book
+
+        conf_override(bookdir)
+        
         paversphinx.run_sphinx(options)
         
         in_fname = os.path.join(bookdir,options.builddir,'singlehtml','index.html')

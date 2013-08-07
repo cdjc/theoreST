@@ -180,20 +180,32 @@ htmlhelp_basename = 'EBCWAdoc'
 
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
-#'papersize': 'letterpaper',
+'papersize': 'a4paper',
 
 # The font size ('10pt', '11pt' or '12pt').
-#'pointsize': '10pt',
+'pointsize': '10pt',
 
 # Additional stuff for the LaTeX preamble.
-#'preamble': '',
+'preamble': r'''
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\pagenumbering{arabic}
+\lhead{Evangelical Bible College of Western Australia}
+''',
+
+'tableofcontents': r'''%{\LARGE EBCWA}
+\pagebreak
+\tableofcontents
+''',
+
+#'footer': 'EBCWA footer',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'EBCWA.tex', 'EBCWA Documentation',
-   'EBCWA', 'manual'),
+   'EBCWA', 'howto'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -255,3 +267,13 @@ texinfo_documents = [
 #intersphinx_mapping = {'http://docs.python.org/': None}
 #intersphinx_mapping = {'doctrines' : ('../../doctrines/_build/singlehtml/', None)}
 #intersphinx_cache_limit = 0
+#[[cog
+#if 'conf_overrides' in globals():
+#    with open(conf_overrides,'r') as fid:
+#        cog.out(fid.read())
+#]]
+#[[[cog include('conf_override.py')]]]
+latex_documents = [('index', 'Philemon.tex', 'Philemon', 'Peter Moses', 'howto')]
+latex_elements['preamble'] += r'''\rhead{Philemon}
+'''
+#[[[end]]]
