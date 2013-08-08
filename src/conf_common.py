@@ -273,7 +273,7 @@ texinfo_documents = [
 #        cog.out(fid.read())
 #]]
 #[[[cog include('conf_override.py')]]]
-latex_documents = [('index', 'Philemon.tex', 'Philemon', 'Peter Moses', 'howto')]
+latex_documents = [('index', 'philemon.tex', 'Philemon', 'Peter Moses', 'howto')]
 latex_elements['preamble'] += r'''\rhead{Philemon}
 '''
 #[[[end]]]

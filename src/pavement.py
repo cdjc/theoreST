@@ -4,13 +4,16 @@ import sys,os,shutil,glob
 
 from paver.easy import *
 import paver.doctools
+from paver.path import pushd
 
 sys.path.insert(0,'.')
 
 import paversphinx
 import utils
 
-options.docroot = '..'
+basepath = os.path.abspath('..')
+
+options.docroot = basepath
 options.builddir = 'out'
 options.conf_overrides = {}
 
@@ -27,13 +30,48 @@ def pdf(args):
     if not hasattr(options, 'tags'):
         options.tags = []
     options.tags.append('standalone')
-    print('options:',options)
+    #print('options:',options)
     for book, bookdir in options.books.items():
         book_options = options
         book_options.docroot = bookdir
         book_options.conf_overrides['project'] = book
         conf_override(bookdir)
         paversphinx.run_sphinx(options)
+        run_latex(os.path.join(bookdir, options.builddir, 'latex'))
+        copy_to_htmldir(options, bookdir, 'latex', book+'.pdf')
+        
+def bookgroups():
+    
+    def is_excluded(group):
+        return group.startswith('_') or group in ('out','src','common_rest')
+    
+    files = glob.glob(os.path.join(basepath,'*'))
+    dirs = [os.path.basename(f) for f in files if os.path.isdir(f)]
+    return [f for f in dirs if not is_excluded(f)]
+
+
+def copy_to_htmldir(options, bookdir, output_type, filename):
+    #print('bookgroup',bookgroups())
+    groups = [d for d in utils.splitall(bookdir) if d in bookgroups()]
+    if len(groups) == 0:
+        print('no groups in '+bookdir)
+        return
+    if len(groups) > 1:
+        print('too many groups in '+bookdir)
+        return
+    group = groups[0]
+    
+    copyfile = os.path.join(bookdir, options.builddir, output_type, filename)
+    copyto_dir = os.path.join(basepath, options.builddir, 'html',group)
+    print('cp',copyfile,copyto_dir)
+    shutil.copy(copyfile, copyto_dir)
+    #print('copy',os.path.join(bookdir, options.builddir, output_type, filename))
+    #print('to',os.path.join(basepath, options.builddir, 'html',group))
+        
+def run_latex(builddir):
+    with pushd(builddir) as old_dir:
+        for texfile in glob.glob('*.tex'):
+            sh('rubber --pdf '+texfile)
 
 def conf_override(bookdir):
     conf_override_path = os.path.join(bookdir,'conf_override.py')
@@ -58,7 +96,7 @@ def single(args):
     options.tags.append('standalone')
     options.conf_overrides['html_theme'] = 'default'
     #options.conf_overrides['html_theme_options'] = {'nosidebar' : True}
-    print('options:',options)
+    #print('options:',options)
     for book, bookdir in options.books.items():
         book_options = options
         book_options.docroot = bookdir
@@ -71,6 +109,28 @@ def single(args):
         in_fname = os.path.join(bookdir,options.builddir,'singlehtml','index.html')
         out_fname = os.path.join(bookdir,options.builddir,'singlehtml',book+'.html')
         insert_gdoc_css(in_fname, out_fname)
+
+@task
+@consume_args
+def epub(args):
+    handle_options(args)
+    options.builder = 'epub'
+    if not hasattr(options, 'tags'):
+        options.tags = []
+    options.tags.append('standalone')
+    options.conf_overrides['html_theme'] = 'default'
+    #options.conf_overrides['html_theme_options'] = {'nosidebar' : True}
+    #print('options:',options)
+    for book, bookdir in options.books.items():
+        book_options = options
+        book_options.docroot = bookdir
+        book_options.conf_overrides['project'] = book
+
+        conf_override(bookdir)
+        
+        paversphinx.run_sphinx(options)
+        copy_to_htmldir(options, bookdir, 'epub', book+'.epub')
+        
 
 def insert_gdoc_css(in_fname, out_fname):
     with open(in_fname,'r') as fid:
