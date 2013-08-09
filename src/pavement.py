@@ -38,7 +38,11 @@ def pdf(args):
         conf_override(bookdir)
         paversphinx.run_sphinx(options)
         run_latex(os.path.join(bookdir, options.builddir, 'latex'))
-        copy_to_htmldir(options, bookdir, 'latex', book+'.pdf')
+        
+        pdffile = os.path.join(bookdir, options.builddir, 'latex', book+'.pdf')
+        print('copy',pdffile,bookdir)
+        shutil.copy(pdffile, bookdir)
+        
         
 def bookgroups():
     
@@ -129,7 +133,10 @@ def epub(args):
         conf_override(bookdir)
         
         paversphinx.run_sphinx(options)
-        copy_to_htmldir(options, bookdir, 'epub', book+'.epub')
+        epubfile = os.path.join(bookdir, options.builddir, 'epub', book+'.epub')
+        print('copy',epubfile,bookdir)
+        shutil.copy(epubfile, bookdir)
+        #copy_to_htmldir(options, bookdir, 'epub', book+'.epub')
         
 
 def insert_gdoc_css(in_fname, out_fname):
