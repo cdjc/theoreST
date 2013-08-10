@@ -91,4 +91,5 @@ def setup(app):
     app.add_domain(BibleDomain)
     app.add_config_value('bible_version','KJV', 'env')
     app.add_config_value('draft',False,'env')
+    app.add_config_value('standalone',True,'env')
     

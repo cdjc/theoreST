@@ -29,7 +29,7 @@ def pdf(args):
     options.builder = 'latex'
     if not hasattr(options, 'tags'):
         options.tags = []
-    options.tags.append('standalone')
+    #options.tags.append('standalone')
     #print('options:',options)
     for book, bookdir in options.books.items():
         book_options = options
@@ -53,25 +53,6 @@ def bookgroups():
     dirs = [os.path.basename(f) for f in files if os.path.isdir(f)]
     return [f for f in dirs if not is_excluded(f)]
 
-
-def copy_to_htmldir(options, bookdir, output_type, filename):
-    #print('bookgroup',bookgroups())
-    groups = [d for d in utils.splitall(bookdir) if d in bookgroups()]
-    if len(groups) == 0:
-        print('no groups in '+bookdir)
-        return
-    if len(groups) > 1:
-        print('too many groups in '+bookdir)
-        return
-    group = groups[0]
-    
-    copyfile = os.path.join(bookdir, options.builddir, output_type, filename)
-    copyto_dir = os.path.join(basepath, options.builddir, 'html',group)
-    print('cp',copyfile,copyto_dir)
-    shutil.copy(copyfile, copyto_dir)
-    #print('copy',os.path.join(bookdir, options.builddir, output_type, filename))
-    #print('to',os.path.join(basepath, options.builddir, 'html',group))
-        
 def run_latex(builddir):
     with pushd(builddir) as old_dir:
         for texfile in glob.glob('*.tex'):
@@ -97,7 +78,7 @@ def single(args):
 #    options.builder = 'epub'
     if not hasattr(options, 'tags'):
         options.tags = []
-    options.tags.append('standalone')
+    #options.tags.append('standalone')
     options.conf_overrides['html_theme'] = 'default'
     #options.conf_overrides['html_theme_options'] = {'nosidebar' : True}
     #print('options:',options)
@@ -121,7 +102,7 @@ def epub(args):
     options.builder = 'epub'
     if not hasattr(options, 'tags'):
         options.tags = []
-    options.tags.append('standalone')
+    #options.tags.append('standalone')
     options.conf_overrides['html_theme'] = 'default'
     #options.conf_overrides['html_theme_options'] = {'nosidebar' : True}
     #print('options:',options)
@@ -136,7 +117,6 @@ def epub(args):
         epubfile = os.path.join(bookdir, options.builddir, 'epub', book+'.epub')
         print('copy',epubfile,bookdir)
         shutil.copy(epubfile, bookdir)
-        #copy_to_htmldir(options, bookdir, 'epub', book+'.epub')
         
 
 def insert_gdoc_css(in_fname, out_fname):
@@ -162,7 +142,6 @@ def insert_gdoc_css(in_fname, out_fname):
 
 @task
 def publish_local():
-    print("HERE")
     pubdir = '/media/sf_EBCWA/'
     htmldir = '../out/html'
     print('Removing...')
@@ -191,9 +170,14 @@ def publish_local():
 def all(args):
     handle_options(args)
     #rint('options:',options)
+    options.conf_overrides['standalone'] = False
     paversphinx.run_sphinx(options, 'html')
 
 
+@task
+@consume_args
+def html(args):
+    all(args)
 
 if __name__ == '__main__':
     from pkg_resources import load_entry_point
