@@ -19,15 +19,51 @@
 %  paver <type> book <version> <draft> <force>
 %  override conf.py with cog
 %  run pdflatex with rubber
-%  
+%  singlehtml->insert css with cog->google-doc
 
-
+\newcommand{\rst}{reStructuredText}
 
 \documentclass{beamer}
 \usetheme{default}
 
+\title{TheoreST: Publishing Theology with Python}
+\author{Carl Cerecke}
+\institute{Evangelical Bible College of Western Australia}
+\date{September 8, 2013}
+
 \begin{document}
     
+    \begin{frame}[plain]
+        \titlepage
+    \end{frame}
+
+    \begin{frame}{Overview of the talk}
+        \begin{itemize}
+        \item Problem (and ideal solution)
+        \item A tank is not the solution
+        \item Proprietary format $\rightarrow$ \rst
+        \item \rst $\rightarrow$ web/pdf/epub
+            \begin{itemize}
+            \item docutils
+            \item sphinx
+            \end{itemize}
+        \item Automating with \texttt{paver}
+        \item Other tools/technologies
+        \item Todo\ldots
+        \end{itemize}
+    \end{frame}
     
+    \begin{frame}{The problem}
+        \begin{itemize}
+        \item ~300 books in MS Word format (written over 20+ years)
+            \begin{itemize}
+            \item Systematic Theology
+            \item Pastoral Theology
+            \item Commentaries
+            \item Miscellaneous topics 
+            \end{itemize}
+        \item ``Freely you have been given, freely give''
+        \end{itemize}
+    \end{frame}
     
 \end{document}
