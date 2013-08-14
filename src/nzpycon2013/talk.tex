@@ -25,6 +25,7 @@
 
 \documentclass{beamer}
 \usetheme{default}
+\hypersetup{colorlinks=true}
 
 \title{TheoreST: Publishing Theology with Python}
 \author{Carl Cerecke}
@@ -62,8 +63,41 @@
             \item Commentaries
             \item Miscellaneous topics 
             \end{itemize}
+        \item Distribute as widely and conveniently as possible
         \item ``Freely you have been given, freely give''
         \end{itemize}
     \end{frame}
+    
+    \begin{frame}{The (ideal) solution}
+        \begin{itemize}
+        \item One authoritative source, multiple outputs
+        \item Share common document fragments
+        \item Bible version independent
+        \item Bible references hyperlinked: \href{http://some.url}{John 3:16}
+        \item Build individual books (pdf/epub), or whole collection (html)
+    \end{itemize}
+\end{frame}
+    
+    \begin{frame}{DITA: the Wrong Way}
+        \begin{itemize}
+        \item DITA: Enterprise-level technical documentation
+        \item XML
+        \item Java
+        \item Deal-breaker: Too static.\\
+            Dynamically determine bible-reference URLs during document creation?
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}[plain]
+        \includegraphics[keepaspectratio=true, width=\paperwidth]{tank-toll.jpg}
+    \end{frame}
+    
+    \begin{frame}{\rst markup language (PEP 287)}
+        \begin{itemize}
+        \item Used for documenting python.
+        \item 
+        \end{itemize}
+    \end{frame}
+    
     
 \end{document}

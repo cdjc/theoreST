@@ -31,7 +31,8 @@
     intercession_for_onesimus
     salutations_and_conclusion
 
-.. ifconfig:: builder == 'standalone'
+    
+.. ifconfig:: standalone == True
 
     Doctrines
     =========
