@@ -24,12 +24,13 @@ names = ['1 Chronicles', '1 Corinthians', '1 John', '1 Kings', '1 Peter',
          'Ruth', 'Song of Solomon', 'Song of Songs', 'Titus', 'Zechariah',
          'Zephaniah']
 
+re_names = '('+'|'.join(names)+')'
+re_raw = '('+re_names+r'\s+\d+:(\s*(,|-|;|:|'+re_names+'|\d+))+'+')'
+re_bibref = re.compile(re_raw)
+
+
 def bibquote(text):
-    re_names = '('+'|'.join(names)+')'
-    re2 = re_names+r'\s+\d+:(\s*(,|-|;|:|'+re_names+'|\d+))+'
-        
-    re1 = re.compile('('+re2+')')
-    return re1.sub(r'`\1`', text)
+    return re_bibref.sub(r'`\1`', text)
 
 def test():
     tests = \
@@ -43,6 +44,7 @@ def test():
      (" sister Acts 23:16, John 18:12 with"," sister `Acts 23:16, John 18:12` with"),
      (" sister Acts 23:16, 2 John 18:12 with"," sister `Acts 23:16, 2 John 18:12` with"),
      (" sister Acts 23:16, 2 Timothy 18:12 with"," sister `Acts 23:16, 2 Timothy 18:12` with"),
+     (" sister John 23:16, 2 John 18:12 with"," sister `John 23:16, 2 John 18:12` with"),
      ]
     
     for raw,expected in tests:
