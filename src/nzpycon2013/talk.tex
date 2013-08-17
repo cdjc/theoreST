@@ -23,7 +23,7 @@
 
 \newcommand{\rst}{reStructuredText}
 \documentclass{beamer}
-\usepackage{listings}
+\usepackage{minted}
 \usetheme{default}
 \hypersetup{colorlinks=true}
 \usepackage{framed}
@@ -34,7 +34,7 @@
 \date{September 8, 2013}
 
 \begin{document}
-\lstset{language=Python}
+
     \begin{frame}[plain]
         \titlepage
     \end{frame}
@@ -94,7 +94,8 @@
     \end{frame}
     
     \begin{frame}{\rst markup language (PEP 287)}
-        Put example here
+        Put example here\\
+        include roles and directives
     \end{frame}
 
     \begin{frame}{MS Word format to \rst}
@@ -102,6 +103,7 @@
     \end{frame}
     
     \begin{frame}{MS Word problems}
+    No styles\\
         Enumerated lists
         \begin{framed} %{enumerated lists}
             \ldots\\
@@ -141,15 +143,23 @@ Other examples:
 
 \begin{frame}[fragile]
     
-\begin{lstlisting}
+\begin{minted}{python}
 names = ['Genesis', 'Exodus', ..., 'Revelation']
 re_names = '('+'|'.join(names)+')'
-re_raw = '('+re_names+r'\s+\d+:(\s*(,|-|;|:|'+re_names+'|\d+))+'+')'
+re_raw = '('+re_names+r'\s+\d+:(\s*(,|-|;|:|'+\
+    re_names+'|\d+))+'+')'
 re_bibref = re.compile(re_raw)
 
 def bibquote(text):
     return re_bibref.sub(r'`\1`', text)
-\end{lstlisting}
+\end{minted}
+
+What about lsaiah? or I Corinthians?
+
+\end{frame}
+
+\begin{frame}{Parsing the verse roles}
+
 \end{frame}
 
 \end{document}
