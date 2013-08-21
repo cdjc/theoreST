@@ -79,6 +79,10 @@
     \end{itemize}
 \end{frame}
     
+\begin{frame}
+    \includegraphics[keepaspectratio=true, width=\paperwidth]{theorest_process.png}
+\end{frame}
+    
     \begin{frame}{DITA: the Wrong Way}
         \begin{itemize}
         \item DITA: Enterprise-level technical documentation
@@ -90,7 +94,7 @@
     \end{frame}
     
     \begin{frame}[plain]
-        \includegraphics[keepaspectratio=true, width=\paperwidth]{tank-toll.jpg}
+        \centerline{\includegraphics[keepaspectratio=true, width=\paperwidth]{tank-toll.jpg}}
     \end{frame}
     
     \begin{frame}{\rst markup language (PEP 287)}
@@ -158,8 +162,136 @@ What about lsaiah? or I Corinthians?
 
 \end{frame}
 
-\begin{frame}{Parsing the verse roles}
+\begin{frame}[fragile]{Parsing the verse roles}
+Need to translate `John 3:16-18,20` into:
+
+\begin{minted}{html}
+<a href="http://bible.xyz/ESV/john3+3:16-18">
+John 3:16-18</a>,
+<a href="http://bible.xyz/ESV/john3+3:20">20</a>
+\end{minted}
+
+Actually, internal document-tree nodes representing links.
 
 \end{frame}
 
+\begin{frame}[fragile]{Tokenisation}
+Use python's own tokeniser
+
+\begin{minted}{bash}
+> echo "John 3:16-18,20" | python3 -m tokenize
+1,0-1,4:            NAME           'John'         
+1,5-1,6:            NUMBER         '3'            
+1,6-1,7:            OP             ':'            
+1,7-1,9:            NUMBER         '16'           
+1,9-1,10:           OP             '-'            
+1,10-1,12:          NUMBER         '18'           
+1,12-1,13:          OP             ','            
+1,13-1,15:          NUMBER         '20'           
+1,15-1,16:          NEWLINE        '\n'           
+2,0-2,0:            ENDMARKER      ''             
+\end{minted}
+
+\end{frame}
+
+\begin{frame}[fragile]{Parsing}
+
+\begin{itemize}
+\item Plenty of parser-generators available.
+
+\item Too heavyweight.
+
+\item Verse references don't nest.
+
+\item But do need lookahead:
+\begin{minted}{python}
+'John' '3' ':' '16' '-' '18' ',' '20' ...
+\end{minted}
+
+\item Solution: Use a state machine
+
+\pause
+\item Problem: No goto :-(
+
+\pause
+\item Solution: My goto function decorator:\\
+\url{http://code.activestate.com/recipes/576944-the-goto-decorator/}
+
+\pause
+\item Problem: Only python 2
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Parsing state machine}
+
+One method per state.
+
+Each method-state returns next method-state
+
+\begin{minted}{python}
+def parse(self):
+    ...
+    state = self.p_book            # start state
+    while state:
+        state = state()
+		
+def p_book(self):                  # expecting a book
+    self.book = self.swallow(Book) # exception if not Book
+    self.text += self.book.value   # collect link text
+    return self.p_chapter          # 'goto' this state
+	
+def p_chapter(self):               # expecting a chapter
+    ...
+\end{minted}
+\end{frame}
+
+\begin{frame}{Adding verse role to sphinx}
+\end{frame}
+
+\begin{frame}{Automating the build process}
+Problem: minimise effort to build documentation
+
+What I want to build:
+\begin{itemize}
+\item All documents in integrated sphinx website
+\item Individual documents as pdf/epub/html-for-google-docs
+\end{itemize}
+For each build I want to specify:
+\begin{itemize}
+\item bible version (ESV, KJV, NET, etc.)
+\item 'draft' (include comments?)
+\end{itemize}
+
+Solution: paver
+
+\end{frame}
+
+\begin{frame}{Automating the build process with paver}
+"Paver is a Python-based build/distribution/deployment 
+scripting tool along the lines of Make"
+
+What I want:
+\begin{itemize}
+\item paver command here
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Multiple build files for sphinx?}
+
+
+\begin{minted}{python}
+a=b
+
+def parse(foo):
+    bar.baz
+\end{minted}
+\end{frame}
+
+\begin{frame}{Future work}
+\begin{itemize}
+\item Robust versioning scheme
+\end{itemize}
+
+\end{frame}
 \end{document}
