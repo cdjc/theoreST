@@ -141,9 +141,18 @@ Other examples:
 \end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Regular expressions}
     \includegraphics[keepaspectratio=true, width=0.9\paperwidth]{regular_expressions.png}
+
+High-level view:
+\begin{itemize}
+\item A language for specifying a set of strings.
+\item An efficient \emph{recogniser} for that set of strings.
+\end{itemize}
+
 \end{frame}
+
+
 
 \begin{frame}[fragile]
     
@@ -158,7 +167,7 @@ def bibquote(text):
     return re_bibref.sub(r'`\1`', text)
 \end{minted}
 
-What about lsaiah? or I Corinthians?
+What about lsaiah? or I Corinthians? Argh!
 
 \end{frame}
 
@@ -248,6 +257,9 @@ def p_chapter(self):               # expecting a chapter
 \begin{frame}{Adding verse role to sphinx}
 \end{frame}
 
+\begin{frame}{Adding biblepassage directive to sphinx}
+\end{frame}
+
 \begin{frame}{Automating the build process}
 Problem: minimise effort to build documentation
 
@@ -261,7 +273,7 @@ For each build I want to specify:
 \item bible version (ESV, KJV, NET, etc.)
 \item 'draft' (include comments?)
 \end{itemize}
-
+Also, minimal duplication in sphinx \texttt{conf.py}
 Solution: paver
 
 \end{frame}
@@ -270,11 +282,18 @@ Solution: paver
 "Paver is a Python-based build/distribution/deployment 
 scripting tool along the lines of Make"
 
-What I want:
+Command line I want:
 \begin{itemize}
-\item paver command here
+\item \texttt{paver html} (integrated website with all books)
+\item \texttt{paver pdf john} (pdf ouput of John, default bible version)
+\item \texttt{paver epub john}
+\item \texttt{paver pdf john NET draft} (use NET bible, show comments)
+\item \texttt{paver single john} (html for upload to google-docs)
 \end{itemize}
 
+\end{frame}
+
+\begin{frame}{Sharing a single sphinx config file}
 \end{frame}
 
 \begin{frame}[fragile]{Multiple build files for sphinx?}
@@ -288,9 +307,24 @@ def parse(foo):
 \end{minted}
 \end{frame}
 
+\begin{frame}{TheoreST technology overview}
+\begin{itemize}
+\item python 3.3
+\item sphinx
+\item paver (build tool)
+\item cog (code generation tool)
+\item \LaTeX\  and rubber (generating pdf)
+\item Linux Mint 15 virtualbox VM
+\item Wing IDE Professional (thanks nz pycon!)
+\end{itemize}
+\end{frame}
+
 \begin{frame}{Future work}
 \begin{itemize}
-\item Robust versioning scheme
+\item Robust versioning scheme.
+\item Translation (with the aid of google-translate).
+\item Dynamic bible-version selection on website.
+\item Greek/Hebrew/Aramaic hyperlinks.
 \end{itemize}
 
 \end{frame}
