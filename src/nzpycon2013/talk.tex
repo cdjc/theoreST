@@ -27,6 +27,7 @@
 \usetheme{default}
 \hypersetup{colorlinks=true}
 \usepackage{framed}
+\usepackage[normalem]{ulem}
 
 \title{TheoreST: Publishing Theology with Python}
 \author{Carl Cerecke}
@@ -294,7 +295,7 @@ Command line I want:
 \item \texttt{paver pdf matthew mark luke john} (multiple books)
 \end{itemize}
 
-
+Sets up configuration, then calls \texttt{sphinx-build}
 
 \end{frame}
 
@@ -322,13 +323,49 @@ Project file hierarchy:
 
 \begin{frame}[fragile]{Handling sphinx options?}
 
+\begin{itemize}
+\item Sphinx configuration file is python code.
 
+\item Can override simple name=value options on command line:\\
+\texttt{sphinx-build -Dbible\_version=ESV}
+
+\item But complex overrides (i.e. python code) fail:
+\sout{\texttt{-Dlatex\_elements['papersize']='a4paper'}}
+
+\item Some overrides are static per-book:\\
+Generated \LaTeX\ file = \texttt{john.tex}
+
+\item Others are dynamic--- at generation time:
+\texttt{paper\_type = "letter"}
+\end{itemize}
+
+Solution: code generation with \emph{cog}
+\end{frame}
+
+\begin{frame}[fragile]{Taming the sphinx config file with \emph{cog}}
+
+\url{http://nedbatchelder.com/code/cog/}
+
+\begin{itemize}
+\item Use python code in a file to generate part of the file
+
+\item At the end of sphinx config file:
 \begin{minted}{python}
-a=b
-
-def parse(foo):
-    bar.baz
+#[[[cog 
+#include('conf_override.py')
+#cog.out('\n')
+#if 'override_text' in globals():
+#    cog.out(override_text)
+#]]]
+#[[[end]]]
 \end{minted}
+
+\item Cog runs python code between \texttt{[[[cog} and \texttt{]]]}
+
+\item Output (via \texttt{cog.out}) appears between \texttt{]]]} and \texttt{[[[end]]]}
+
+\item In paver stdlib: \texttt{paver.doctools.cog(\emph{options})}
+\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{TheoreST technology overview}
@@ -346,13 +383,14 @@ def parse(foo):
 
 \begin{frame}{Future work}
 \begin{itemize}
+\item Continue converting documents to reST.
 \item Robust versioning scheme.
 \item Translation (with the aid of google-translate).
 \item Dynamic bible-version selection on website.
 \item Greek/Hebrew/Aramaic hyperlinks.
 \item Website hosting.
 \item Formatting tweaks.
-\item Fix bugs.
+\item Fix bugs. Add more tests.
 \item Use more github features.
 \end{itemize}
 

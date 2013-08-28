@@ -26,23 +26,26 @@ def handle_options(args):
 @consume_args
 def pdf(args):
     handle_options(args)
+    override_text = ''
     options.builder = 'latex'
     if not hasattr(options, 'tags'):
         options.tags = []
+    if hasattr(options, 'pdf_paper_size'):
+        override_text += "latex_elements['paper_size'] = '"+options.pdf_paper_size+"'"
     #options.tags.append('standalone')
     #print('options:',options)
     for book, bookdir in options.books.items():
         book_options = options
         book_options.docroot = bookdir
         book_options.conf_overrides['project'] = book
-        conf_override(bookdir)
+        conf_override(bookdir, {'override_text' : override_text})
         paversphinx.run_sphinx(options)
         run_latex(os.path.join(bookdir, options.builddir, 'latex'))
         
         pdffile = os.path.join(bookdir, options.builddir, 'latex', book+'.pdf')
         print('copy',pdffile,bookdir)
         shutil.copy(pdffile, bookdir)
-        
+    uncog()
         
 def bookgroups():
     
@@ -58,14 +61,21 @@ def run_latex(builddir):
         for texfile in glob.glob('*.tex'):
             sh('rubber --pdf '+texfile)
 
-def conf_override(bookdir):
+def conf_override(bookdir, defines_dict=None):
     conf_override_path = os.path.join(bookdir,'conf_override.py')
-    #print('over path:',conf_override_path)
     if os.path.exists(conf_override_path):
+        if defines_dict == None:
+            defines_dict = {}
         options.cog = Bunch(basedir=bookdir,
                             pattern='conf.py',
-                            includedir=bookdir)
+                            includedir=bookdir,
+                            defines=defines_dict)
         paver.doctools.cog(options)    
+
+def uncog():
+    options.cog = Bunch(basedir='.',
+                        pattern='conf_common.py')
+    paver.doctools.uncog(options)    
 
 @task
 @consume_args
@@ -94,6 +104,7 @@ def single(args):
         in_fname = os.path.join(bookdir,options.builddir,'singlehtml','index.html')
         out_fname = os.path.join(bookdir,options.builddir,'singlehtml',book+'.html')
         insert_gdoc_css(in_fname, out_fname)
+    uncog()
 
 @task
 @consume_args

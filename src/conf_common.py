@@ -267,12 +267,13 @@ texinfo_documents = [
 #intersphinx_mapping = {'http://docs.python.org/': None}
 #intersphinx_mapping = {'doctrines' : ('../../doctrines/_build/singlehtml/', None)}
 #intersphinx_cache_limit = 0
-#[[cog
-#if 'conf_overrides' in globals():
-#    with open(conf_overrides,'r') as fid:
-#        cog.out(fid.read())
-#]]
-#[[[cog include('conf_override.py')]]]
+
+#[[[cog 
+#include('conf_override.py')
+#cog.out('\n')
+#if 'override_text' in globals():
+#    cog.out(override_text)
+#]]]
 latex_documents = [('index', 'philemon.tex', 'Philemon', 'Peter Moses', 'howto')]
 latex_elements['preamble'] += r'''\rhead{Philemon}
 '''

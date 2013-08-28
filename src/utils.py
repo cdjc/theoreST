@@ -61,6 +61,8 @@ def parse_options(options, ls):
             #print('DRAFT')
         elif opt == 'force':
             options.force = True
+        elif opt == 'letter':
+            options.pdf_paper_size = 'letter'
         else:
             print("Unknown option '"+opt+"'")
             sys.exit(1)
