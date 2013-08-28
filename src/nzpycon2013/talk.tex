@@ -146,7 +146,7 @@ Other examples:
 
 High-level view:
 \begin{itemize}
-\item A language for specifying a set of strings.
+\item A mini-language for specifying a set of strings.
 \item An efficient \emph{recogniser} for that set of strings.
 \end{itemize}
 
@@ -271,9 +271,11 @@ What I want to build:
 For each build I want to specify:
 \begin{itemize}
 \item bible version (ESV, KJV, NET, etc.)
-\item 'draft' (include comments?)
+\item include draft comments
+\item possibly other options (e.g. force)
 \end{itemize}
-Also, minimal duplication in sphinx \texttt{conf.py}
+Also, minimal duplication in sphinx \texttt{conf.py}\\
+
 Solution: paver
 
 \end{frame}
@@ -289,14 +291,36 @@ Command line I want:
 \item \texttt{paver epub john}
 \item \texttt{paver pdf john NET draft} (use NET bible, show comments)
 \item \texttt{paver single john} (html for upload to google-docs)
+\item \texttt{paver pdf matthew mark luke john} (multiple books)
 \end{itemize}
 
+
+
 \end{frame}
 
-\begin{frame}{Sharing a single sphinx config file}
+\begin{frame}[fragile]{Sharing a single sphinx config file}
+
+Project file hierarchy:
+
+\begin{tabular}{|l|l|}
+\hline
+\texttt{/} & root directory \\
+\texttt{/index.rst} & for integrated website with all books \\
+\texttt{/conf.py} & symbolic link to \texttt{/src/conf.py}\\
+\hline
+\texttt{/src/} & All common configuration and code\\
+\texttt{/src/conf.py} & Common sphinx configuration file\\
+\hline
+\texttt{/\emph{group}/\emph{book}/index.rst} & for stand-alone documents\\
+\texttt{/\emph{group}/\emph{book}/conf.py} & symbolic link to \texttt{/src/conf.py}\\
+\texttt{/../../conf\_override.py} & append to \texttt{conf.py}\\
+\hline
+\end{tabular}
+
+
 \end{frame}
 
-\begin{frame}[fragile]{Multiple build files for sphinx?}
+\begin{frame}[fragile]{Handling sphinx options?}
 
 
 \begin{minted}{python}
@@ -307,8 +331,9 @@ def parse(foo):
 \end{minted}
 \end{frame}
 
-\begin{frame}{TheoreST technology overview}
+\begin{frame}[fragile]{TheoreST technology overview}
 \begin{itemize}
+\item \url{https://github.com/cdjc/theoreST}
 \item python 3.3
 \item sphinx
 \item paver (build tool)
@@ -325,6 +350,10 @@ def parse(foo):
 \item Translation (with the aid of google-translate).
 \item Dynamic bible-version selection on website.
 \item Greek/Hebrew/Aramaic hyperlinks.
+\item Website hosting.
+\item Formatting tweaks.
+\item Fix bugs.
+\item Use more github features.
 \end{itemize}
 
 \end{frame}
