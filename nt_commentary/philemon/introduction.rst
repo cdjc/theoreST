@@ -103,18 +103,20 @@ men women and children.
 .. draftcomment:: 300 slaves killed
     :class: comment
     
-    Reference would be good.
+    Reference would be good. JM says students can track down. If someone finds
+    a reference then we can put it in here.
 
-Slavery was therefore a very important social issue in Paul’s day not 
-unlike apartheid in recent times.
+.. XXX
+    Slavery was therefore a very important social issue in Paul’s day not 
+    unlike apartheid in recent times.
 
-.. draftcomment:: apartheid
-    :class: comment
+    .. draftcomment:: apartheid
+        :class: comment
     
-    Not sure the comparison between slavery in ancient Rome and apartheid
-    in recent history is more beneficial than confusing. Also, many people
-    younger than I would not know what apartheid is - at least from a social
-    issue perspective anyway. (Would be more relevant in the 80's, perhaps)
+        Not sure the comparison between slavery in ancient Rome and apartheid
+        in recent history is more beneficial than confusing. Also, many people
+        younger than I would not know what apartheid is - at least from a social
+        issue perspective anyway. (Would be more relevant in the 80's, perhaps)
 
 It is of note that one thing Paul does not do is to ask Philemon to set 
 the slaves free. Paul is working from within the institution to humanise 
@@ -125,12 +127,7 @@ it from within. From a Scriptural viewpoint slavery is dealt with in
 Here we see that a free man who was converted became a slave of Christ
 while a slave who was converted was seen to be free in Christ. Slavery
 was neither commended nor condemned by the early church.
-The issue is "What do you think of Christ?"
-
-.. draftcomment:: "What think ye of Christ"
-    :class: comment
-    
-    Reworded to: "What do you think of Christ?"
+The issue is "What do you think about the Christ?" (`Matthew 22:42`)
     
 A modern Example
 ................
@@ -157,6 +154,14 @@ the gospel.
     :class: comment
     
     I don't think he took time off during the war, but earlier.
+    In an article from the Virginia Center for Civil War Studies 
+    at Virginia Tech (http://www.essential.civilwar.vt.edu/915.html):
+    
+        Civil War exploded in April, 1861, and Jackson promptly offered 
+        his sword to his native state. The VMI cadets were ordered to
+        Richmond to serve as drillmasters for thousands of recruits
+        gathering there. On April 20, the professor led the corps out
+        of Lexington. He never again saw his adopted hometown.
 
 We need to set an example and show what light can do in 
 the darkness. It is only as lives are transformed that society is 

@@ -274,7 +274,4 @@ texinfo_documents = [
 #if 'override_text' in globals():
 #    cog.out(override_text)
 #]]]
-latex_documents = [('index', 'philemon.tex', 'Philemon', 'Peter Moses', 'howto')]
-latex_elements['preamble'] += r'''\rhead{Philemon}
-'''
 #[[[end]]]
