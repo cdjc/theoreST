@@ -40,73 +40,70 @@
         \titlepage
     \end{frame}
 
-    \begin{frame}{Overview of the talk}
-        \begin{itemize}
-        \item Problem (and ideal solution)
-        \item A tank is not the solution
-        \item Proprietary format $\rightarrow$ \rst
-        \item \rst $\rightarrow$ web/pdf/epub
-            \begin{itemize}
-            \item docutils
-            \item sphinx
-            \end{itemize}
-        \item Automating with \texttt{paver}
-        \item Other tools/technologies
-        \item Todo\ldots
-        \end{itemize}
-    \end{frame}
-    
-    \begin{frame}{The problem}
-        \begin{itemize}
-        \item ~300 books in MS Word format (written over 20+ years)
-            \begin{itemize}
-            \item Systematic Theology
-            \item Pastoral Theology
-            \item Commentaries
-            \item Miscellaneous topics 
-            \end{itemize}
-        \item Distribute as widely and conveniently as possible
-        \item ``Freely you have been given, freely give''
-        \end{itemize}
-    \end{frame}
-    
-    \begin{frame}{The (ideal) solution}
-        \begin{itemize}
-        \item One authoritative source, multiple outputs
-        \item Share common document fragments
-        \item Bible version independent
-        \item Bible references hyperlinked: \href{http://some.url}{John 3:16}
-        \item Build individual books (pdf/epub), or whole collection (html)
+\begin{frame}{Overview of the talk}
+    \begin{itemize}
+    \item Problem (and ideal solution)
+    \item A tank is not the solution
+    \item Proprietary format $\rightarrow$ \rst
+    \item \rst $\rightarrow$ web/pdf/epub (sphinx)
+    \item Domain-specific problems (extending sphinx)
+    \item Automating with \texttt{paver}
+    \item Other tools/technologies
+    \item Todo\ldots
     \end{itemize}
+\end{frame}
+    
+\begin{frame}{The problem}
+    \begin{itemize}
+    \item ~300 books in MS Word format (written over 20+ years)
+        \begin{itemize}
+        \item Systematic Theology
+        \item Pastoral Theology
+        \item Commentaries
+        \item Miscellaneous topics 
+        \end{itemize}
+    \item Domain-specific behaviour (verse references)
+    \item Distribute as widely and conveniently as possible
+    \item ``Freely you have been given, freely give''
+    \end{itemize}
+\end{frame}
+    
+\begin{frame}{The (ideal) solution}
+\begin{itemize}
+    \item One authoritative source, multiple outputs
+    \item Share common document fragments
+    \item Bible version independent
+    \item Bible references hyperlinked: \href{http://some.url}{John 3:16}
+    \item Build individual books (pdf/epub), or whole collection (html)
+\end{itemize}
 \end{frame}
     
 \begin{frame}
     \includegraphics[keepaspectratio=true, width=\paperwidth]{theorest_process.png}
 \end{frame}
     
-    \begin{frame}{DITA: the Wrong Way}
-        \begin{itemize}
-        \item DITA: Enterprise-level technical documentation
-        \item XML
-        \item Java
-        \item Deal-breaker: Too static.\\
-            Dynamically determine bible-reference URLs during document creation?
-        \end{itemize}
-    \end{frame}
-    
-    \begin{frame}[plain]
-        \centerline{\includegraphics[keepaspectratio=true, width=\paperwidth]{tank-toll.jpg}}
-    \end{frame}
-    
-    \begin{frame}{\rst markup language (PEP 287)}
-        Put example here\\
-        include roles and directives
-    \end{frame}
+\begin{frame}{DITA: the Wrong Way}
+    \begin{itemize}
+    \item DITA: Enterprise-level technical documentation
+    \item XML
+    \item Java
+    \item Deal-breaker: Too static.\\
+        Dynamically determine bible-reference URLs during document creation?
+    \end{itemize}
+\end{frame}
 
-    \begin{frame}{MS Word format to \rst}
-        \includegraphics[keepaspectratio=true, width=\paperwidth]{typewriter_keyboard.jpg}
-    \end{frame}
-    
+\begin{frame}[plain]
+    \centerline{\includegraphics[keepaspectratio=true, width=\paperwidth]{tank-toll.jpg}}
+\end{frame}
+
+\begin{frame}{\rst\ markup language (PEP 287)}
+\centerline{\includegraphics[keepaspectratio=true, width=\paperwidth, height=0.9\paperheight]{rst_example.png}}
+\end{frame}
+
+\begin{frame}{MS Word format to \rst}
+    \includegraphics[keepaspectratio=true, width=\paperwidth]{typewriter_keyboard.jpg}
+\end{frame}
+
     \begin{frame}{MS Word problems}
     No styles\\
         Enumerated lists
@@ -173,7 +170,8 @@ What about lsaiah? or I Corinthians? Argh!
 \end{frame}
 
 \begin{frame}[fragile]{Parsing the verse roles}
-Need to translate `John 3:16-18,20` into:
+\begin{itemize}
+\item Need to translate \texttt{`John 3:16-18,20`} into:
 
 \begin{minted}{html}
 <a href="http://bible.xyz/ESV/john3+3:16-18">
@@ -181,8 +179,14 @@ John 3:16-18</a>,
 <a href="http://bible.xyz/ESV/john3+3:20">20</a>
 \end{minted}
 
-Actually, internal document-tree nodes representing links.
+\item Actually, internal document-tree nodes representing links.
+\end{itemize}
 
+\begin{enumerate}
+\item Tokenise
+\item Parse
+\item Output
+\end{enumerate}
 \end{frame}
 
 \begin{frame}[fragile]{Tokenisation}
@@ -208,8 +212,11 @@ Use python's own tokeniser
 
 \begin{itemize}
 \item Plenty of parser-generators available.
+\begin{itemize}
+\item \url{http://wiki.python.org/moin/LanguageParsing}
 
-\item Too heavyweight.
+\item But, too heavyweight.
+\end{itemize}
 
 \item Verse references don't nest.
 
@@ -392,7 +399,9 @@ Current Solution:
 \item Author edits google doc.
 \item I incorporate changes to \rst source.
 \end{itemize}
-Conversion is poor. Need way to programattically create google docs.
+Conversion is poor. Need way to programmatically create google docs.
+
+other options: Wiki, github interface\ldots
 \end{frame}
 
 \begin{frame}[fragile]{TheoreST technology overview}
@@ -405,6 +414,7 @@ Conversion is poor. Need way to programattically create google docs.
 \item \LaTeX\  and rubber (generating pdf)
 \item Linux Mint 15 virtualbox VM
 \item Wing IDE Professional (thanks nz pycon!)
+\item Google deive/docs
 \end{itemize}
 \end{frame}
 
