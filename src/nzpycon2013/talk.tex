@@ -45,10 +45,9 @@
     \item Problem (and ideal solution)
     \item A tank is not the solution
     \item Proprietary format $\rightarrow$ \rst
+    \item Domain-specific problems (bible verses)
     \item \rst $\rightarrow$ web/pdf/epub (sphinx)
-    \item Domain-specific problems (extending sphinx)
     \item Automating with \texttt{paver}
-    \item Other tools/technologies
     \item Todo\ldots
     \end{itemize}
 \end{frame}
@@ -77,16 +76,16 @@
     \item Build individual books (pdf/epub), or whole collection (html)
 \end{itemize}
 \end{frame}
+
     
-\begin{frame}
-    \includegraphics[keepaspectratio=true, width=\paperwidth]{theorest_process.png}
-\end{frame}
-    
-\begin{frame}{DITA: the Wrong Way}
+\begin{frame}{DITA: The Wrong Way}
     \begin{itemize}
-    \item DITA: Enterprise-level technical documentation
-    \item XML
-    \item Java
+    \item DITA: Darwin Information Typing Architecture
+    \item \url{http://dita.xml.org/}
+    \item `Enterprise-level' technical documentation
+    \item XML.
+    \item Java.
+    \item Complex.
     \item Deal-breaker: Too static.\\
         Dynamically determine bible-reference URLs during document creation?
     \end{itemize}
@@ -96,37 +95,70 @@
     \centerline{\includegraphics[keepaspectratio=true, width=\paperwidth]{tank-toll.jpg}}
 \end{frame}
 
+\begin{frame}{\rst\ and sphinx: The Right Way}
+\begin{itemize}
+\item Markup language.
+\item \url{http://docutils.sourceforge.net/rst.html}
+\item Part of docutils text processing system.
+\item Relatively easy to extend.
+\item Multiple output formats: html, pdf (via \LaTeX), epub.
+\item Used by sphinx \url{http://sphinx-doc.org/}
+\begin{itemize}
+\item Used to generate \url{http://docs.python.org}
+\item Extensions for hierarchichal documents.
+\item Python
+\item Not XML!
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
 \begin{frame}{\rst\ markup language (PEP 287)}
 \centerline{\includegraphics[keepaspectratio=true, width=\paperwidth, height=0.9\paperheight]{rst_example.png}}
 \end{frame}
 
-\begin{frame}{MS Word format to \rst}
-    \includegraphics[keepaspectratio=true, width=\paperwidth]{typewriter_keyboard.jpg}
+\begin{frame}
+    \centerline{\includegraphics[keepaspectratio=true, width=\paperwidth]{theorest_process.png}}
 \end{frame}
 
-    \begin{frame}{MS Word problems}
-    No styles\\
-        Enumerated lists
-        \begin{framed} %{enumerated lists}
-            \ldots\\
-3. EVALUATION\\
+
+\begin{frame}[fragile]{TheoreST technology overview}
+\begin{itemize}
+\item \url{https://github.com/cdjc/theoreST}
+\item python 3.3
+\item sphinx
+\item paver (build tool)
+\item cog (code generation tool)
+\item \LaTeX\  and rubber (generating pdf)
+\item Linux Mint 15 virtualbox VM
+\item Wing IDE Professional (thanks nz pycon!)
+\item Google deive/docs
+\end{itemize}
+\end{frame}
+
+\begin{frame}{MS Word problems}
+No styles! What you see is all you've got.
+
+    \begin{framed} %{enumerated lists}
+        \ldots\\
+3. PAUL'S TRIALS\\
 \quad (a) Persecuted in Damascus; escapes in basket (Acts 9:20-25)\\
 \quad (b) Driven out of Jerusalem, sent to Tarsus (Acts 9:28-30).\\
 \quad (c) Stoned at Lystra and thought to have died (Acts 14:19).\\
-        \quad (d) Paul whipped and imprisoned at Phillipi (Acts 16:16-24).\\
-        \ldots
-    \end{framed}
-    Solution:\\
-    \emph{Save As...} docbook XML format. Guess indent level.  
-    \end{frame}
+\quad (d) Whipped and imprisoned at Phillipi (Acts 16:16-24).\\
+\ldots
+\end{framed}
+Solution:\\
+\emph{Save As...} docbook XML format. Guess indent level.  
+\end{frame}
     
-    \begin{frame}[fragile]
-        \frametitle{Recognising bible references}
-         Want to replace:\\
-         \begin{verbatim}Lorem ipsum John 3:16 dolor
+\begin{frame}[fragile]
+    \frametitle{Recognising bible references}
+     Want to replace:\\
+     \begin{verbatim}Lorem ipsum John 3:16 dolor
 \end{verbatim}
-         with:\\
-         \begin{verbatim}Lorem ipsum `John 3:16` dolor
+     with:\\
+ \begin{verbatim}Lorem ipsum `John 3:16` dolor
 \end{verbatim}
 Other examples:
 \begin{itemize}
@@ -167,6 +199,10 @@ def bibquote(text):
 
 What about lsaiah? or I Corinthians? Argh!
 
+\end{frame}
+
+\begin{frame}{MS Word format to \rst}
+    \centerline{\includegraphics[keepaspectratio=true, width=\paperwidth]{typewriter_keyboard.jpg}}
 \end{frame}
 
 \begin{frame}[fragile]{Parsing the verse roles}
@@ -262,10 +298,28 @@ def p_chapter(self):               # expecting a chapter
 \end{minted}
 \end{frame}
 
-\begin{frame}{Adding verse role to sphinx}
-\end{frame}
+\begin{frame}{Extending \rst/sphinx}
 
-\begin{frame}{Adding biblepassage directive to sphinx}
+\begin{itemize}
+\item Roles (inline markup)
+\begin{itemize}
+\item Single function; returns doctree nodes.
+\item \texttt{verse} role (parse verse text, insert references).
+\item \texttt{greek} role (nothing much, yet).
+\end{itemize}
+\item Directives (block markup)
+\begin{itemize}
+\item Single class with \texttt{run} method. Returns doctree nodes.
+\item \texttt{biblepassage} directive (inserts bible text into document).
+\end{itemize}
+\item Domain (collection of extensions)
+\begin{itemize}
+\item Roles
+\item Directives
+\item Config values
+\end{itemize}
+\end{itemize}
+
 \end{frame}
 
 \begin{frame}{Automating the build process}
@@ -382,41 +436,30 @@ Solution: code generation with \emph{cog}
 %\item Changes are made based on comments.
 %\end{enumerate}
 
-Quote from one of the authors:
+From one of the authors:
 
 \begin{quote}
 I come from a pre computer background which means I can write material and
 send out emails plus do some limited scanning but nothing else
 \end{quote}
 
-Editing \rst\ source? I don't think so.
+%Editing \rst\ source? I don't think so.
 
 Current Solution:
 
-\begin{itemize}
+\begin{enumerate}
 \item Publish to html.
 \item Upload to google-drive, converting to google doc.
 \item Author edits google doc.
 \item I incorporate changes to \rst source.
-\end{itemize}
-Conversion is poor. Need way to programmatically create google docs.
+\item goto step 1
+\end{enumerate}
 
-other options: Wiki, github interface\ldots
+%Conversion is poor. Need way to programmatically create google docs.
+
+%other options: Wiki, github interface\ldots
 \end{frame}
 
-\begin{frame}[fragile]{TheoreST technology overview}
-\begin{itemize}
-\item \url{https://github.com/cdjc/theoreST}
-\item python 3.3
-\item sphinx
-\item paver (build tool)
-\item cog (code generation tool)
-\item \LaTeX\  and rubber (generating pdf)
-\item Linux Mint 15 virtualbox VM
-\item Wing IDE Professional (thanks nz pycon!)
-\item Google deive/docs
-\end{itemize}
-\end{frame}
 
 \begin{frame}{Future work}
 \begin{itemize}
