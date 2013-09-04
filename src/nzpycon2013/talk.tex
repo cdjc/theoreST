@@ -42,7 +42,7 @@
 
 \begin{frame}{Overview of the talk}
     \begin{itemize}
-    \item Problem (and ideal solution)
+    \item Publishing problem (and ideal solution)
     \item A tank is not the solution
     \item Proprietary format $\rightarrow$ \rst
     \item Domain-specific problems (bible verses)
@@ -54,13 +54,14 @@
     
 \begin{frame}{The problem}
     \begin{itemize}
-    \item ~300 books in MS Word format (written over 20+ years)
+    \item $\simeq$300 books in MS Word format (written over 20+ years)
         \begin{itemize}
         \item Systematic Theology
         \item Pastoral Theology
         \item Commentaries
         \item Miscellaneous topics 
         \end{itemize}
+    \item Two primary, non-techincal authors
     \item Domain-specific behaviour (verse references)
     \item Distribute as widely and conveniently as possible
     \item ``Freely you have been given, freely give''
@@ -74,6 +75,7 @@
     \item Bible version independent
     \item Bible references hyperlinked: \href{http://some.url}{John 3:16}
     \item Build individual books (pdf/epub), or whole collection (html)
+    \item Simple method for authors to make changes
 \end{itemize}
 \end{frame}
 
@@ -83,11 +85,11 @@
     \item DITA: Darwin Information Typing Architecture
     \item \url{http://dita.xml.org/}
     \item `Enterprise-level' technical documentation
-    \item XML.
-    \item Java.
-    \item Complex.
-    \item Deal-breaker: Too static.\\
-        Dynamically determine bible-reference URLs during document creation?
+    \item XML
+    \item Java
+    \item Complex
+    \item Deal-breaker: Too static\ldots\\
+        Dynamically determine bible-reference URLs during document creation? Too hard.
     \end{itemize}
 \end{frame}
 
@@ -95,17 +97,17 @@
     \centerline{\includegraphics[keepaspectratio=true, width=\paperwidth]{tank-toll.jpg}}
 \end{frame}
 
-\begin{frame}{\rst\ and sphinx: The Right Way}
+\begin{frame}{\rst\ and sphinx: A Better Way}
 \begin{itemize}
-\item Markup language.
+\item Markup language
 \item \url{http://docutils.sourceforge.net/rst.html}
-\item Part of docutils text processing system.
-\item Relatively easy to extend.
-\item Multiple output formats: html, pdf (via \LaTeX), epub.
+\item Part of docutils text processing system
+\item Relatively easy to extend
+\item Multiple output formats: html, pdf (via \LaTeX), epub
 \item Used by sphinx \url{http://sphinx-doc.org/}
 \begin{itemize}
 \item Used to generate \url{http://docs.python.org}
-\item Extensions for hierarchichal documents.
+\item Extensions for hierarchichal documents
 \item Python
 \item Not XML!
 \end{itemize}
@@ -132,12 +134,12 @@
 \item \LaTeX\  and rubber (generating pdf)
 \item Linux Mint 15 virtualbox VM
 \item Wing IDE Professional (thanks nz pycon!)
-\item Google deive/docs
+\item Google drive/docs
 \end{itemize}
 \end{frame}
 
 \begin{frame}{MS Word problems}
-No styles! What you see is all you've got.
+No styles! What you see is \emph{all} you've got
 
     \begin{framed} %{enumerated lists}
         \ldots\\
@@ -149,9 +151,9 @@ No styles! What you see is all you've got.
 \ldots
 \end{framed}
 Solution:\\
-\emph{Save As...} docbook XML format. Guess indent level.  
+\emph{Save As...} docbook XML format. Guess indent level
 \end{frame}
-    
+
 \begin{frame}[fragile]
     \frametitle{Recognising bible references}
      Want to replace:\\
@@ -174,17 +176,17 @@ Other examples:
 \begin{frame}{Regular expressions}
     \includegraphics[keepaspectratio=true, width=0.9\paperwidth]{regular_expressions.png}
 
-High-level view:
+High-level view of regular expressions:
 \begin{itemize}
-\item A mini-language for specifying a set of strings.
-\item An efficient \emph{recogniser} for that set of strings.
+\item A mini-language for specifying a set of strings
+\item An efficient \emph{recogniser} for that set of strings
 \end{itemize}
 
 \end{frame}
 
 
 
-\begin{frame}[fragile]
+\begin{frame}[fragile]{Quoting bible references}
     
 \begin{minted}{python}
 names = ['Genesis', 'Exodus', ..., 'Revelation']
@@ -197,11 +199,13 @@ def bibquote(text):
     return re_bibref.sub(r'`\1`', text)
 \end{minted}
 
+\vspace{1cm}
+
 What about lsaiah? or I Corinthians? Argh!
 
 \end{frame}
 
-\begin{frame}{MS Word format to \rst}
+\begin{frame}%{MS Word format to \rst}
     \centerline{\includegraphics[keepaspectratio=true, width=\paperwidth]{typewriter_keyboard.jpg}}
 \end{frame}
 
@@ -215,7 +219,7 @@ John 3:16-18</a>,
 <a href="http://bible.xyz/ESV/john3+3:20">20</a>
 \end{minted}
 
-\item Actually, internal document-tree nodes representing links.
+\item Actually, internal document-tree nodes representing links
 \end{itemize}
 
 \begin{enumerate}
@@ -247,21 +251,21 @@ Use python's own tokeniser
 \begin{frame}[fragile]{Parsing}
 
 \begin{itemize}
-\item Plenty of parser-generators available.
+\item Plenty of parser-generators available
 \begin{itemize}
 \item \url{http://wiki.python.org/moin/LanguageParsing}
 
-\item But, too heavyweight.
+\item But, too heavyweight
 \end{itemize}
 
-\item Verse references don't nest.
+\item Verse references don't nest
 
 \item But do need lookahead:
 \begin{minted}{python}
 'John' '3' ':' '16' '-' '18' ',' '20' ...
 \end{minted}
 
-\item Solution: Use a state machine
+\item Solution: Use a state machine!
 
 \pause
 \item Problem: No goto :-(
@@ -275,9 +279,14 @@ Use python's own tokeniser
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Parsing state machine}
+\begin{frame}{Avoiding the raptors}
+    \centerline{\includegraphics[keepaspectratio=true, width=\paperwidth]{goto.png}}
+\end{frame}
 
-One method per state.
+
+\begin{frame}[fragile]{Parsing state machine (no \texttt{goto}s)}
+
+One method per state
 
 Each method-state returns next method-state
 
@@ -286,10 +295,10 @@ def parse(self):
     ...
     state = self.p_book            # start state
     while state:
-        state = state()
+        state = state()            # 'do' state. get next
 		
-def p_book(self):                  # expecting a book
-    self.book = self.swallow(Book) # exception if not Book
+def p_book(self):                  # expect to parse book
+    self.book = self.swallow(Book) # eat Book token
     self.text += self.book.value   # collect link text
     return self.p_chapter          # 'goto' this state
 	
@@ -301,16 +310,17 @@ def p_chapter(self):               # expecting a chapter
 \begin{frame}{Extending \rst/sphinx}
 
 \begin{itemize}
-\item Roles (inline markup)
+\item Roles (inline markup--- \texttt{:gk:`agape`})
 \begin{itemize}
-\item Single function; returns doctree nodes.
-\item \texttt{verse} role (parse verse text, insert references).
-\item \texttt{greek} role (nothing much, yet).
+\item Single function; returns doctree nodes
+\item \texttt{verse} role (parse verse text, insert references)
+\item \texttt{greek} role (nothing much, yet)
 \end{itemize}
 \item Directives (block markup)
 \begin{itemize}
-\item Single class with \texttt{run} method. Returns doctree nodes.
-\item \texttt{biblepassage} directive (inserts bible text into document).
+\item Single class with \texttt{run} method. Returns doctree nodes
+\item \texttt{biblepassage} directive (inserts bible text into document)
+\item \texttt{draftcomment} directive
 \end{itemize}
 \item Domain (collection of extensions)
 \begin{itemize}
@@ -323,35 +333,41 @@ def p_chapter(self):               # expecting a chapter
 \end{frame}
 
 \begin{frame}{Automating the build process}
-Problem: minimise effort to build documentation
+\begin{itemize}
+\item Problem: minimise effort to build documentation
 
-What I want to build:
+\item What I want to build:
 \begin{itemize}
 \item All documents in integrated sphinx website
 \item Individual documents as pdf/epub/html-for-google-docs
 \end{itemize}
-For each build I want to specify:
+\item For each build I want to specify:
 \begin{itemize}
 \item bible version (ESV, KJV, NET, etc.)
 \item include draft comments
-\item possibly other options (e.g. force)
+\item possibly other options (e.g. a4/letter)
 \end{itemize}
-Also, minimal duplication in sphinx \texttt{conf.py}\\
+\item Also, minimal duplication in sphinx \texttt{conf.py}\\
 
-Solution: paver
-
+\item Solution: paver
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Automating the build process with paver}
-"Paver is a Python-based build/distribution/deployment 
-scripting tool along the lines of Make"
+
+\url{http://paver.github.io/paver/}
+
+\begin{quote}
+Paver is a Python-based build/distribution/deployment 
+scripting tool along the lines of Make.
+\end{quote}
 
 Command line I want:
 \begin{itemize}
 \item \texttt{paver html} (integrated website with all books)
 \item \texttt{paver pdf john} (pdf ouput of John, default bible version)
 \item \texttt{paver epub john}
-\item \texttt{paver pdf john NET draft} (use NET bible, show comments)
+\item \texttt{paver pdf john NET letter} (use NET bible, letter paper)
 \item \texttt{paver single john} (html for upload to google-docs)
 \item \texttt{paver pdf matthew mark luke john} (multiple books)
 \end{itemize}
@@ -362,20 +378,27 @@ Sets up configuration, then calls \texttt{sphinx-build}
 
 \begin{frame}[fragile]{Sharing a single sphinx config file}
 
+\begin{itemize}
+\item \texttt{index.rst} is the root of a document
+\item \texttt{conf.py} is the sphinx config file
+\end{itemize}
+
 Project file hierarchy:
 
 \begin{tabular}{|l|l|}
 \hline
 \texttt{/} & root directory \\
-\texttt{/index.rst} & for integrated website with all books \\
-\texttt{/conf.py} & symbolic link to \texttt{/src/conf.py}\\
 \hline
-\texttt{/src/} & All common configuration and code\\
+\texttt{/index.rst} & Integrated website with all books \\
+\texttt{/conf.py} & Symbolic link to \texttt{src/conf.py}\\
+\texttt{/conf\_override.py} & Append to \texttt{conf.py}\\
+\hline
+\texttt{/src/} & Common configuration and code\\
 \texttt{/src/conf.py} & Common sphinx configuration file\\
 \hline
-\texttt{/\emph{group}/\emph{book}/index.rst} & for stand-alone documents\\
-\texttt{/\emph{group}/\emph{book}/conf.py} & symbolic link to \texttt{/src/conf.py}\\
-\texttt{/../../conf\_override.py} & append to \texttt{conf.py}\\
+\texttt{/\emph{group}/\emph{book}/index.rst} & For stand-alone documents\\
+\texttt{/\emph{group}/\emph{book}/conf.py} & Symbolic link to \texttt{/src/conf.py}\\
+\texttt{/\emph{group}/\emph{book}/conf\_override.py} & Append to \texttt{conf.py}\\
 \hline
 \end{tabular}
 
@@ -387,17 +410,17 @@ Project file hierarchy:
 \begin{itemize}
 \item Sphinx configuration file is python code.
 
-\item Can override simple name=value options on command line:\\
+\item Can override simple \texttt{name=value} options on command line:\\
 \texttt{sphinx-build -Dbible\_version=ESV}
 
 \item But complex overrides (i.e. python code) fail:
 \sout{\texttt{-Dlatex\_elements['papersize']='a4paper'}}
 
 \item Some overrides are static per-book:\\
-Generated \LaTeX\ file = \texttt{john.tex}
+Generated \LaTeX\ filename = \texttt{john.tex}
 
 \item Others are dynamic--- at generation time:
-\texttt{paper\_type = "letter"}
+\texttt{papersize = "letter"}
 \end{itemize}
 
 Solution: code generation with \emph{cog}
@@ -408,7 +431,7 @@ Solution: code generation with \emph{cog}
 \url{http://nedbatchelder.com/code/cog/}
 
 \begin{itemize}
-\item Use python code in a file to generate part of the file
+\item Cog: Use python code in a file to generate part of that file
 
 \item At the end of sphinx config file:
 \begin{minted}{python}
@@ -440,7 +463,7 @@ From one of the authors:
 
 \begin{quote}
 I come from a pre computer background which means I can write material and
-send out emails plus do some limited scanning but nothing else
+send out emails plus do some limited scanning but nothing else.
 \end{quote}
 
 %Editing \rst\ source? I don't think so.
@@ -448,11 +471,11 @@ send out emails plus do some limited scanning but nothing else
 Current Solution:
 
 \begin{enumerate}
-\item Publish to html.
-\item Upload to google-drive, converting to google doc.
-\item Author edits google doc.
-\item I incorporate changes to \rst source.
-\item goto step 1
+\item Publish to html (paver)
+\item Upload to google-drive, converting to google doc
+\item Author edits google doc
+\item I incorporate changes to \rst source 
+\item If not finished, goto step 1
 \end{enumerate}
 
 %Conversion is poor. Need way to programmatically create google docs.
@@ -463,15 +486,15 @@ Current Solution:
 
 \begin{frame}{Future work}
 \begin{itemize}
-\item Continue converting documents to reST.
-\item Robust versioning scheme.
-\item Translation (with the aid of google-translate).
-\item Dynamic bible-version selection on website.
-\item Greek/Hebrew/Aramaic hyperlinks.
-\item Website hosting.
-\item Formatting tweaks.
-\item Fix bugs. Add more tests.
-\item Use more github features.
+\item Continue converting documents to reST
+\item Robust versioning scheme
+\item Translation (with the aid of google-translate)
+\item Dynamic bible-version selection on website
+\item Greek/Hebrew/Aramaic hyperlinks
+\item Website hosting
+\item Formatting tweaks
+\item Fix bugs. Add more tests
+\item Use more github features
 \end{itemize}
 
 \end{frame}
