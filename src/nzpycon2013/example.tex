@@ -20,6 +20,17 @@
 
 % titlereference role
 \providecommand*{\DUroletitlereference}[1]{\textsl{#1}}
+\providecommand*{\DUrole}[2]{%
+  \ifcsname DUrole#1\endcsname%
+    \csname DUrole#1\endcsname{#2}%
+  \else% backwards compatibility: try \docutilsrole#1{#2}
+    \ifcsname docutilsrole#1\endcsname%
+      \csname docutilsrole#1\endcsname{#2}%
+    \else%
+      #2%
+    \fi%
+  \fi%
+}
 
 % hyperlinks:
 \ifthenelse{\isundefined{\hypersetup}}{
@@ -74,9 +85,13 @@ changed.
 \emph{Some} inline markup is \emph{done} using roles.
 %
 \begin{quote}{\ttfamily \raggedright \noindent
-def~plus\_one(n):\\
-~~~~return~n~+~1
+\DUrole{keyword}{def}~\DUrole{name}{\DUrole{function}{plus\_one}}\DUrole{punctuation}{(}\DUrole{name}{n}\DUrole{punctuation}{):}~\\
+~~~~\DUrole{keyword}{return}~\DUrole{name}{n}~\DUrole{operator}{+}~\DUrole{literal}{\DUrole{number}{\DUrole{integer}{1}}}
 }
+%\begin{quote}{\ttfamily \raggedright \noindent
+%def~plus\_one(n):\\
+%~~~~return~n~+~1
+%}
 \end{quote}
 
 \subsection{\huge{Subtitle}}
