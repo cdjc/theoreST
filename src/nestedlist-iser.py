@@ -50,11 +50,16 @@ lines = sys.stdin.readlines()
 last_match = ''
 for line in lines:
     line = line.strip()
-
+    #print(line)
+    line = line.replace('\xa0','')
     if line == matcher:
         collecting = True
+        print("Matching")
         continue
-    line = line.replace('\xa0','')
+    #if 'CHARACTER' in line:
+    #    print(line)
+    #    print([(ord(c),c) for c in line])
+    
     if not collecting:
         continue
     if line == "<para/>":
@@ -68,6 +73,7 @@ for line in lines:
         continue
 
     if finished(text):
+        print("Finish at "+text)
         break
     
     num_match = num_re.match(text)
@@ -104,7 +110,7 @@ for line in lines:
             root.children[-1].children.append(n) # Just fix this up manually later
         else:
             root.children.append(n)
-        #print("### ",text)
+        print("### ",text)
 
 #end_of_ordered_list
 

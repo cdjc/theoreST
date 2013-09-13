@@ -1,0 +1,13 @@
+out
+*.log
+theoreST.wpu
+*.html
+__pycache__
+*.pdf
+*.epub
+*.pickle
+*.aux,
+rmthis*
+*.DOC
+*.doc
+*.xml

@@ -39,12 +39,18 @@ def pdf(args):
         book_options.docroot = bookdir
         book_options.conf_overrides['project'] = book
         conf_override(bookdir, {'override_text' : override_text})
-        paversphinx.run_sphinx(options)
+        pdffile = os.path.join(bookdir, options.builddir, 'latex', book+'.pdf')
+        if os.path.exists(pdffile):
+            os.unlink(pdffile)
+        rval = paversphinx.run_sphinx(options)
+        
         run_latex(os.path.join(bookdir, options.builddir, 'latex'))
         
-        pdffile = os.path.join(bookdir, options.builddir, 'latex', book+'.pdf')
-        print('copy',pdffile,bookdir)
-        shutil.copy(pdffile, bookdir)
+        if os.path.exists(pdffile):
+            print('copy',pdffile,bookdir)
+            shutil.copy(pdffile, bookdir)
+        else:
+            print('pdf file not created')
     uncog()
         
 def bookgroups():
@@ -128,7 +134,21 @@ def epub(args):
         epubfile = os.path.join(bookdir, options.builddir, 'epub', book+'.epub')
         print('copy',epubfile,bookdir)
         shutil.copy(epubfile, bookdir)
+
+@task
+@consume_args
+def pseudo(args):
+    handle_options(args)
+    options.builder = 'pseudoxml'
+    
+    for book, bookdir in options.books.items():
+        book_options = options
+        book_options.docroot = bookdir
+        book_options.conf_overrides['project'] = book
+
+        conf_override(bookdir)
         
+        paversphinx.run_sphinx(options)    
 
 def insert_gdoc_css(in_fname, out_fname):
     with open(in_fname,'r') as fid:

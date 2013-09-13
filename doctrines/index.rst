@@ -7,6 +7,7 @@ Doctrines
     ambassador
     amen
     apostleship
+    bible_inspiration
     brotherhood_of_believers
     christian_soldier
     confidence
@@ -15,6 +16,7 @@ Doctrines
     evangelism
     faith
     free_will
+    god_character_of_god
     gospel_of_salvation
     grace
     happiness

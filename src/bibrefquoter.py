@@ -25,9 +25,8 @@ names = ['1 Chronicles', '1 Corinthians', '1 John', '1 Kings', '1 Peter',
          'Zephaniah']
 
 re_names = '('+'|'.join(names)+')'
-re_raw = '('+re_names+r'\s+\d+:(\s*(,|-|;|:|'+re_names+'|\d+))+'+')'
+re_raw = '('+re_names+r'\s+\d+(:(\s*(,(?=\s*(\d+|'+re_names+'))|-|;|:|'+re_names+'|\d+))+)?'+')'
 re_bibref = re.compile(re_raw)
-
 
 def bibquote(text):
     return re_bibref.sub(r'`\1`', text)
@@ -39,23 +38,36 @@ def test():
      (" sister 2 Timothy 23:16 with"," sister `2 Timothy 23:16` with"),
      (" sister Acts 23:16,18 with"," sister `Acts 23:16,18` with"),
      (" sister Acts 23:16-18 with"," sister `Acts 23:16-18` with"),
+     (" sister Acts 23:16-18, 19 with"," sister `Acts 23:16-18, 19` with"),
+     (" sister Acts 23:16-18, 19,20 with"," sister `Acts 23:16-18, 19,20` with"),
+     (" sister Acts 23:16-18, 19-21 with"," sister `Acts 23:16-18, 19-21` with"),
      (" sister Acts 23:16, 18 with"," sister `Acts 23:16, 18` with"),
      (" sister Acts 23:16, 18:12 with"," sister `Acts 23:16, 18:12` with"),
      (" sister Acts 23:16, John 18:12 with"," sister `Acts 23:16, John 18:12` with"),
      (" sister Acts 23:16, 2 John 18:12 with"," sister `Acts 23:16, 2 John 18:12` with"),
      (" sister Acts 23:16, 2 Timothy 18:12 with"," sister `Acts 23:16, 2 Timothy 18:12` with"),
      (" sister John 23:16, 2 John 18:12 with"," sister `John 23:16, 2 John 18:12` with"),
+     (" trailing comma John 23:16, and something else", " trailing comma `John 23:16`, and something else"),
+     (" chapter ref John 23 and something else", " chapter ref `John 23` and something else"),
+     (" not a ref 23:16 and something else", " not a ref 23:16 and something else"),
      ]
     
+    fail_count = 0
+    pass_count = 0
     for raw,expected in tests:
         if bibquote(raw) != expected:
+            fail_count += 1
             print('Fail:')
-            print('raw:      ',raw)
-            print('expected: ',expected)
-            print('actual:   ',bibquote(raw))
+            print('  raw:      ',raw)
+            print('  expected: ',expected)
+            print('  actual:   ',bibquote(raw))
         else:
+            pass_count += 1
             print('Pass:',expected)
 
+    print("Passed: ",pass_count)
+    print("Failed: ",fail_count)
+    
 if __name__ == '__main__':
     if len(sys.argv) == 1:
         text = sys.stdin.read()

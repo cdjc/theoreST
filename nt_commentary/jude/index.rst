@@ -9,10 +9,6 @@
  |title|
 =========
 
-:Author: John McEwan
-:Organization: Evangelical Bible College of Western Australia
-:Date: |date|
-
 .. raw:: latex
 
     \pagebreak
@@ -22,4 +18,14 @@
 .. toctree::
 
     introduction
+    verses1_3
 
+.. ifconfig:: standalone == True
+
+    Doctrines
+    =========
+    
+    .. toctree::
+
+        doctrines/bible_inspiration
+        doctrines/god_character_of_god
