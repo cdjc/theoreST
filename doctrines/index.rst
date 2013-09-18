@@ -13,9 +13,13 @@ Doctrines
     confidence
     deposits
     effective_calling
+    election_and_predestination
+    eternal_security
     evangelism
     faith
+    fatherhood_of_god
     free_will
+    fundamentalism
     god_character_of_god
     gospel_of_salvation
     grace

@@ -11,7 +11,7 @@ Bible: inspiration
 
 #. The Bible is the mind of Christ (`1 Corinthians 2:16`). Therefore it is the absolute standard for believers (`Psalm 138:2`).
 
-#. Pre-canon revelation from God occurred through the Holy Spirit. There was no written scripture until the time of Moses (2Samuel 23:2, `Ezekiel 2:2, 8:3, 11:1, 24, Micah 3:8, Hebrews 3:7`).
+#. Pre-canon revelation from God occurred through the Holy Spirit. There was no written scripture until the time of Moses (`2 Samuel 23:2, Ezekiel 2:2, 8:3, 11:1, 24, Micah 3:8, Hebrews 3:7`).
 
 #. Four categories of Old Testament revelation:
 
