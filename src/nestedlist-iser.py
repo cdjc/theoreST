@@ -14,7 +14,7 @@ para_re = re.compile(r'<para>(.*)</para>')
 
 num_re = re.compile(r'([0-9]+)[.]\W+(.*)')
 lett_re = re.compile(r'([a-z])[)]\W+(.*)')
-rom_re = re.compile(r'((i+v?)|(vi*))[)]\W+(.*)')
+rom_re = re.compile(r'((i+(v|x)?)|((v|x)i*))[)]\W+(.*)')
 ws_re = re.compile(r'^\W+$')
 
 if len(sys.argv) not in (2,3):
@@ -54,7 +54,7 @@ for line in lines:
     line = line.replace('\xa0','')
     if line == matcher:
         collecting = True
-        print("Matching")
+        #print("Matching")
         continue
     #if 'CHARACTER' in line:
     #    print(line)
@@ -73,7 +73,7 @@ for line in lines:
         continue
 
     if finished(text):
-        print("Finish at "+text)
+        #print("Finish at "+text)
         break
     
     num_match = num_re.match(text)
@@ -99,8 +99,8 @@ for line in lines:
         last_match = 'let',lett_match.group(1)
         continue
     if rom_match != None:
-        #print("        rom ",rom_match.group(1), rom_match.group(4), file=sys.stderr)
-        n = Node(3, rom_match.group(4))
+        #print("        rom ",rom_match.group(1), rom_match.group(6), file=sys.stderr)
+        n = Node(3, rom_match.group(6))
         root.children[-1].children[-1].children.append(n)
         last_match = 'rom',rom_match.group(1)
         continue
@@ -110,7 +110,7 @@ for line in lines:
             root.children[-1].children.append(n) # Just fix this up manually later
         else:
             root.children.append(n)
-        print("### ",text)
+        #print("### ",text)
 
 #end_of_ordered_list
 

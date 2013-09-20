@@ -66,3 +66,8 @@ Doctrines
 
 - :doc:`/doctrines/god_character_of_god`
 - :doc:`/doctrines/bible_inspiration`
+- :doc:`/doctrines/election_and_predestination`
+- :doc:`/doctrines/eternal_security`
+- :doc:`/doctrines/fatherhood_of_god`
+- :doc:`/doctrines/fundamentalism`
+

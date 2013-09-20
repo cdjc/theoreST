@@ -88,6 +88,6 @@ Doctrines
 - :doc:`/doctrines/angelic_conflict`
 - :doc:`/doctrines/judgement_seat_of_christ`
 - :doc:`/doctrines/judgement_great_white_throne`
-- :doc:`/doctrines/hommosexuality`
+- :doc:`/doctrines/homosexuality`
 - :doc:`/doctrines/satans_strategy`
 - :doc:`/doctrines/sin_unto_death`

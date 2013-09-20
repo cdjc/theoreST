@@ -15,7 +15,7 @@ Sin unto death
 
    #. Achan (`Joshua 7:16-26`)
 
-   #. Ananias and Sapphira (`Acts 5: 1 -1 1`).
+   #. Ananias and Sapphira (`Acts 5: 1-11`).
 
 
    a)The Corinthian Pervert (`1 Corinthians 5`)
