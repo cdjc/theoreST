@@ -3,7 +3,7 @@ Homosexuality
 
 1. The Bible tells us that homosexuality is not a form of immaturity; an aspect of normal human development; the product of certain kinds of experience or the result of genetic factors. It is a learned activity.
 
-#. It is not a condition or sickness; it is an act of sin (`Leviticus 18:22; 20:13; Deuteronomy 23:17; 1 Timothy 1:10; 1`Corinthians 6:9; `Revelation 22:15`).
+#. It is not a condition or sickness; it is an act of sin (`Leviticus 18:22, 20:13, Deuteronomy 23:17, 1 Timothy 1:10, 1 Corinthians 6:9, Revelation 22:15`).
 
 #. It is the culminating sexual practice of a culminating apostasy and hostility towards God. It is an act against God and therefore against nature (`Romans 1:21-30`). The "burned out" product of rebellion (verse 27).
 

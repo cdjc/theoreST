@@ -3,7 +3,7 @@ Judgement seat of christ
 
 1. There are three types of judgement for believers in the Church Age:
 
-   a. Judgement of Sins:- The Lord Jesus Christ on the cross substituted the payment of all man's sins. The penalty of sin is death (`Romans 6:23`). There is therefore no judgement for those in Christ Jesus (`Romans 8:1`). The substitutionary death is given in `2 Corinthians 5:19-2 1, Galatians 3:13`.
+   a. Judgement of Sins:- The Lord Jesus Christ on the cross substituted the payment of all man's sins. The penalty of sin is death (`Romans 6:23`). There is therefore no judgement for those in Christ Jesus (`Romans 8:1`). The substitutionary death is given in `2 Corinthians 5:19-21, Galatians 3:13`.
 
    #. Judgement of Self:- We are told that if we judge ourselves we shall not be judged. Failure to do so brings discipline. (`1 Corinthians 5:1-5, 11:31, 32, 2 Corinthians 2:5-7, Hebrews 12:7, 1 John 1:9`)
 

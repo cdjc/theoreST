@@ -14,7 +14,7 @@ Each man is a good study of rebellion; they provide a three sided portrait of ap
 
 The key to understanding apostasy is to see its twin root; pride and lust. Apostasy, at its heart, is the belief by a mere mortal that they can, "do great things for God" , that they, in their own human strength, are able to impress God by their deeds. True faith, on the other hand, is identified by the belief, behaviour, and attitude of grace, humility and Holy Spirit empowered service, for the true believer realises that they are, by themselves, incapable of pleasing God in anything. Let us examine each of these three men that Jude selects as examples of apostates.
 
-Cain - Genesis 4  - Cain is the religious apostate who rejected the necessity of the blood sacrifice and probably is the best representation of the liberal minister nowadays. Cain did not believe that man was a sinner in need of a Saviour and stressed that man was created in the image of God, and could bring to God the fruit of his own work and be accepted.   He believed that he was only one generation away from God, and therefore accepted in and of himself, through his relationship with Adam. God does not have grand-children, nor does he accept us in the creation as anything more than "fallen creatures".     
+Cain - `Genesis 4`  - Cain is the religious apostate who rejected the necessity of the blood sacrifice and probably is the best representation of the liberal minister nowadays. Cain did not believe that man was a sinner in need of a Saviour and stressed that man was created in the image of God, and could bring to God the fruit of his own work and be accepted.   He believed that he was only one generation away from God, and therefore accepted in and of himself, through his relationship with Adam. God does not have grand-children, nor does he accept us in the creation as anything more than "fallen creatures".     
 
 Cain found the whole concept of the "fall" and sin repugnant. He felt that the blood sacrifice was uncouth and felt superior to his brother Abel and that the work of his own hands would be acceptable to God. Cain was an exponent of natural religion, rather than revealed religion. He stands as an example of, human good, rather than divine good, man's works rather than God's work. 
 
@@ -34,7 +34,7 @@ Balaam knew some doctrine but did not understand the nature of God's grace and t
 
 The second thing he did not know was his position before God. First of all he tried to curse Israel but God would not allow him. He then gave Balak some advice to the effect that if you want to destroy Israel you have to separate them from God's blessing and put them under the sin unto death and then God will do it for you. He told Balak to send his most beautiful women to seduce the young men of Israel. After that they should be invited down to the temple to worship the pagan gods. 
 
-By immorality you compromise the man and you follow this with religious idolatry. God will then deal with Israel. God does not like immorality or religious apostasy. For this information Balaam received a fortune and for a while it worked until Phineas got to work with his javelin and Balaam died. Balaam knew the truth but the truth did not get to know him.  He made money out of spiritual things, to "consume it upon his lusts", (James 4 : 3), and there are still people in the church nowadays who use their faith for money making purposes, for selfish lustful reasons.
+By immorality you compromise the man and you follow this with religious idolatry. God will then deal with Israel. God does not like immorality or religious apostasy. For this information Balaam received a fortune and for a while it worked until Phineas got to work with his javelin and Balaam died. Balaam knew the truth but the truth did not get to know him.  He made money out of spiritual things, to "consume it upon his lusts", (`James 4` : 3), and there are still people in the church nowadays who use their faith for money making purposes, for selfish lustful reasons.
 
 The third person was Korah who had two friends/relatives Dathan and Abiram  Korah was a power hungry religious apostate.   In your ministry you will meet all three of Satan's men. 
 
@@ -42,7 +42,7 @@ Korah was the type of person who wants the pastor at his beck and call. There is
 
 There is always a danger that a person will usurp a position that the Lord has not given him. All this type of apostate think that they are God's gift to the church.   
 
-He was disqualified from leadership under the first letter of John because he has no love for the brethren. 1 John 3:11-24, 4:6-13. Also, refer John 13:15-16. A servant attitude is required for a person to hold a position in a local church. 1 Peter 5:6. If God wants you in a position He will raise you up, do not politic for votes. Satan's people tend to push for positions. If someone is pushing for a position it is usually a good indication that they should not get it. Recognise them, identify them and deal with them.
+He was disqualified from leadership under the first letter of John because he has no love for the brethren. `1 John 3:11-24, 4:6-13`. Also, refer `John 13:15-16`. A servant attitude is required for a person to hold a position in a local church. `1 Peter 5:6`. If God wants you in a position He will raise you up, do not politic for votes. Satan's people tend to push for positions. If someone is pushing for a position it is usually a good indication that they should not get it. Recognise them, identify them and deal with them.
 
 Verse  12 - This describes apostates in the church or believers in a continuously carnal state. "To the heavenly calling they are strangers, hence their aim and object is to advance their own interests in this world." (Ironside, 1983, page 39). 
 
@@ -50,7 +50,7 @@ The love feast was an agape meal held in conjunction with the communion service.
 
 The apostates would be there for the evening service; wherever there is free food and fellowship these people love to gather. The Greek word used to describe them is "spilos" meaning spots. This is a hidden shoal of rocks close to the shore that a boat will strike and sink. You are just about at the shore when you hit the rocks, you are saved but you suffer great loss to all your cargo on your ship. 
 
-This is what apostates do in the church. 2 Peter 2:13. They cannot affect the salvation of the believer but they can rob them of eternal rewards by shipwrecking their lives and witness. They rob people of eternal reward by side tracking them from their legitimate service and destroy the spirituality of those who are influenced by them.
+This is what apostates do in the church. `2 Peter 2:13`. They cannot affect the salvation of the believer but they can rob them of eternal rewards by shipwrecking their lives and witness. They rob people of eternal reward by side tracking them from their legitimate service and destroy the spirituality of those who are influenced by them.
 
 They are said to have no fear, that is, they have no respect for God or His Word, no fear of judgement, and they reject the authority of anyone other than themselves.
 
@@ -58,9 +58,9 @@ The third thing that is said of them, is that they are like a cloud without wate
 
 The fourth thing that describes them is that they are trees whose fruit has withered, and come to nothing. Literally it is a tree in autumn, but rather than being fruitful it has withered and has no fruit. From a distance it looks as if it has something on it but there is no fruit, or bad wizened up fruit, once you arrive. These apostates are like that; they are both sterile and useless.  They will not only not satisfy you and will let you down, but will also cause you to get a disease if you eat what they produce.   
 
-Like the poor vines in John 15, they will be torn up by the roots, and burned, with no trace of them left and they will be placed in the Lake of Fire. As a minister, facing these people, you have to hang in there under the pressures they will bring upon you, for in the end these people will be plucked up by the roots. Compare this passage with 1 Corinthians 11:20-22, Matthew 3:10, 7:19, 13:29, 15:13, Luke 13:6-9, John 15:2-6, 2 Peter 1:8, 2 Peter 2:13 -17.
+Like the poor vines in `John 15`, they will be torn up by the roots, and burned, with no trace of them left and they will be placed in the Lake of Fire. As a minister, facing these people, you have to hang in there under the pressures they will bring upon you, for in the end these people will be plucked up by the roots. Compare this passage with `1 Corinthians 11:20-22, Matthew 3:10, 7:19, 13:29, 15:13, Luke 13:6-9, John 15:2-6, 2 Peter 1:8, 2 Peter 2:13 -17`.
 
-In Proverbs 25:14, such people are described as, those who boast of gifts that they fail to give, being like clouds and wind without rain. The true believer is always a "refreshment" to all they meet, the false brethren are shown to be false by their lack of production of anything other than confusion.   
+In `Proverbs 25:14`, such people are described as, those who boast of gifts that they fail to give, being like clouds and wind without rain. The true believer is always a "refreshment" to all they meet, the false brethren are shown to be false by their lack of production of anything other than confusion.   
 
 Verse 13 -  Eternally you are secure, but as "make believers", they are not. You have a place in heaven, due to your position in Christ, they have a place in hell, due to their following of Satan's policies. 
 
@@ -72,7 +72,7 @@ The picture Jude uses is of a garbage filled wave spewing its rotten seaweed ont
 
 Verse 14  - This is a quote from the apocryphal book of Enoch which is not part of Scripture. The fact that Jude quotes this part shows us that the book of Enoch records this accurately, but does not mean that the book is canonical, or correct in any other part of it. Jude' s message(as Enoch's was) is, God is coming to judge and will end all apostasy. These evil ones will be dealt with and swept away. God is in control, and he will judge the evil, but if they are still active, it simply means that he hasn't moved against them yet!   
 
-We must claim Romans 8:28, in such situations, and look for the good that can come as we confront evil directly. The debates about the validity of quoting Enoch fill many commentaries. Ironside's point is a good one regarding these commentaries. "The source of Jude's information as to this prophecy is not given.   Criticism has busied itself to find out, but all to little purpose and certainly to no profit." (Ironside, 1983, page 44).
+We must claim `Romans 8:28`, in such situations, and look for the good that can come as we confront evil directly. The debates about the validity of quoting Enoch fill many commentaries. Ironside's point is a good one regarding these commentaries. "The source of Jude's information as to this prophecy is not given.   Criticism has busied itself to find out, but all to little purpose and certainly to no profit." (Ironside, 1983, page 44).
 
 Verse 15 - These people are ungodly in all their ways, both immoral and anti-God in their beliefs and practises. Four times Jude uses the word for ungodly, to underline the evil of these people and the certainty of the Lord's visiting judgement on them. All they say and do will be visited upon them.
 
@@ -81,7 +81,7 @@ Application
 
 Like the apostates of Jude's day the apostates of our own need to be identified quickly and dealt with promptly. "Like Cain they were devoid of love. Like Balaam they were prepared in return for money to teach others that sin did not matter. Like Korah they were careless of the ordinances of God and insubordinate to church leaders." (Green, 1968, page 173). Once we spot such people we need to deal with them by thorough church discipline.
 
-Do we train our fellow believers to put on their armour against such people? Do we take their threat seriously, or do we let them stay within the church and hurt the weak? Paul tells us as firmly, as Jude does, Ephesians 6 - the whole armour of God must be put on, for only it will allow us to stand against the wiles of the devil, and his people.  We stand on the rock and we must stand well armed against the attacks of these evil people.
+Do we train our fellow believers to put on their armour against such people? Do we take their threat seriously, or do we let them stay within the church and hurt the weak? Paul tells us as firmly, as Jude does, `Ephesians 6` - the whole armour of God must be put on, for only it will allow us to stand against the wiles of the devil, and his people.  We stand on the rock and we must stand well armed against the attacks of these evil people.
 
 Believers must be warned about and against these evil people, and from the pulpit they should be identified and dealt with. Vigilance is the price of our Christian freedom, and we are to stand firm against all who would rob believers of their hope.
 
@@ -91,3 +91,4 @@ Doctrines
 - :doc:`/doctrines/cain_and_abel`
 - :doc:`/doctrines/balaam`
 - :doc:`/doctrines/church_discipline`
+

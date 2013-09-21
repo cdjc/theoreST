@@ -5,7 +5,7 @@ Angelic conflict
 
 #. Angels and mankind have a number of parallels:
 
-   a. Angels began in innocence and full obedience to God (`Job 38:7 Ezekiel 28:14-15`)
+   a. Angels began in innocence and full obedience to God (`Job 38:7, Ezekiel 28:14-15`)
 
    #. Angels sinned - rebellion of Satan (`Isaiah 14:12-14`)
 
