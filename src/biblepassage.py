@@ -58,14 +58,16 @@ if __name__ == '__main__':
     try:
         vrefs = vp.parse_verse_references()
     except verse_parser.ParseException as pe:
-        raise self.error("BiblePassage: parse verse ref error: "+str(pe))
+        print("BiblePassage: parse verse ref error: "+str(pe), file=sys.stderr)
+        sys.exit(1)
     if len(vrefs) != 1:
-        raise self.error("BiblePassage: One, and only one, verse reference allowed")
+        print("BiblePassage: One, and only one, verse reference allowed", file=sys.stderr)
+        sys.exit(1)
     vref = vrefs[0]
     verse = vref.verse.value if vref.verse else None
     to_verse = vref.to_verse.value if vref.to_verse else None
 
-    rst = bible.get_passage_as_rst('KJV', vref.book.value,
+    rst = bible.get_passage_as_rst('ESV', vref.book.value,
                                    vref.chapter.value, verse, to_verse,
                                    force=True)
     print(rst)

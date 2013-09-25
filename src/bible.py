@@ -180,7 +180,7 @@ def verses_as_rest(verses):
             rval += '\n'#+prefix
             raw_ref = verse.location()+'_'+str(footnote_idx)
             footnote_idx += 1
-            rval += '.. '+'[#'+raw_ref+']'+footnote.text+'\n'
+            rval += '.. '+'[#'+raw_ref+'] '+footnote.text+'\n'
     rval += '\n\n'
     return rval
         
@@ -342,9 +342,10 @@ class Retriever_BibleGateway:
         footnotes = []
         for raw_footnote in raw_footnotes:
             rst = ''
+            #print('--footnote--')
             for raw_child in raw_footnote:
                 #print(type(raw_child), hasattr(raw_child, 'name'))
-                if not hasattr(raw_child,'name'):
+                if not hasattr(raw_child,'text'): # is NavigableString
                     rst += raw_child
                 elif raw_child.name == 'i':
                     rst += '*'+raw_child.text+'*'
