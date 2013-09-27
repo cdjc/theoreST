@@ -75,7 +75,7 @@ Homosexuality is going after, "other flesh", and like the men and women who had 
 
 Homosexuals should be told that they will be allowed back into the church once they have recognised their sin and repented from it. If they started practising it again they were ejected because the church must have God's standard. 
 
-If the church lowers its standard the church no longer has a message. By calling homosexuality a disease or an inherited genetic defect, we deprive the homosexual of all hope. Immoral acts are sins that can be forgiven in Christ, and through the working of the Holy Spirit the old, sinful way of life can be abandoned and a new one established (Isaiah I:18; `1 John 1:7; 1 Corinthians 6:9,11`). God's answer to sexual immorality is in (`1 Corinthians 7:1-9`).
+If the church lowers its standard the church no longer has a message. By calling homosexuality a disease or an inherited genetic defect, we deprive the homosexual of all hope. Immoral acts are sins that can be forgiven in Christ, and through the working of the Holy Spirit the old, sinful way of life can be abandoned and a new one established (`Isaiah 1:18; 1 John 1:7; 1 Corinthians 6:9,11`). God's answer to sexual immorality is in (`1 Corinthians 7:1-9`).
 
 Application
 ~~~~~~~~~~~
