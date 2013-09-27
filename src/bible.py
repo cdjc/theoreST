@@ -132,7 +132,7 @@ class Verse:
 def verses_as_rest(verses):
     verse_num_markup = '*'
     rval = ''
-    prefix = ' |'
+    prefix = '|'
     rval = prefix
     for verse in verses:
         done_num = False

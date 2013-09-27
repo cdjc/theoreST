@@ -26,6 +26,22 @@ class BiblePassage(Directive):
     final_argument_whitespace = True
     version = None
 
+    preamble = r'''
+
+.. raw:: latex
+    
+    \begin{minipage}[c]{\textwidth}
+    
+'''
+    
+    postamble = r'''
+    
+.. raw:: latex
+    
+    \end{minipage}
+    
+'''
+
     def run(self):
         '''
         '''
@@ -54,10 +70,15 @@ class BiblePassage(Directive):
         rst = bible.get_passage_as_rst(env.config.bible_version, vref.book.value,
                                        vref.chapter.value, verse, to_verse,
                                        force=False)
+        rst = self.preamble + rst + self.postamble
         #print(rst)
         source = 'Bible Passage'
+        #include_lines = statemachine.string2lines(self.preamble, 0, convert_whitespace=False)
+        #self.state_machine.insert_input(include_lines, source)
         include_lines = statemachine.string2lines(rst, 0, convert_whitespace=True)
         self.state_machine.insert_input(include_lines, source)
+        #include_lines = statemachine.string2lines(self.postamble, 0, convert_whitespace=True)
+        #self.state_machine.insert_input(include_lines, source)
         return []
 
 class DraftComment(directives.body.Sidebar):
