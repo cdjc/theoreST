@@ -1,4 +1,4 @@
-Verses 5-7
+Verses 4-7
 ----------
 
 .. biblepassage:: Jude 1:4-7
@@ -8,7 +8,7 @@ Analysis and Background
 
 "It has ever been the object of Satan to secretly introduce evil workers into the assemblies of the saints of God, that thus the simple and the unwary may be deceived and led astray."  (Ironside, 1983, page 16).
 
-Jude had to write to counter the threat of spiritual saboteurs, spies and terrorists who had crept into the churches and were undermining the faith of believers from within the church itself. All such people are condemned by the Lord as far back as ``Deuteronomy 13:1-11``, where severe judgement is spelled out for all who lead others from the truth. Jude reminds the people of his day and ours that the Bible has many examples of the Lord's judgement upon these evil ones and we are to remember these and take warning from them. He reminds them, and us, of three great apostasies; the angels, the Israelites and the pagans of the cities of the Plain. To protect ourselves we must hold onto the truth of the gospel message.
+Jude had to write to counter the threat of spiritual saboteurs, spies and terrorists who had crept into the churches and were undermining the faith of believers from within the church itself. All such people are condemned by the Lord as far back as `Deuteronomy 13:1-11`, where severe judgement is spelled out for all who lead others from the truth. Jude reminds the people of his day and ours that the Bible has many examples of the Lord's judgement upon these evil ones and we are to remember these and take warning from them. He reminds them, and us, of three great apostasies; the angels, the Israelites and the pagans of the cities of the Plain. To protect ourselves we must hold onto the truth of the gospel message.
 
 We are not followers of a martyr or a hero who died on the cross, we are servants of the risen Lord Jesus Christ, the king of kings and Lord of Lords. The crucifixion must always be looked at in the light of the resurrection, and the two spoken of together, for we serve a victorious Saviour. It is not where you were born or who your parents are it is whether you are born again that matters eternally.
 
@@ -22,7 +22,7 @@ The cause of the fall of most churches and believers into sin, or spiritual usel
 
 Verse 4  - The people who came in unawares came in by the side door. `John 10:1-9`, is the passage that Jude is referring to here. The Lord says that those who come in other than through the door (himself) are thieves and evil men come to kill the sheep. 
 
-The Greek word here is, "pareisdouomai", and is the aorist active indicative. This means, aorist tense, they came in at different points of time, and this is a reality in the church and always will be. They have crept in to stir people up. ``John 10:10`` says that the purpose that Jesus Christ  came was that all who believe in him might have life and have it more abundantly.  
+The Greek word here is, "pareisdouomai", and is the aorist active indicative. This means, aorist tense, they came in at different points of time, and this is a reality in the church and always will be. They have crept in to stir people up. `John 10:10` says that the purpose that Jesus Christ  came was that all who believe in him might have life and have it more abundantly.  
 
 All who come through the true door of salvation have that life, but these people don't; they are not there to enjoy life in Christ but to eat and molest sheep! They are in the church but they have not come through the door, they have not come through Christ, they are not genuine believers at all, they are make believers. They are the wolves and the Lord's words over them are words of judgement and condemnation. We should be as tough as the Lord is over those who enter the church for any other reason than to serve and love him.
 
@@ -93,9 +93,11 @@ Doctrines
 
 - :doc:`/doctrines/apostasy`
 - :doc:`/doctrines/angelic_conflict`
+- :doc:`/doctrines/grace`
+- :doc:`/doctrines/god_character_of_god`
+- :doc:`/doctrines/homosexuality`
 - :doc:`/doctrines/judgement_seat_of_christ`
 - :doc:`/doctrines/judgement_great_white_throne`
-- :doc:`/doctrines/homosexuality`
 - :doc:`/doctrines/satans_strategy`
 - :doc:`/doctrines/sin_unto_death`
 

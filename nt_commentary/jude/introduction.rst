@@ -1,5 +1,3 @@
-.. :mode=rest: (for jEdit edit mode)
-
 Introduction
 ------------
 
@@ -18,7 +16,7 @@ Jude divides into four sections
 This is a very systematic treatment of the subject. It was written by Jude, the name being the Greek form of Judah (Y'hudah). Along with James (Jacob, Ya'akov), he is one of the half brothers of the Lord Jesus Christ. Both letters are very Jewish in their style and tone, they are practical and focused on correcting specific problems within the local church, and some references can appear to be obscure at first reading. There are similarities to the pastoral epistles, as the theme is the same; the defence of the truth of the historic gospel against the attacks of heretical innovators.    
 
 
-It also bears many similarities to 2 Peter, from which some believe it draws much of its content. [#]_ It is clear that one was used by the other, but which is first is still a point of debate, where good scholars differ. Compare `Jude 1:3-18`, with `2 Peter 2:1-18`, and see the parallels. The probability is that not much time elapsed between them. In Jude we have the first though, in Peter the second thought. (Robertson, 1933, Vol VI, page 183).   Mayor and Robertson's conclusion, "feels right", but this is as precise as we can be.  
+It also bears many similarities to 2 Peter, from which some believe it draws much of its content. [#]_ It is clear that one was used by the other, but which is first is still a point of debate, where good scholars differ. Compare `Jude 1:3-18`, with `2 Peter 2:1-18`, and see the parallels. The probability is that not much time elapsed between them. In Jude we have the first thought, in Peter the second thought. (Robertson, 1933, Vol VI, page 183).   Mayor and Robertson's conclusion, "feels right", but this is as precise as we can be.  
 
 .. [#] "It has a secondary origin since it summarises in an elegant style points which 2 Peter expounds with greater effort and more detail. Such smoothness of style is frequently characteristic of editors who condense and revise what has been laboriously drawn up by others." (Reike, 1984, page 189 - 190).
 

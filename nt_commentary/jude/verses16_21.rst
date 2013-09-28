@@ -40,19 +40,19 @@ Firstly remember the meaning of the phrase, "the last days". It refers to all th
 
 - They spot people and target them to take advantage of them, either because they are weak and able to be used, or because they are wealthy or powerful in influence and having them as "friends" will advance their interests.
 
-- Mockers - "empaiktes" - these are people who laugh when they should be thoughtful, they mock things that are serious. The truth is lost in the presence of those who indulge in laughter when thought is called for. If a person responds to a doctrine with a joke they have robbed others of that doctrine. They should be challenged regarding this. If they continue to mock you must deal with them, as if they are apostates.
+- Mockers - :gk:`empaiktes` - these are people who laugh when they should be thoughtful, they mock things that are serious. The truth is lost in the presence of those who indulge in laughter when thought is called for. If a person responds to a doctrine with a joke they have robbed others of that doctrine. They should be challenged regarding this. If they continue to mock you must deal with them, as if they are apostates.
 
 - Walkers after ungodly lusts - the word means that they walk on a journey and set a pattern for their lives on ungodliness. They do not care about God. He is left out of their lives.
 
-- They separate themselves and cause divisions. "Apodiorizo" - they make divisive boundaries between themselves and others and create a faction. The division is normally on the basis of pride and therefore indicate that they are superior from the people they are separating from. When the Spirit is moving in the Christians life you want to associate with other Christians, and so by their attitude of superiority they indicate they are apostates. The person who is constantly wanting to disassociate themselves from other believers, who love the Lord, is likely either to be an apostate or a carnal believer.
+- They separate themselves and cause divisions. :gk:`Apodiorizo` - they make divisive boundaries between themselves and others and create a faction. The division is normally on the basis of pride and therefore indicate that they are superior from the people they are separating from. When the Spirit is moving in the Christians life you want to associate with other Christians, and so by their attitude of superiority they indicate they are apostates. The person who is constantly wanting to disassociate themselves from other believers, who love the Lord, is likely either to be an apostate or a carnal believer.
 
-- Sensual - "psuchikos"; which means natural, unregenerate or soulish. These people live exactly like all unbelievers(because they are mostly unbelievers), having no spiritual discernment. During the week they live like unbelievers but on Sunday they make a great effort and put on their Sunday face and clothes. This is one of the reasons why those who stand for deacon or pastor should be tested by inquiring of their unbelieving workmates as to their opinion of them. A number of Christians go into the workplace with a big Bible under their arm but no witness except to their hypocrisy. If you are living soulishly your spiritual life will be under question, for the spiritual man or woman will have spiritual fruit in their life and spiritual discernment in their speech.
+- Sensual - :gk:`psuchikos`; which means natural, unregenerate or soulish. These people live exactly like all unbelievers (because they are mostly unbelievers), having no spiritual discernment. During the week they live like unbelievers but on Sunday they make a great effort and put on their Sunday face and clothes. This is one of the reasons why those who stand for deacon or pastor should be tested by inquiring of their unbelieving workmates as to their opinion of them. A number of Christians go into the workplace with a big Bible under their arm but no witness except to their hypocrisy. If you are living soulishly your spiritual life will be under question, for the spiritual man or woman will have spiritual fruit in their life and spiritual discernment in their speech.
 
 - They do not have any evidence in their lives that they are indwelt by the Holy Spirit. The Word of God is clear on this matter, they that have not the Holy Spirit are none of His - `Romans 8:9-13`. The only sign that they have the Holy Spirit is that they have a holy life, the fruit of the Holy Spirit in their daily walk through the world. The holy life does not mean speaking in tongues, or doing miracles, for all these may be counterfeited!
 
 Verses 20-21 - The behaviours of the true believer are now contrasted to the lives of the apostates. What do we do about the presence of these people in the church? We do not get distracted by them! We warn others against them, we expel them from the fellowship and we strengthen ourselves in the truth. The first thing we do is, in fact, to look at ourselves and be strong in the Lord. You are beloved, they are apostate. Your growth depends on you feeding on God's Word, believe it, apply it in your life , growing spiritually upon the foundation of our most holy faith. That foundation is the grace and mercy and love of God for us. "A definite command follows; keep yourself in the love of God. Mark that, it is not keep God loving you!" (Ironside, 1983, page 54). "To be conscious of being beloved by God is one of the great protections that the believer can possess." (Plummer, 1896, page 457).
 
-Jude uses the word "holy" - "hagios" - and this means set apart for service. In combination with this he mentions prayer, and that is appropriate for the two go together where faith is genuine. Praying in the Spirit means that the person should pray under the control of the Holy Spirit.  `Ephesians 6:18`. This does not mean speaking in tongues it means praying in fellowship with the Holy Spirit, in obedience to the revealed word of God and with sins dealt with in life. As you feed on God's Word you learn more about God's policy. In your prayer life you will repeat it back to God so that it becomes a reality in your life, and fellowship with the Lord so that it becomes a living part of you. You talk about God's will for your life, to God, in your prayers.
+Jude uses the word "holy" - :gk:`hagios` - and this means set apart for service. In combination with this he mentions prayer, and that is appropriate for the two go together where faith is genuine. Praying in the Spirit means that the person should pray under the control of the Holy Spirit.  `Ephesians 6:18`. This does not mean speaking in tongues it means praying in fellowship with the Holy Spirit, in obedience to the revealed word of God and with sins dealt with in life. As you feed on God's Word you learn more about God's policy. In your prayer life you will repeat it back to God so that it becomes a reality in your life, and fellowship with the Lord so that it becomes a living part of you. You talk about God's will for your life, to God, in your prayers.
 
 Keep yourself in the love of God, live in the sphere of God's love. His banner over you is love. Protect yourself by being occupied with Christ giving thanks to Him as you walk through the day. When you face temptation you resist by looking at the Cross, and reminding yourself of his love for you.
 
@@ -74,12 +74,12 @@ We must ensure we know the full counsel of God's Word so that we are never outfo
 Doctrines
 ~~~~~~~~~
 
-- :doc:`/doctrines/spirituality`
-- :doc:`/doctrines/sanctification`
-- :doc:`/doctrines/eternal_life`
-- :doc:`/doctrines/prayer`
-- :doc:`/doctrines/imitate_christ`
 - :doc:`/doctrines/apostasy`
+- :doc:`/doctrines/eternal_life`
+- :doc:`/doctrines/imitate_christ`
 - :doc:`/doctrines/last_days_characteristics`
 - :doc:`/doctrines/mystery_of_iniquity`
+- :doc:`/doctrines/prayer`
+- :doc:`/doctrines/sanctification`
+- :doc:`/doctrines/spirituality`
 

@@ -34,7 +34,7 @@ Balaam knew some doctrine but did not understand the nature of God's grace and t
 
 The second thing he did not know was his position before God. First of all he tried to curse Israel but God would not allow him. He then gave Balak some advice to the effect that if you want to destroy Israel you have to separate them from God's blessing and put them under the sin unto death and then God will do it for you. He told Balak to send his most beautiful women to seduce the young men of Israel. After that they should be invited down to the temple to worship the pagan gods. 
 
-By immorality you compromise the man and you follow this with religious idolatry. God will then deal with Israel. God does not like immorality or religious apostasy. For this information Balaam received a fortune and for a while it worked until Phineas got to work with his javelin and Balaam died. Balaam knew the truth but the truth did not get to know him.  He made money out of spiritual things, to "consume it upon his lusts", (`James 4` : 3), and there are still people in the church nowadays who use their faith for money making purposes, for selfish lustful reasons.
+By immorality you compromise the man and you follow this with religious idolatry. God will then deal with Israel. God does not like immorality or religious apostasy. For this information Balaam received a fortune and for a while it worked until Phineas got to work with his javelin and Balaam died. Balaam knew the truth but the truth did not get to know him.  He made money out of spiritual things, to "consume it upon his lusts", (`James 4:3`), and there are still people in the church nowadays who use their faith for money making purposes, for selfish lustful reasons.
 
 The third person was Korah who had two friends/relatives Dathan and Abiram  Korah was a power hungry religious apostate.   In your ministry you will meet all three of Satan's men. 
 
@@ -88,7 +88,7 @@ Believers must be warned about and against these evil people, and from the pulpi
 Doctrines
 ~~~~~~~~~
 
-- :doc:`/doctrines/cain_and_abel`
 - :doc:`/doctrines/balaam`
+- :doc:`/doctrines/cain_and_abel`
 - :doc:`/doctrines/church_discipline`
 

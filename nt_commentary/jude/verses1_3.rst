@@ -64,11 +64,12 @@ We are to stand for the faith of the apostles, and argue for that alone; no chan
 Doctrines
 ~~~~~~~~~
 
-- :doc:`/doctrines/god_character_of_god`
 - :doc:`/doctrines/bible_inspiration`
+- :doc:`/doctrines/brotherhood_of_believers`
 - :doc:`/doctrines/election_and_predestination`
 - :doc:`/doctrines/eternal_security`
 - :doc:`/doctrines/fatherhood_of_god`
 - :doc:`/doctrines/fundamentalism`
+- :doc:`/doctrines/god_character_of_god`
 
 

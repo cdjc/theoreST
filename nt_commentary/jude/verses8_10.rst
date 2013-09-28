@@ -39,8 +39,8 @@ Doctrines
 ~~~~~~~~~
 
 - :doc:`/doctrines/apostasy`
-- :doc:`/doctrines/sin`
 - :doc:`/doctrines/satan_adversary`
 - :doc:`/doctrines/satans_work`
 - :doc:`/doctrines/satans_destiny`
+- :doc:`/doctrines/sin`
 

@@ -8,7 +8,7 @@ Versioning
 
 Translation: Interaction with versioning. Automatic via online translation provider. Pass through greek words as is (also, consider non-latin target alphabet)
 
-LaTeX: biblepassage footnotes should be directly under the passage, not at the bottom of the page
+DONE: LaTeX: biblepassage footnotes should be directly under the passage, not at the bottom of the page
 
 DONE: LaTeX: Use rubber to auto-rerun until references are correct
 
@@ -22,16 +22,18 @@ Non-latin languages from biblegateway.com
 
 biblepassage directive to have option to exclude verse numbers.
 
-Fix biblepassage footnotes. See Philemon 1:8-21.
+DONE: Fix biblepassage footnotes. See Philemon 1:8-21.
 
 Fix references to whole chapters (currently just points to first verse)
+
+Citations and bibliography. ``sphinxcontrib.bibtex`` exists, but is not yet suitable: citations are limited to [1] format based on upstream pybtex restrictions.
 
 Editing
 -------
 
 Remove KJV-isms. Useful to ease automatic translations.
 
-Create style guide.
+Create style guide: Conventions used etc. "What the rst should look like". 
 
 Pre-existing Bugs
 -----------------

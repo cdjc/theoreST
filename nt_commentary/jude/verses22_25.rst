@@ -14,7 +14,7 @@ In order to do this you need to be walking closely with the Lord and be constant
 
 Garments soiled with the flesh, is a phrase that refers to anything associated with the O.S.N. and such things must be hated and rejected, as if infected with the plague. If you are not disgusted about everything involving the O.S.N. you are in danger. Jude has given us in this letter warnings about evil in the church that we may help those who are trapped in it, but we must not get mesmerised by the "nice" things about evil practises; they are to be hated!     
 
-"Mercy must not become a snare luring the orthodox into the falsehood of those he is trying to help."  (Sidebottom, 1982, page 93). Clothing can carry some influences with it, as is clear from `Mark 5:27-30,  Acts 19 : 11`ff. In these cases the influence is good, but it may be bad also, and we must not be complacent about any things associated with evil.
+"Mercy must not become a snare luring the orthodox into the falsehood of those he is trying to help."  (Sidebottom, 1982, page 93). Clothing can carry some influences with it, as is clear from `Mark 5:27-30,  Acts 19:11`. In these cases the influence is good, but it may be bad also, and we must not be complacent about any things associated with evil.
 
 Verse 24-25  - These verses are a song of praise and confidence and now within the church, a favourite benediction. He is reminding everybody that they are on the winning team. God has kept you, is keeping you and will keep you through to glory. You are in the Lord's hands. He will give the glory and get the glory.  
 
