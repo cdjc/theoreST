@@ -2,6 +2,7 @@ Announcement to Zacharias of John the Baptist's Birth
 -----------------------------------------------------
 
 .. biblepassage:: Luke 1:5-25
+    :bold:
 
 Background and Analysis
 -----------------------
@@ -21,3 +22,6 @@ Zechariah was in the course of Abijah which was the eighth in the order which ha
 We note later in this verse that not only Zechariah but also his wife Elizabeth came from the tribe of Levi. Their son, John the Baptist, was also most well qualified by birth to be a priest being the son of a father who was a priest and of a mother who was the daughter of a priest.  By both father and mother he was descended from the family of Amram of whom came Moses, Aaron and Miriam three of the most illustrious characters in Jewish History.
 
 We thus have a totally qualified king in the Lord Jesus Christ, and priest in the form of John the Baptist.
+
+.. biblepassage:: Luke 1:6
+

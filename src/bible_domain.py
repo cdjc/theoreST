@@ -17,14 +17,18 @@ import bible
 import verse_parser
 
 import verse_role
+from bibleyves import BiblePassageYVES
 
 greek_role = roles.GenericRole('gk', nodes.emphasis)
 
+
+    
 class BiblePassage(Directive):
     required_arguments = 1
     optional_aguments = 0
     final_argument_whitespace = True
     version = None
+    option_spec = {'bold':directives.flag}
 
     preamble = r'''
 
@@ -38,7 +42,7 @@ class BiblePassage(Directive):
     
 .. raw:: latex
     
-    \end{minipage}
+    \end{minipage} 
     
 '''
 
@@ -47,7 +51,7 @@ class BiblePassage(Directive):
         '''
         env = self.state.document.settings.env
         #version = env.config.bible_version
-        #print(dir(env.config), file=sys.stderr)
+        #print('options:',self.options, file=sys.stderr)
         if 'bible_version' not in env.config:
             raise self.error("BiblePassage: no bible version. Call set_version() after biblepassage import")
         ref = self.arguments[0]
@@ -100,7 +104,7 @@ class BibleDomain(Domain):
     
     object_types = {}
     
-    directives = {'biblepassage' : BiblePassage,
+    directives = {'biblepassage' : BiblePassageYVES,
                   'draftcomment' : DraftComment}
     
     roles = {'gk' : greek_role,
@@ -110,7 +114,7 @@ class BibleDomain(Domain):
     
 def setup(app):
     app.add_domain(BibleDomain)
-    app.add_config_value('bible_version','KJV', 'env')
+    app.add_config_value('bible_version','NET', 'env')
     app.add_config_value('draft',False,'env')
     app.add_config_value('standalone',True,'env')
     

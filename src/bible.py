@@ -126,6 +126,7 @@ class Verse:
         #rval = str(self.number)+'\n'+'\n'.join((''.join(y[1] for y in x) for x in self.lines))
         if len(self.footnotes) > 0:
             rval += ' '+'{'+' | '.join(str(f) for f in self.footnotes)+'}'
+        #print(rval)
         return rval
         
 
@@ -319,7 +320,11 @@ class Retriever_BibleGateway:
             elif 'small-caps' in elem['class']:
                 self.r_curr_verse_line.append(('sc',elem.text))
             elif 'indent-1-breaks' in elem['class']:
-                self.r_curr_verse_line.append(('tab','    '))
+                self.r_curr_verse_line.append(('tab','  b '))
+            elif 'indent-1' in elem['class']:
+                self.r_curr_verse_line.append(('tab',' nb '))
+                for child in elem.children:
+                    self.r_elem(child)                
             else:
                 print('unknown class:',elem['class'])
                 for child in elem.children:
@@ -359,7 +364,7 @@ class Retriever_BibleGateway:
             for line in verse.lines:
                 for idx,pair in enumerate(line):
                     if pair[0] == 'fn':
-                        ref = ' [#'+verse.location()+'_'+str(part_i)+']_'
+                        ref = ' [#'+verse.location()+'_'+str(part_i)+']_ '
                         line[idx] = ('fn',ref)
                         foot_text = raw_footnote_list[foot_i]
                         verse.footnotes.append(Footnote(foot_text, ref, verse))
