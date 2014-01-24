@@ -1,0 +1,11 @@
+<document source="bible_passage_chapter_verse_bold.rst">
+    <paragraph>
+        Paragraph One
+    <strong>
+        <block_quote>
+            <line_block>
+                <line>
+                    1 
+                     King Ahasuerus then imposed forced labor on the land and on the coastlands of the sea. 
+    <paragraph>
+        Paragraph Two

@@ -15,7 +15,8 @@ class BiblePassageYVES(Directive):
     optional_aguments = 0
     final_argument_whitespace = True
     version = None
-    option_spec = {'bold':directives.flag}
+    option_spec = {'bold':directives.flag,
+                   'title':directives.unchanged}
     
     preamble = r'''
 
@@ -37,14 +38,16 @@ class BiblePassageYVES(Directive):
         try:
             env = self.state.document.settings.env
             #version = env.config.bible_version
-            #print('options:',self.options, file=sys.stderr)
+            print('options:',self.options, file=sys.stderr)
             if 'bible_version' not in env.config:
                 raise self.error("BiblePassage: no bible version. Call set_version() after biblepassage import")
         except AttributeError:
             # probably running from docutils rather than sphionx
             pass
         ref = self.arguments[0]
-
+        if 'title' in self.options and self.options['title'] == '':
+            self.options['title'] = ref
+        #print('options:',self.options, file=sys.stderr)
         vp = verse_parser.Parser(ref)
         try:
             vrefs = vp.parse_verse_references()
@@ -58,7 +61,12 @@ class BiblePassageYVES(Directive):
         #to_verse = vref.to_verse.value if vref.to_verse else None
         #print('Book',type(vref.book),'Chapter',vref.chapter)
         y = YvesReader()
-        nodes = y.rst_nodes('NET',str(vref.book),vref.chapter.value, vref.verse, vref.to_verse)
+        nodes = y.rst_nodes(self.options,
+                            'NET',
+                            str(vref.book),
+                            vref.chapter.value, 
+                            vref.verse.value if vref.verse else None,
+                            vref.to_verse.value if vref.to_verse else None)
         return nodes
         
         
@@ -123,17 +131,53 @@ class TextWriter(object):
 
 class RstWriter(object):
     
-    def __init__(self, from_verse = None, to_verse = None):
+    def __init__(self, options, from_verse = None, to_verse = None):
+        self.options = options
+        self.node_stack = [(nodes.block_quote(), 0)] # node, depth
+        self.is_first = True
         self.show_label = False
-        self.nodes = [nodes.block_quote()]
-        self.curr_line_blocks = []
-        self.curr_lines = []
         self.current_verse = 0 # TODO: Need to handle some psalms that have a 'verse 0'
         self.from_verse = from_verse
         if self.from_verse is not None and to_verse is None:
             self.to_verse = from_verse
         else:
             self.to_verse = to_verse
+        if 'title' in options:
+            title = nodes.Text(options['title'])
+            line = nodes.line()
+            line_block = nodes.line_block()
+            line.append(title)
+            line_block.append(line)
+            self.node_stack[0][0].append(line_block)
+
+    def get_base_node(self):
+        self._unwind_stack()
+        base_node = self.node_stack[0][0]
+        if 'bold' in self.options:
+            bold_node = nodes.strong()
+            bold_node.append(base_node)
+            return bold_node
+        return base_node
+
+    def _update_stack(self, item, depth):
+        if not self.verse_wanted():
+            return
+        if self.is_first:
+            self.is_first = False
+            self._update_stack(nodes.line_block(), depth - 2)
+            self._update_stack(nodes.line(), depth - 1)
+        tos,tos_depth = self.node_stack[-1]
+        while depth <= tos_depth:
+            del self.node_stack[-1]
+            old_node = tos
+            tos,tos_depth = self.node_stack[-1]
+            tos.append(old_node)
+        self.node_stack.append((item, depth))
+        
+    def _unwind_stack(self):
+        while len(self.node_stack) > 1:
+            self.node_stack[-2][0].append(self.node_stack[-1][0])
+            del self.node_stack[-1]
         
     def verse_wanted(self):
         if self.from_verse is None:
@@ -141,23 +185,16 @@ class RstWriter(object):
         return self.from_verse <= self.current_verse <= self.to_verse
     
     def span_content(self, elem, depth):
-        if self.verse_wanted() and elem.text.strip():
-            self.curr_lines[-1].append(nodes.Text(elem.text))
-            #print(elem.text, end='')
+        if elem.text.strip():
+            self._update_stack(nodes.Text(elem.text), depth)
         
     def span_ft(self,elem, depth):
         pass
         #print('[ft]', end='')
         
     def div_p(self, elem, depth):
-        if self.verse_wanted() or len(self.curr_line_blocks) == 0:
-            new_node = nodes.line_block()
-            self.curr_line_blocks.append(new_node)
-            new_line = nodes.line()
-            self.curr_lines.append(new_line)
-            
-            self.nodes[-1].append(new_node)
-            new_node.append(new_line)
+        self._update_stack(nodes.line_block(), depth - 1)
+        self._update_stack(nodes.line(), depth)
         
     def span_verse(self, elem, depth):
         self.show_label = True
@@ -165,15 +202,16 @@ class RstWriter(object):
     def span_label(self, elem, depth):
         if self.show_label:
             self.current_verse = int(elem.text)
-            if self.verse_wanted():
-                self.curr_lines[-1].append(nodes.Text(elem.text+' '))
-                #print(elem.text+' ', end='')
+            self._update_stack(nodes.Text(elem.text+' '), depth)
             self.show_label = False
             
     def span_bd(self, elem, depth): # bold
         pass
         
     def span_it(self, elem, depth): # italics
+        italics = nodes.emphasis()
+        self._update_stack(italics, depth)
+        #print('italics')
         pass
         
     def span_sc(self, elem, depth): # small caps
@@ -204,6 +242,11 @@ class RstWriter(object):
         print(' '*40, end='')
         
     def unknown(self, elem_name, depth):
+        if elem_name in ('div_version',
+                         'div_book',
+                         'div_chapter',
+                         'div_label'):
+            return
         print('\n'+'-'*40+'\nUnknown elem:'+elem_name, file=sys.stderr)
 
 class ProcessYvesXML(object):
@@ -228,6 +271,7 @@ class ProcessYvesXML(object):
         elem_name = tag+'_'+klass
         #print(' '*(depth-1)+elem_name)
         if elem_name not in self.ignore_names:
+            #print(elem_name, depth)
             if hasattr(self.writer, elem_name):
                 method = getattr(self.writer, elem_name)
                 method(elem, depth)
@@ -293,20 +337,21 @@ class YvesReader:
         
         return newstrbuf
 
-    def rst_nodes(self, version, book, chapter, verse = None, to_verse = None):
+    def rst_nodes(self, options, version, book, chapter, verse = None, to_verse = None):
         fname = self.yves_file(version, book, chapter)
         rawxml = self.read_yves(fname)
         processor = ProcessYvesXML(rawxml)
-        writer = RstWriter(2,6)
+        writer = RstWriter(options, verse,to_verse)
         nodes = processor.process(writer)
-        return writer.nodes
+        #return writer.nodes
+        return [writer.get_base_node()]
         #print(rawxml)
     
     
 if __name__ == '__main__':
     print('test')
     y = YvesReader()
-    nodes = y.rst_nodes('NET','Esther',9)
+    nodes = y.rst_nodes({}, 'NET','Esther',9)
     print()
     print(nodes[-1].pformat())
     #for node in list(nodes[-1].traverse()):
