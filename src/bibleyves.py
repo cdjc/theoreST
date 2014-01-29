@@ -9,6 +9,7 @@ from docutils.parsers.rst import roles, Directive, directives
 from docutils import nodes
 
 import verse_parser
+import bible_names
 
 class BiblePassageYVES(Directive):
     required_arguments = 1
@@ -287,16 +288,16 @@ class ProcessYvesXML(object):
 class YvesReader:
 
     yves_dir = '/home/theorest/yves'
-    book_codes = {'Esther' : 'EST'}
+    #book_codes = {'Esther' : 'EST'}
     version_codes = dict(KJV=1, AMP=8, ESV=59, MSG=97, NET=107, NIV=111, NKJV=114)
     
     def __init__(self):
         pass
     
     def book_code(self, book):
-        if book not in self.book_codes:
+        if book not in bible_names.book_codes:
             raise Exception("Unrecognised bible book: "+str(book))
-        return self.book_codes[book]
+        return bible_names.book_codes[book]
     
     def version_code(self, version):
         if version not in self.version_codes:
@@ -349,6 +350,31 @@ class YvesReader:
     
     
 if __name__ == '__main__':
+    
+    if len(sys.argv) == 2:
+        fname = sys.argv[1]
+        if not fname.endswith('.yves'):
+            print('file must be .yves file', file=sys.stderr)
+            sys.exit(1)
+        y = YvesReader()
+        raw = y.read_yves(fname)
+        #print(rawxml)
+        import lxml.etree
+        try:
+            import xml.dom.minidom
+            xml = xml.dom.minidom.parseString(raw)
+            print(xml.toprettyxml())
+            #xml = lxml.etree.fromstring(raw)
+            #print(lxml.etree.tostring(xml, pretty_print = True))
+        except lxml.etree.XMLSyntaxError:
+            # not an xml file. Maybe a JSON file
+            import json
+            #try:
+            print(json.dumps(json.loads(raw), indent=2))
+            #except:
+            
+        sys.exit(0)
+        
     print('test')
     y = YvesReader()
     nodes = y.rst_nodes({}, 'NET','Esther',9)
