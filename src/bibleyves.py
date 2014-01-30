@@ -161,7 +161,7 @@ class RstWriter(object):
         return base_node
 
     def _update_stack(self, item, depth):
-        if not self.verse_wanted():
+        if not self._verse_wanted():
             return
         if self.is_first:
             self.is_first = False
@@ -180,7 +180,7 @@ class RstWriter(object):
             self.node_stack[-2][0].append(self.node_stack[-1][0])
             del self.node_stack[-1]
         
-    def verse_wanted(self):
+    def _verse_wanted(self):
         if self.from_verse is None:
             return True
         return self.from_verse <= self.current_verse <= self.to_verse
@@ -198,10 +198,10 @@ class RstWriter(object):
         self._update_stack(nodes.line(), depth)
         
     def span_verse(self, elem, depth):
-        self.show_label = True
+        self.show_label = True # Next label could be a note instead though
         
     def span_label(self, elem, depth):
-        if self.show_label:
+        if self.show_label and elem.text != '#':
             self.current_verse = int(elem.text)
             self._update_stack(nodes.Text(elem.text+' '), depth)
             self.show_label = False
@@ -212,11 +212,10 @@ class RstWriter(object):
     def span_it(self, elem, depth): # italics
         italics = nodes.emphasis()
         self._update_stack(italics, depth)
-        #print('italics')
-        pass
         
     def span_sc(self, elem, depth): # small caps
-        pass #print(elem.text.upper(), end='')
+        small_caps = nodes.emphasis() #TODO: Fix this one day
+        self._update_stack(small_caps, depth)
         
     def span_nd(self, elem, depth): # name of God (Deity)
         pass
@@ -264,7 +263,7 @@ class ProcessYvesXML(object):
             
     def process_elem(self, elem, depth):
         tag = elem.tag
-        
+        #print(tag)
         if 'class' in elem.attrib:
             klass = elem.attrib['class'].strip().split()[0]
         else:
@@ -288,7 +287,7 @@ class ProcessYvesXML(object):
 class YvesReader:
 
     yves_dir = '/home/theorest/yves'
-    #book_codes = {'Esther' : 'EST'}
+
     version_codes = dict(KJV=1, AMP=8, ESV=59, MSG=97, NET=107, NIV=111, NKJV=114)
     
     def __init__(self):
