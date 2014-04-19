@@ -23,7 +23,7 @@ class BiblePassageYVES(Directive):
 
 .. raw:: latex
     
-    \begin{minipage}[c]{\textwidth}
+    \begin{minipage}[c]{\textwidth}\bfseries
     
 '''
     
@@ -36,10 +36,11 @@ class BiblePassageYVES(Directive):
 '''
 
     def run(self):
+        #print('RUN')
         try:
             env = self.state.document.settings.env
             #version = env.config.bible_version
-            print('options:',self.options, file=sys.stderr)
+            #print('options:',self.arguments[0],self.options, file=sys.stdout)
             if 'bible_version' not in env.config:
                 raise self.error("BiblePassage: no bible version. Call set_version() after biblepassage import")
         except AttributeError:
@@ -148,16 +149,17 @@ class RstWriter(object):
             line = nodes.line()
             line_block = nodes.line_block()
             line.append(title)
+            if 'bold' in options:
+                bold = nodes.strong()
+                bold.append(line)
+                line = bold
             line_block.append(line)
             self.node_stack[0][0].append(line_block)
 
     def get_base_node(self):
         self._unwind_stack()
         base_node = self.node_stack[0][0]
-        if 'bold' in self.options:
-            bold_node = nodes.strong()
-            bold_node.append(base_node)
-            return bold_node
+        # Making the whole lot bold here doesn't work for LaTeX :-(
         return base_node
 
     def _update_stack(self, item, depth):
@@ -187,7 +189,13 @@ class RstWriter(object):
     
     def span_content(self, elem, depth):
         if elem.text.strip():
-            self._update_stack(nodes.Text(elem.text), depth)
+            if 'bold' in self.options:
+                node = nodes.strong()
+                node.append(nodes.Text(elem.text))
+            else:
+                node = nodes.Text(elem.text)
+            self._update_stack(node, depth)
+            #self._update_stack(nodes.Text(elem.text), depth)
         
     def span_ft(self,elem, depth):
         pass
@@ -195,7 +203,11 @@ class RstWriter(object):
         
     def div_p(self, elem, depth):
         self._update_stack(nodes.line_block(), depth - 1)
-        self._update_stack(nodes.line(), depth)
+        node = nodes.line()
+        #if 'bold' in self.options:
+        #    node = nodes.strong()
+        #    node.append(nodes.line())
+        self._update_stack(node, depth)
         
     def span_verse(self, elem, depth):
         self.show_label = True # Next label could be a note instead though
@@ -203,7 +215,7 @@ class RstWriter(object):
     def span_label(self, elem, depth):
         if self.show_label and elem.text != '#':
             self.current_verse = int(elem.text)
-            self._update_stack(nodes.Text(elem.text+' '), depth)
+            self._update_stack(nodes.Text(' '+elem.text+' '), depth)
             self.show_label = False
             
     def span_bd(self, elem, depth): # bold

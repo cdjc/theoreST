@@ -7,6 +7,7 @@ Background and Analysis
 -----------------------
 
 .. biblepassage:: Luke 1:1
+    :bold:
 
 In verse 1 we see that many had written down accounts of the life and ministry of the Lord Jesus Christ by the time Luke begins his record. We do not know how many but certainly more than the two or three who wrote the canonical gospels. The word translated “taken in hand” is a compound verb comprising “cheir” for hand and “epi” meaning upon.
 
@@ -18,6 +19,7 @@ Luke had two sources of information as an historian; both written
 material from others already in writing, and oral history from the eyewitnesses of the Lord’s ministry.  He will blend these two sources together in his Gospel account, as a record that Paul’s lawyer can use to explain to the Roman Court his client’s belief system and the legality of its tenants and origins.
 
 .. biblepassage:: Luke 1:2
+    :bold:
 
 Here we see that Luke did not claim himself to be an eyewitness but he had interviews with those who were. We note that the Greek word Paradidomi which is translated “delivered”, is made up of the Greek words for side by side, and to give. Luke says that here he has been handed down thoroughly reliable information both oral and written. He was a secondary and not primary witness to the events of the Gospel, but the material is totally reliable and not fables.  In the Acts record he will be an eye witness from Chapter 16 and will give us accurate indication of this.
 

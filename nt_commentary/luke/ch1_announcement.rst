@@ -3,11 +3,13 @@ Announcement to Zacharias of John the Baptist's Birth
 
 .. biblepassage:: Luke 1:5-25
     :bold:
+    :title:
 
 Background and Analysis
 -----------------------
 
 .. biblepassage:: Luke 1:5
+    :bold:
 
 In the days of Herod the king relates to Herod the Great. For full coverage as to his lineage see section 15. He claimed to be a proselyte to the Jewish religion but used Judaism only as much as it would enhance his secular plans.  He was the archetypal religious criminal figure using people’s faith to his own political ends and worshipping power alone.
 
@@ -24,4 +26,4 @@ We note later in this verse that not only Zechariah but also his wife Elizabeth 
 We thus have a totally qualified king in the Lord Jesus Christ, and priest in the form of John the Baptist.
 
 .. biblepassage:: Luke 1:6
-
+    :bold:
