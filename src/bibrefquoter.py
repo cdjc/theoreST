@@ -29,7 +29,14 @@ re_raw = '('+re_names+r'\s+\d+(:(\s*(,(?=\s*(\d+|'+re_names+'))|-|;|:|'+re_names
 re_bibref = re.compile(re_raw)
 
 def bibquote(text):
-    return re_bibref.sub(r'`\1`', text)
+    lines = text.split('\n')
+    done_lines = []
+    for line in lines:
+        if line.startswith('.. biblepassage::'):
+            done_lines.append(line)
+        else:
+            done_lines.append(re_bibref.sub(r'`\1`', line))
+    return '\n'.join(done_lines)
 
 def test():
     tests = \

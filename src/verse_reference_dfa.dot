@@ -1,0 +1,27 @@
+digraph verse_reference {
+
+book -> start_ref [label="from-c:from-v"];
+book -> start_chaponly_ref [label="from-c"];
+start_ref -> range [label="dash"];
+start_ref -> verse_ref_sep [label="comma"];
+range -> end_verse [label="to-v"];
+range -> end_chap_verse [label="to-c:to-v"];
+end_verse -> verse_ref_sep [label="comma"];
+end_chap_verse -> chap_verse_ref_sep [label="comma"];
+verse_ref_sep -> start_ref [label="from-v"];
+verse_ref_sep -> start_ref [label="from-c:from-v"];
+verse_ref_sep -> book [label="book"];
+chap_verse_ref_sep -> start_ref [label="to-c:to-v"];
+chap_verse_ref_sep -> book [label="book"];
+
+start_chaponly_ref -> chaponly_range [label="dash"];
+start_chaponly_ref -> chaponly_sep [label="comma"];
+chaponly_range -> end_chaponly_chap [label="to-c"];
+chaponly_range -> end_chaponly_chap_verse [label="to-c:to-v"];
+end_chaponly_chap -> chaponly_sep [label="comma"];
+end_chaponly_chap_verse -> chaponly_sep [label="comma"];
+chaponly_sep -> start_chaponly_ref [label="from-c"];
+chaponly_sep -> book [label="book"];
+chaponly_sep -> start_ref [label="from-c:from-v"];
+
+}

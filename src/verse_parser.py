@@ -173,7 +173,11 @@ class Parser:
         self.index = 0            # current token
         self.refs = []            # verse reference objects
         self.book = None         # current book
-        self.chapter = None      # current chapter
+        self.from_verse = None
+        self.to_verse = None
+        self.from_chapter = None  
+        self.to_chapter = None
+        self.chapter = None       # current_chapter (p_ methods)
         self.text = ""            # text of current verse reference
         self.swallowed = []       # tokens 'swallowed'
         
@@ -203,6 +207,74 @@ class Parser:
                 raise ParseException('One reference with | char',str(len(self.refs))+' references')
             self.refs[0].text = self.explicit_txt
         return self.refs
+        
+    def s_book(self):
+        self.book = self.swallow(Book)
+        self.text += self.book.value
+        if self.peek([Number, Colon, Number]):
+            return self.s_start_ref
+        if self.cur_tok_is(Number):
+            return None
+        raise ParseException({Number},self.cur_tok())
+    
+    def s_start_ref(self):
+        self.from_chapter = self.swallow(Number)
+        self.swallow(Colon)
+        self.from_verse = self.swallow(Number)
+        
+        if self.cur_tok_is(SubVerse):
+            self.from_sub_verse = self.swallow()
+        
+        if self.cur_tok_is(Dash):
+            return self.s_range
+        if self.cur_tok_is(Comma):
+            return self.s_verse_ref_sep
+        if self.eof():
+            return None
+        raise ParseException({Dash,Comma, Eof},self.cur_tok())
+    
+    def s_range(self):
+        self.swallow(Dash)
+        if self.peek([Number,Colon, Number]):
+            return self.s_end_chap_verse
+        if self.peek([Number]):
+            return self.s_end_verse
+        raise ParseException({Number}, self.cur_tok())
+    
+    def s_end_verse(self):
+        self.to_verse = self.swallow(Number)
+        
+        if self.cur_tok_is(SubVerse):
+            self.to_sub_verse = self.swallow()
+            
+        if self.cur_tok_is(Comma):
+            return self.s_verse_ref_sep
+        if self.eof():
+            return None
+        raise ParseException({Comma,SubVerse, Eof}, self.cur_tok())
+    
+    def s_verse_ref_sep(self):
+        self.swallow(Comma)
+        
+        if self.cur_tok_is(Book):
+            return self.s_book
+        if self.peek([Number,Colon, Number]):
+            return self.s_start_ref
+        if self.peek([Number]):
+            return self.s_start_ref
+        raise ParseException({Book, Number}, self.cur_tok())
+        
+    def s_end_chap_verse(self):
+        self.swallow(Comma)
+                
+        if self.cur_tok_is(Book):
+            return self.s_book
+        if self.peek([Number,Colon, Number]):
+            return self.s_start_ref
+        raise ParseException({Book, Number}, self.cur_tok()) # Not quite right   
+        
+        
+        
         
     def p_book(self):
         self.book = self.swallow(Book)

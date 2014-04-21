@@ -37,3 +37,5 @@
     .. toctree::
         
         doctrines/ambassador
+        doctrines/hell_and_hades
+        doctrines/miracles_purpose
