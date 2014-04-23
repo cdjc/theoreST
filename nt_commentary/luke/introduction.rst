@@ -146,4 +146,6 @@ Doctrines
 
 - :doc:`/doctrines/hell_and_hades`
 - :doc:`doctrines/miracles_purpose`
+- :doc:`doctrines/christ_jesus_christ`
+- :doc:`doctrines/christ_deity`
 

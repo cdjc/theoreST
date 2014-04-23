@@ -49,6 +49,7 @@ def verse_reference_role(role, rawtext, text, lineno, inliner, options={}, conte
     try:
         vrlist = p.parse_verse_references()
     except ParseException as pe:
+        #print(pe)
         msg = inliner.reporter.error("Exception parsing '"+text+"':"+str(pe), line=lineno)
         prb = inliner.problematic(rawtext, rawtext, msg)
         return [prb], [msg]

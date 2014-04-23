@@ -35,7 +35,11 @@ def bibquote(text):
         if line.startswith('.. biblepassage::'):
             done_lines.append(line)
         else:
-            done_lines.append(re_bibref.sub(r'`\1`', line))
+            newline = re_bibref.sub(r'`\1`', line)
+            # We might run over the same file twice.
+            # So might have just back-quoted already-backquoted references.
+            newline = newline.replace("``","`") # Easier this way than with -ve lookaheads/behinds
+            done_lines.append(newline)
     return '\n'.join(done_lines)
 
 def test():

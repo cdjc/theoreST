@@ -37,5 +37,10 @@
     .. toctree::
         
         doctrines/ambassador
+        doctrines/bible_inspiration
+        doctrines/christ_deity
+        doctrines/christ_jesus_christ
         doctrines/hell_and_hades
         doctrines/miracles_purpose
+        doctrines/priests
+        doctrines/priests_levitical

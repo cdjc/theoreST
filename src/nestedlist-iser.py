@@ -39,6 +39,9 @@ class Node:
         self.children = []
         self.numbered = numbered
         
+    def __str__(self):
+        return 'level: '+str(self.level)+' "'+self.text+'" children:'+str(len(self.children))+' Numbered:'+str(self.numbered)
+        
 
 root = Node(0,'')
 stack = [root]
@@ -48,6 +51,8 @@ collecting = False
 
 lines = sys.stdin.readlines()
 last_match = ''
+last_numbered_node = None
+guess_made = False # Did we guess where to put unnumbered lines?
 for line in lines:
     line = line.strip()
     #print(line)
@@ -91,26 +96,37 @@ for line in lines:
         n = Node(1, num_match.group(2))
         root.children.append(n)
         last_match = ('num', num_match.group(1))
+        last_numbered_node = n
         continue
     if lett_match != None:
         #print("    let ",lett_match.group(1), lett_match.group(2), file=sys.stderr)
         n = Node(2, lett_match.group(2))
         root.children[-1].children.append(n)
         last_match = 'let',lett_match.group(1)
+        last_numbered_node = n
         continue
     if rom_match != None:
         #print("        rom ",rom_match.group(1), rom_match.group(6), file=sys.stderr)
         n = Node(3, rom_match.group(6))
         root.children[-1].children[-1].children.append(n)
         last_match = 'rom',rom_match.group(1)
+        last_numbered_node = n
         continue
     if (num_match, lett_match, rom_match) == (None, None, None):
+        # We can't tell what numbered node this is supposed to be attached to (if any).
+        # We will attach it to the most recent numbered node (if there is one).
         n = Node(-1,text,numbered = False)
-        if len(root.children) > 0:
-            root.children[-1].children.append(n) # Just fix this up manually later
+        guess_made = True
+        if last_numbered_node:
+            last_numbered_node.children.append(n)
+        
+        #if len(root.children) > 0:
+        #    print("### ",text)
+        #    print(root.children[-1].children[-1])
+        #    root.children[-1].children.append(n) # Just fix this up manually later
         else:
             root.children.append(n)
-        #print("### ",text)
+        
 
 #end_of_ordered_list
 
@@ -141,3 +157,6 @@ def output_rest(node, depth, child_num = 0):
 print(heading.capitalize())
 print('~'*len(heading))
 output_rest(root,-1)
+
+if guess_made:
+    print('.. Guess Made. Manual check required', file=sys.stderr)
