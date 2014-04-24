@@ -41,6 +41,7 @@
         doctrines/christ_deity
         doctrines/christ_jesus_christ
         doctrines/hell_and_hades
+        doctrines/holy_sprit_ministry_to_jesus
         doctrines/miracles_purpose
         doctrines/priests
         doctrines/priests_levitical
