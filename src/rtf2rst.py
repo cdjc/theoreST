@@ -41,7 +41,7 @@ class Book:
         if self.introduction:
             self.introduction.show()
         for c in self.chapters:
-            self.chapters[0].show()
+            c.show()
 
 class Introduction:
     
@@ -83,6 +83,7 @@ class Section():
         self.optional_introduction = []
         self.subsections = []
         self.application = []
+        self.sidebars = [] # Like an application, but without the title "APPLICATION"
         self.doctrines = []
         
     def show(self):
@@ -97,7 +98,21 @@ class Section():
         print '    Application'
         for p in self.application:
             print ('\n').join(' '*6+'[A]'+line for line in textwrap.wrap(p, width=txt_width, subsequent_indent='  '))
+        for s in self.sidebars:
+            s.show()
         print '    Doctrines'
+
+class SideBar:
+    
+    def __init__(self, name):
+        self.name = name
+        self.paragraphs = []
+        
+    def show(self):
+        print '    [SB]'+self.name
+        for p in self.paragraphs:
+            print ('\n').join(' '*6+'[P]'+line for line in textwrap.wrap(str(p), width=txt_width, subsequent_indent='  '))
+        
         
 class SubSection():
     
@@ -146,6 +161,8 @@ class Reader:
                 state = state()
             except StopIteration:
                 break
+        if state == None:
+            print 'Stopped at:',self.curr()
         return self.book
 
     def curr(self):
@@ -184,6 +201,9 @@ class Reader:
         if self.index + offset >= len(self.doc_props):
             return False
         return 'bold' in self.doc_props[self.index + offset]
+    
+    def is_bold_title(self, offset = 0):
+        return self.is_all_caps() and self.is_bold() and self.is_paragraph_start() and self.is_paragraph_end()
     
     def is_underline(self, offset = 0):
         if self.index + offset >= len(self.doc_props):
@@ -252,6 +272,7 @@ class Reader:
         while not self.is_bold_underline():
             self.next()
         if self.curr().startswith("CHAPTER"):
+            print 'Chapter:',self.curr()
             self.book.chapters.append(Chapter(self.curr()))
             self.next()
             if not self.is_bold_underline():
@@ -273,6 +294,7 @@ class Reader:
         if not self.is_bold_underline():
             self.fail("Expected section heading to be bold and underline")
         sec = Section(self.curr())
+        print "Section:",self.curr()
         self.next()
         self.book.chapters[-1].sections.append(sec)
         sec.reference = self.curr()
@@ -282,9 +304,12 @@ class Reader:
         self.next()
         
         #optional intro paragraphs
-        while not self.is_verse():
+        while not self.is_verse() and not self.is_bold_title():
             sec.optional_introduction.append(self.curr())
             self.next()
+        if self.curr().startswith('APPLICATION'):
+            return self._application
+        
         return self._subsection
     
     def is_verse(self):
@@ -305,6 +330,7 @@ class Reader:
             self.fail("Expected verse text to start with number or V number")
         ss = SubSection(self.curr())
         self.book.chapters[-1].sections[-1].subsections.append(ss)
+        #print self.curr()
         self.next()
         while not (self.is_verse() or self.curr().startswith('APPLICATION')): #self.is_bold():
             if self.is_paragraph_start():
@@ -320,9 +346,22 @@ class Reader:
         if not self.curr().startswith('APPLICATION') and not self.is_bold():
             self.fail("Expected bold APPLICATION here")
         self.next()
-        while not self.is_bold():
+        while not self.is_bold_title():
             self.book.chapters[-1].sections[-1].application.append(self.curr())
             self.next()
+        while self.is_bold_title() and not self.curr().startswith('DOCTRINE'):
+            # A 'sidebar'. An extra non-doctrine note (e.g. in Luke 1 'Born in Bethlehem')
+            sb = SideBar(self.curr())
+            self.book.chapters[-1].sections[-1].sidebars.append(sb)
+            #print self.curr()
+            self.next()
+            while not self.is_bold_title():
+                #print self.curr()
+                if self.is_paragraph_start():
+                    sb.paragraphs.append(Paragraph())
+                sb.paragraphs[-1].text.append(self.curr())
+                sb.paragraphs[-1].props.append(self.curr_props())
+                self.next()
         return self._doctrines
 
     def _readin_rtf(self):
