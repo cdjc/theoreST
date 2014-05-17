@@ -80,13 +80,19 @@ class Tokeniser:
         pass
         
     def tokenise(self, chars):
-        #print(chars)
+        print('chars:',chars)
         tokens = [self._to_bib_token(x) for x in self._py_token_list(chars)]
         tokens = self._transform_for_SoS(tokens)
         tokens = self._transform_for_numbered_books(tokens)
         return tokens
 
     def _py_token_list(self, s):
+        #print('s: ',s)
+        #print('s.encode:',s.encode('ascii'))
+        #print('tokenize:',tokenize)
+        #print('tokenize:',tokenize.__code__)
+        #print('toks:',tokenize(BytesIO(s.encode('ascii')).readline))
+        
         return [(x[0],x[1]) for x in tokenize(BytesIO(s.encode('ascii')).readline) if x[0] != 56]
 
     def _to_bib_token(self, tok):
@@ -95,7 +101,9 @@ class Tokeniser:
         if tok_id == token.NAME:
             if tok_val in all_book_names:
                 return Book(tok_val)
-            if tok_val in 'abc':
+            if tok_val.lower() in {name.lower() for name in all_book_names}:
+                return Book([name for name in all_book_names if name.lower() == tok_val.lower()][0])
+            if tok_val in 'abcABC':
                 return SubVerse(tok_val)
         if tok_id == token.NUMBER:
             return Number(int(tok_val))
@@ -507,8 +515,7 @@ class VerseReference:
             if self.to_verse:
                 s += str(self.to_verse)
         return '('+s+')'
-        
-    
+            
 if __name__ == '__main__':
     tests = {'John 3:16' : [VerseReference('John 3:16', 'John', 3, 16)],
     'John 3,4' : [VerseReference('John 3', 'John', 3), VerseReference('4', 'John', 4)],
@@ -546,7 +553,9 @@ if __name__ == '__main__':
     'Luke 10-12:5' : [VerseReference('Luke 10-12:5', 'Luke', 10, to_chapter=12, to_verse=5)],
     'Luke 3-4,10-12:5' : [VerseReference('Luke 3-4', 'Luke', 3, to_chapter=4),
                           VerseReference('10-12:5', 'Luke', 10, to_chapter=12, to_verse=5)],
-    'Luke 17:11-19:48' : [VerseReference('Luke 17:11-19:48', 'Luke', 17, 11, to_chapter=19, to_verse=48)]
+    'Luke 17:11-19:48' : [VerseReference('Luke 17:11-19:48', 'Luke', 17, 11, to_chapter=19, to_verse=48)],
+    'LUKE 1:1-4': [VerseReference('Luke 1:1-4', 'Luke', 1, 1, 4)],
+    'LUKE 3:21-23A': [VerseReference('Luke 3:21-23A', 'Luke', 3, 21, 23)],
                                 # TODO: more tests for errors.
     }
 

@@ -1,10 +1,12 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys
 import textwrap
 
+sys.path.append('../../pyth')
+
+import verse_parser
 from pyth.plugins.rtf15.reader import Rtf15Reader
-from pyth.plugins.plaintext.writer import PlaintextWriter
 
 import pyth
 
@@ -36,8 +38,8 @@ class Book:
         self.chapters = []
         
     def show(self):
-        print self.name
-        print
+        print(self.name)
+        print()
         if self.introduction:
             self.introduction.show()
         for c in self.chapters:
@@ -47,9 +49,10 @@ class Introduction:
     
     def __init__(self):
         self.sub_intros = []
+        self.doctrines = []
         
     def show(self):
-        print "Introduction"
+        print("Introduction")
         for si in self.sub_intros:
             si.show()
         
@@ -60,9 +63,9 @@ class SubIntroduction:
         self.paragraphs = []
         
     def show(self):
-        print "  "+self.name
+        print("  "+self.name)
         for p in self.paragraphs:
-            print ('\n').join(' '*4+line for line in textwrap.wrap(str(p), width=txt_width, subsequent_indent='  '))
+            print(('\n').join(' '*4+line for line in textwrap.wrap(str(p), width=txt_width, subsequent_indent='  ')))
 
 class Chapter():
     
@@ -71,7 +74,7 @@ class Chapter():
         self.sections = []
         
     def show(self):
-        print self.name
+        print(self.name)
         for s in self.sections:
             s.show()
         
@@ -87,20 +90,22 @@ class Section():
         self.doctrines = []
         
     def show(self):
-        print '  [S]'+self.name
-        print '    [R]'+self.reference
-        print '    Background and Analysis'
+        print('  [S]'+self.name)
+        print('    [R]'+repr(self.reference))
+        print('    Background and Analysis')
         if self.optional_introduction:
             for p in self.optional_introduction:
-                print ('\n').join(' '*6+'[OI]'+line for line in textwrap.wrap(p, width=txt_width, subsequent_indent='  '))
+                print(('\n').join(' '*6+'[OI]'+line for line in textwrap.wrap(p, width=txt_width, subsequent_indent='  ')))
         for sub in self.subsections:
             sub.show()
-        print '    Application'
+        print('    Application')
         for p in self.application:
-            print ('\n').join(' '*6+'[A]'+line for line in textwrap.wrap(p, width=txt_width, subsequent_indent='  '))
+            print(('\n').join(' '*6+'[A]'+line for line in textwrap.wrap(p, width=txt_width, subsequent_indent='  ')))
         for s in self.sidebars:
             s.show()
-        print '    Doctrines'
+        print('    Doctrines')
+        for s in self.doctrines:
+            print('      '+s)
 
 class SideBar:
     
@@ -109,24 +114,29 @@ class SideBar:
         self.paragraphs = []
         
     def show(self):
-        print '    [SB]'+self.name
+        print('    [SB]'+self.name)
         for p in self.paragraphs:
-            print ('\n').join(' '*6+'[P]'+line for line in textwrap.wrap(str(p), width=txt_width, subsequent_indent='  '))
+            print(('\n').join(' '*6+'[P]'+line for line in textwrap.wrap(str(p), width=txt_width, subsequent_indent='  ')))
         
         
 class SubSection():
+
     
     def __init__(self, verse_ref):
         self.verse_ref = verse_ref
         self.paragraphs = []
+        
+        # The verse could be a verse range. We only know by either:
+        # 1. subtracting one from the next verse
+        # 2. If there is no next verse, the last verse should be the end of the eange for the section.
     
     def show(self):
         verse = self.verse_ref.split()[0]
         if verse in ('V','Verse'):
             verse = self.verse_ref.split()[1]
-        print '    VERSE '+verse
+        print('    VERSE '+verse)
         for p in self.paragraphs:
-            print ('\n').join(' '*6+'[V]'+line for line in textwrap.wrap(str(p), width=txt_width, subsequent_indent='  '))
+            print(('\n').join(' '*6+'[V]'+line for line in textwrap.wrap(str(p), width=txt_width, subsequent_indent='  ')))
         
     
 class ParseException(Exception):
@@ -149,7 +159,7 @@ class Reader:
     def raw(self):
         self._readin_rtf()
         for text,props in zip(self.doc_text, self.doc_props):
-            print text,props
+            print(text,props)
 
     def read(self):
         self._readin_rtf()
@@ -162,7 +172,7 @@ class Reader:
             except StopIteration:
                 break
         if state == None:
-            print 'Stopped at:',self.curr()
+            print('Stopped at:',self.curr())
         return self.book
 
     def curr(self):
@@ -213,7 +223,7 @@ class Reader:
     def is_bold_underline(self, offset = 0):
         return self.is_bold() and self.is_underline()
     
-    def next(self):
+    def __next__(self):
         
         self.index += 1
         if self.index >= len(self.doc_text):
@@ -231,10 +241,11 @@ class Reader:
         raise ParseException("EOF","EOF",reason)
 
     def _book(self):
+        print(self.curr().lower())
         while not self.is_bold_underline() or not self.curr().lower().startswith(self.title.lower()):
-            self.next()
+            next(self)
         self.book = Book(self.curr())
-        self.next()
+        next(self)
         return self._intro
     
     def _intro(self):
@@ -248,13 +259,13 @@ class Reader:
             self.fail("Expected subintro title to not be bold or underline")
         si = SubIntroduction(self.curr())
         self.book.introduction.sub_intros.append(si)
-        self.next()
+        next(self)
         while not self.is_all_caps() and not self.curr().startswith("DOCTRINE"):
             if self.is_paragraph_start():
                 si.paragraphs.append(Paragraph())
             si.paragraphs[-1].text.append(self.curr())
             si.paragraphs[-1].props.append(self.curr_props())
-            self.next()
+            next(self)
         if self.curr().startswith("DOCTRINE"):
             return self._doctrines
         if self.is_plain():
@@ -269,12 +280,18 @@ class Reader:
         '''
         if not self.curr().startswith("DOCTRINE"):
             self.fail("Expected to find DOCTRINE(S) heading")
+        next(self)
         while not self.is_bold_underline():
-            self.next()
+            if self.is_bold():
+                if self.book.chapters:
+                    self.book.chapters[-1].sections[-1].doctrines.append(self.curr())
+                else:
+                    self.book.introduction.doctrines.append(self.curr())
+            next(self)
         if self.curr().startswith("CHAPTER"):
-            print 'Chapter:',self.curr()
+            print('Chapter:',self.curr())
             self.book.chapters.append(Chapter(self.curr()))
-            self.next()
+            next(self)
             if not self.is_bold_underline():
                 self.fail("Expected heading after chapter to be bold underline")
         return self._section
@@ -294,19 +311,23 @@ class Reader:
         if not self.is_bold_underline():
             self.fail("Expected section heading to be bold and underline")
         sec = Section(self.curr())
-        print "Section:",self.curr()
-        self.next()
+        print("Section:",self.curr())
+        next(self)
         self.book.chapters[-1].sections.append(sec)
-        sec.reference = self.curr()
-        self.next()
+        print("  Reference:",self.curr())
+        verse_refs = verse_parser.Parser(self.curr()).parse_verse_references()
+        if len(verse_refs) > 1:
+            self.fail("Expected just one verse reference for section:"+self.curr())       
+        sec.reference = verse_refs[0]
+        next(self)
         while not self.curr().startswith('BACKGROUND'):
-            self.next()
-        self.next()
+            next(self)
+        next(self)
         
         #optional intro paragraphs
         while not self.is_verse() and not self.is_bold_title():
             sec.optional_introduction.append(self.curr())
-            self.next()
+            next(self)
         if self.curr().startswith('APPLICATION'):
             return self._application
         
@@ -331,13 +352,13 @@ class Reader:
         ss = SubSection(self.curr())
         self.book.chapters[-1].sections[-1].subsections.append(ss)
         #print self.curr()
-        self.next()
+        next(self)
         while not (self.is_verse() or self.curr().startswith('APPLICATION')): #self.is_bold():
             if self.is_paragraph_start():
                 ss.paragraphs.append(Paragraph())
             ss.paragraphs[-1].text.append(self.curr())
             ss.paragraphs[-1].props.append(self.curr_props())
-            self.next()
+            next(self)
         if self.curr().startswith('APPLICATION'):
             return self._application
         return self._subsection
@@ -345,31 +366,31 @@ class Reader:
     def _application(self):
         if not self.curr().startswith('APPLICATION') and not self.is_bold():
             self.fail("Expected bold APPLICATION here")
-        self.next()
+        next(self)
         while not self.is_bold_title():
             self.book.chapters[-1].sections[-1].application.append(self.curr())
-            self.next()
+            next(self)
         while self.is_bold_title() and not self.curr().startswith('DOCTRINE'):
             # A 'sidebar'. An extra non-doctrine note (e.g. in Luke 1 'Born in Bethlehem')
             sb = SideBar(self.curr())
             self.book.chapters[-1].sections[-1].sidebars.append(sb)
             #print self.curr()
-            self.next()
+            next(self)
             while not self.is_bold_title():
                 #print self.curr()
                 if self.is_paragraph_start():
                     sb.paragraphs.append(Paragraph())
                 sb.paragraphs[-1].text.append(self.curr())
                 sb.paragraphs[-1].props.append(self.curr_props())
-                self.next()
+                next(self)
         return self._doctrines
 
     def _readin_rtf(self):
-        doc = Rtf15Reader.read(open(self.fname))
+        doc = Rtf15Reader.read(open(self.fname, 'r'))
     
         self.doc_text = []
         self.doc_props = []
-    
+        
         for i,element in enumerate(doc.content):
             if hasattr(element,"content"):
                 if len(element.content) == 0:
@@ -379,11 +400,11 @@ class Reader:
                     if not isinstance(text, pyth.document.Text):
                         if isinstance(text, pyth.document.ListEntry):
                             continue
-                        print >> sys.stderr,"### Unknown paragraph element", text
+                        print("### Unknown paragraph element", text, file=sys.stderr)
                         sys.exit(1)
-                    #print text.content[0].encode('utf-8')
-                    self.doc_text.append(text.content[0].encode('utf-8'))
-                    self.doc_props.append(text.properties.keys())
+                    #print text.content[0]
+                    self.doc_text.append(text.content[0])
+                    self.doc_props.append(list(text.properties.keys()))
         self._formatting_fix_ups()
     
     def _formatting_fix_ups(self):
