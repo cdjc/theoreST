@@ -2,6 +2,7 @@
 
 import sys
 import textwrap
+import re
 
 sys.path.append('../../pyth')
 
@@ -11,6 +12,9 @@ from pyth.plugins.rtf15.reader import Rtf15Reader
 import pyth
 
 txt_width = 100
+
+verse_re = re.compile(r'([Vv](erse)?)?\s*[1-9][0-9]*')
+
 
 class Paragraph:
     
@@ -128,12 +132,13 @@ class SubSection():
         
         # The verse could be a verse range. We only know by either:
         # 1. subtracting one from the next verse
-        # 2. If there is no next verse, the last verse should be the end of the eange for the section.
+        # 2. If there is no next verse, the last verse should be the end of the range for the section.
     
     def show(self):
-        verse = self.verse_ref.split()[0]
-        if verse in ('V','Verse'):
-            verse = self.verse_ref.split()[1]
+        verse_match = re.search('\d+',self.verse_ref)
+        if verse_match is None:
+            raise ParseException(self.verse_ref, '', 'Expected numbers in verse reference')
+        verse = verse_match.group(0)
         print('    VERSE '+verse)
         for p in self.paragraphs:
             print(('\n').join(' '*6+'[V]'+line for line in textwrap.wrap(str(p), width=txt_width, subsequent_indent='  ')))
@@ -333,11 +338,24 @@ class Reader:
         
         return self._subsection
     
+    
+    
     def is_verse(self):
-        bits = self.curr().split()
-        return self.is_bold() and \
-               (bits[0].isdigit() or (bits[0] in ('V','Verse') and bits[1].isdigit())) and\
-               self.is_paragraph_start() and self.is_paragraph_end()
+        # TYhe paragraph should be bold
+        if not self.is_bold():
+            return False
+        # The entire paragraph should be bold
+        if not (self.is_paragraph_start() and self.is_paragraph_end()):
+            return False
+
+        #bits = self.curr().split()
+
+        if verse_re.match(self.curr()):
+            return True
+        return False
+        #return self.is_bold() and \
+               #(bits[0].isdigit() or (bits[0] in ('V','Verse') and bits[1].isdigit())) and\
+               #self.is_paragraph_start() and self.is_paragraph_end()
         
     
     def _subsection(self):
