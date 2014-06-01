@@ -22,6 +22,19 @@ class Paragraph:
         self.text = []
         self.props = []
         
+    def annotate(self):
+        pass
+        
+    def show(self,indent):
+        #print('text:',self.text)
+        line_groups = [textwrap.wrap(line, width=txt_width, subsequent_indent='  ') for line in self.text]
+        #print('lines',line_groups)
+        flattened = []
+        for group in line_groups:
+            flattened.extend(line for line in group)
+        #print('flat',flattened)
+        print(('\n').join(indent+'[P]'+line for line in flattened))
+        
     def __str__(self):
         s = ''
         for text,props in zip(self.text, self.props):
@@ -41,6 +54,14 @@ class Book:
         self.introduction = None
         self.chapters = []
         
+    def annotate(self):
+        if self.introduction:
+            self.introduction.parent = self
+            self.introduction.annotate()
+        for chapter in self.chapters:
+            chapter.parent = self
+            chapter.annotate()
+        
     def show(self):
         print(self.name)
         print()
@@ -55,6 +76,11 @@ class Introduction:
         self.sub_intros = []
         self.doctrines = []
         
+    def annotate(self):
+        for child in self.sub_intros + self.doctrines:
+            child.parent = self
+            child.annotate()
+        
     def show(self):
         print("Introduction")
         for si in self.sub_intros:
@@ -65,6 +91,11 @@ class SubIntroduction:
     def __init__(self, name):
         self.name = name
         self.paragraphs = []
+
+    def annotate(self):
+        for child in self.paragraphs:
+            child.parent = self
+            child.annotate()
         
     def show(self):
         print("  "+self.name)
@@ -76,6 +107,11 @@ class Chapter():
     def __init__(self, name):
         self.name = name
         self.sections = []
+
+    def annotate(self):
+        for child in self.sections:
+            child.parent = self
+            child.annotate()
         
     def show(self):
         print(self.name)
@@ -93,13 +129,46 @@ class Section():
         self.sidebars = [] # Like an application, but without the title "APPLICATION"
         self.doctrines = []
         
+    def annotate(self):
+        #print('OI',self.optional_introduction)
+        #print('SS',self.subsections)
+        #print('AP',self.application)
+        #print('SB',self.sidebars)
+        #print('DC',self.doctrines)
+        # self.application is strings, self.reference is verse reference
+
+                
+        
+        for child in self.subsections + self.sidebars + self.doctrines:
+            child.parent = self
+            child.annotate()
+
+        for index,sub in enumerate(self.subsections):
+            sub.from_verse = int(sub.verse_int)
+            if index == len(self.subsections) - 1:
+                sub.to_verse = self.reference.to_verse.value
+            else:
+                sub.to_verse = int(self.subsections[index + 1].verse_int) - 1
+            if sub.to_verse < sub.from_verse: #sanity check
+                raise ParseException('Section '+sub.name+str(self.reference),'','from verse ('+str(sub.from_verse)+') is greater than to-verse ('+str(sub.to_verse)+')')
+
+            
+    def start_verse(self):
+        if self.reference:
+            return self.reference.verse
+        
+    def end_verse(self):
+        if self.reference:
+            return self.reference.to_verse
+        
     def show(self):
         print('  [S]'+self.name)
         print('    [R]'+repr(self.reference))
         print('    Background and Analysis')
         if self.optional_introduction:
             for p in self.optional_introduction:
-                print(('\n').join(' '*6+'[OI]'+line for line in textwrap.wrap(p, width=txt_width, subsequent_indent='  ')))
+                p.show(' '*6)
+                #print(('\n').join(' '*6+'[OI]'+line for line in textwrap.wrap(p, width=txt_width, subsequent_indent='  ')))
         for sub in self.subsections:
             sub.show()
         print('    Application')
@@ -109,13 +178,18 @@ class Section():
             s.show()
         print('    Doctrines')
         for s in self.doctrines:
-            print('      '+s)
+            s.show()
 
 class SideBar:
     
     def __init__(self, name):
         self.name = name
         self.paragraphs = []
+        
+    def annotate(self):
+        for p in self.paragraphs:
+            p.parent = self
+            p.annotate()
         
     def show(self):
         print('    [SB]'+self.name)
@@ -126,23 +200,45 @@ class SideBar:
 class SubSection():
 
     
-    def __init__(self, verse_ref):
-        self.verse_ref = verse_ref
+    def __init__(self, verse_line):
+        self.verse_line = verse_line # string
         self.paragraphs = []
+        
+        self.verse_int = None   # set when we do our annotate()
+        
+        self.from_verse = None  # set when parent does annotate()
+        self.to_verse = None 
         
         # The verse could be a verse range. We only know by either:
         # 1. subtracting one from the next verse
         # 2. If there is no next verse, the last verse should be the end of the range for the section.
     
-    def show(self):
-        verse_match = re.search('\d+',self.verse_ref)
+    def annotate(self):
+        verse_match = re.search('\d+',self.verse_line)
         if verse_match is None:
             raise ParseException(self.verse_ref, '', 'Expected numbers in verse reference')
-        verse = verse_match.group(0)
-        print('    VERSE '+verse)
+        self.verse_int = verse_match.group(0)
+
+        for p in self.paragraphs:
+            p.parent = self
+            p.annotate()
+        
+    def show(self):
+        print('    VERSE '+self.verse_int,self.from_verse,self.to_verse)
         for p in self.paragraphs:
             print(('\n').join(' '*6+'[V]'+line for line in textwrap.wrap(str(p), width=txt_width, subsequent_indent='  ')))
         
+    
+class Doctrine():
+    
+    def __init__(self, title):
+        self.title = title
+        
+    def annotate(self):
+        pass
+        
+    def show(self):
+        print('      Doctrine:',self.title)
     
 class ParseException(Exception):
     
@@ -178,6 +274,9 @@ class Reader:
                 break
         if state == None:
             print('Stopped at:',self.curr())
+            
+        self.book.annotate()
+        
         return self.book
 
     def curr(self):
@@ -283,16 +382,19 @@ class Reader:
         Currently, ignore all doctrines.
         After doctrines will be either a chapter or a section heading
         '''
+        print(' DOCTRINES')
         if not self.curr().startswith("DOCTRINE"):
             self.fail("Expected to find DOCTRINE(S) heading")
         next(self)
         while not self.is_bold_underline():
             if self.is_bold():
+                print('  D:',self.curr())
                 if self.book.chapters:
-                    self.book.chapters[-1].sections[-1].doctrines.append(self.curr())
+                    self.book.chapters[-1].sections[-1].doctrines.append(Doctrine(self.curr()))
                 else:
-                    self.book.introduction.doctrines.append(self.curr())
+                    self.book.introduction.doctrines.append(Doctrine(self.curr()))
             next(self)
+        #print('BU:',self.curr())
         if self.curr().startswith("CHAPTER"):
             print('Chapter:',self.curr())
             self.book.chapters.append(Chapter(self.curr()))
@@ -326,12 +428,26 @@ class Reader:
         sec.reference = verse_refs[0]
         next(self)
         while not self.curr().startswith('BACKGROUND'):
+            #if self.is_bold():
+                ##print('B:',self.curr())
+                #if self.is_all_caps():
+                    #print('AC:',self.curr())
+                #if self.is_paragraph_start():
+                    #print('PS:',self.curr())
+                #if self.is_paragraph_end():
+                    #print('PE:',self.curr())
+            if self.is_bold_title():
+                #print('BT:',self.curr())
+                if not self.curr().startswith("KEY WORD"):
+                    self.fail('Expecting "BACKGROUND" to be the next interesting bold title')
             next(self)
         next(self)
         
         #optional intro paragraphs
         while not self.is_verse() and not self.is_bold_title():
-            sec.optional_introduction.append(self.curr())
+            if self.is_paragraph_start():
+                sec.optional_introduction.append(Paragraph())
+            sec.optional_introduction[-1].text.append(self.curr()) # might need to force paragraph start if the first.
             next(self)
         if self.curr().startswith('APPLICATION'):
             return self._application
@@ -382,6 +498,7 @@ class Reader:
         return self._subsection
 
     def _application(self):
+        print(' APPLICATION')
         if not self.curr().startswith('APPLICATION') and not self.is_bold():
             self.fail("Expected bold APPLICATION here")
         next(self)
