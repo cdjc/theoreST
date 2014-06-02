@@ -499,6 +499,13 @@ class VerseReference:
         self.to_verse = to_verse
         self.to_chapter = to_chapter
         
+    def as_rest(self, *props):
+        rval = '.. biblepassage:: '+self.text
+        for prop in props:
+            rval += '\n    :'+prop+':'
+        rval += '\n'
+        return rval
+        
     def __eq__(self, o):
         return self.__repr__() == o.__repr__()
             

@@ -4,10 +4,12 @@ import sys
 import textwrap
 import re
 
-sys.path.append('../../pyth')
+sys.path.append('../../pyth') # my own python-3 compatible fork
 
 import verse_parser
-from pyth.plugins.rtf15.reader import Rtf15Reader
+import bibrefquoter
+
+from pyth.plugins.rtf15.reader import Rtf15Reader # my own python-3 compatible fork
 
 import pyth
 
@@ -15,6 +17,40 @@ txt_width = 100
 
 verse_re = re.compile(r'([Vv](erse)?)?\s*[1-9][0-9]*')
 
+class RestInfo:
+    '''
+    Class for holding info that is passed around when writing rest
+    '''
+    def __init__(self):
+        self.curr_fid = None
+        
+    def open(self, fname):
+        if self.curr_fid:
+            self.curr_fid.close()
+        self.curr_fid = open(fname+'.rst','w')
+        
+    def H1(self, text):
+        self.write_under(text, '=')
+        
+    def H2(self, text):
+        self.write_under(text, '-')
+        
+    def H3(self, text):
+        self.write_under(text, '.')
+    
+    def finish(self):
+        if self.curr_fid:
+            self.curr_fid.close()        
+        
+    def write(self, text = ''):
+        print(text, file=self.curr_fid)
+        
+    def write_under(self, text, c):
+        text = ' '.join(w.capitalize() for w in text.split())
+        self.write(text)
+        self.write(c*len(text))
+        self.write()
+        
 
 class Paragraph:
     
@@ -24,6 +60,24 @@ class Paragraph:
         
     def annotate(self):
         pass
+
+    def rest(self, inf):
+        s = ''
+        for text,props in zip(self.text, self.props):
+            text = bibrefquoter.bibquote(text)
+            if 'bold' in props:
+                text = '**'+text+'**'
+            if 'underline' in props:
+                text = '_'+text+'_'
+            if 'italics' in props and 'bold' not in props:
+                text = '*'+text+'*'
+            # TODO: italics...
+            s += text
+        
+        s = textwrap.fill(s, 100)
+        inf.write(s)
+        inf.write('')
+        
         
     def show(self,indent):
         #print('text:',self.text)
@@ -61,6 +115,12 @@ class Book:
         for chapter in self.chapters:
             chapter.parent = self
             chapter.annotate()
+            
+    def rest(self, inf):
+        if self.introduction:
+            self.introduction.rest(inf)
+        for c in self.chapters:
+            c.rest(inf)
         
     def show(self):
         print(self.name)
@@ -80,6 +140,17 @@ class Introduction:
         for child in self.sub_intros + self.doctrines:
             child.parent = self
             child.annotate()
+            
+    def rest(self, inf):
+        inf.open('introduction')
+        inf.H1('Introduction')
+
+        for si in self.sub_intros:
+            si.rest(inf)
+        if self.doctrines:
+            inf.H3('Doctrines')
+            for d in self.doctrines:
+                d.rest(inf)
         
     def show(self):
         print("Introduction")
@@ -97,6 +168,12 @@ class SubIntroduction:
             child.parent = self
             child.annotate()
         
+    def rest(self, inf):
+        if self.name.lower() != "introduction":
+            inf.H2(self.name)
+        for p in self.paragraphs:
+            p.rest(inf)
+        
     def show(self):
         print("  "+self.name)
         for p in self.paragraphs:
@@ -112,6 +189,12 @@ class Chapter():
         for child in self.sections:
             child.parent = self
             child.annotate()
+
+    def rest(self, inf):
+        inf.open(self.name.lower().replace(' ','_'))
+        inf.H1(self.name)
+        for s in self.sections:
+            s.rest(inf)
         
     def show(self):
         print(self.name)
@@ -160,6 +243,28 @@ class Section():
     def end_verse(self):
         if self.reference:
             return self.reference.to_verse
+
+    def rest(self, inf):
+        inf.H2(self.name)
+        inf.write()
+        inf.write(self.reference.as_rest('bold','title'))
+        inf.H3("Background and Analysis")
+        if self.optional_introduction:
+            for p in self.optional_introduction:
+                p.rest(inf)
+        for sub in self.subsections:
+            sub.rest(inf)
+        #subsections here
+        if self.application:
+            inf.H3("Application")
+            for p in self.application:
+                p.rest(inf)
+        #sidebars here
+        if self.doctrines:
+            inf.H3('Doctrines')
+            for d in self.doctrines:
+                d.rest(inf)
+            inf.write('')
         
     def show(self):
         print('  [S]'+self.name)
@@ -222,6 +327,20 @@ class SubSection():
         for p in self.paragraphs:
             p.parent = self
             p.annotate()
+
+    def rest(self, inf):
+        book_name = self.parent.reference.book.value
+        chap = str(self.parent.reference.chapter.value)
+        reftext = book_name + ' '+chap+':'+str(self.from_verse)
+        #vstr = 'v'+str(self.from_verse)
+        if self.to_verse != self.from_verse:
+            reftext += '-'+str(self.to_verse)
+        inf.write('.. biblepassage:: '+reftext)
+        inf.write('    :bold:')
+        inf.write()
+        for p in self.paragraphs:
+            p.rest(inf)
+        
         
     def show(self):
         print('    VERSE '+self.verse_int,self.from_verse,self.to_verse)
@@ -236,6 +355,9 @@ class Doctrine():
         
     def annotate(self):
         pass
+    
+    def rest(self, inf):
+        inf.write("- :doc:`doctrines/"+self.title+"`")           
         
     def show(self):
         print('      Doctrine:',self.title)
@@ -502,8 +624,12 @@ class Reader:
         if not self.curr().startswith('APPLICATION') and not self.is_bold():
             self.fail("Expected bold APPLICATION here")
         next(self)
+        par_list = self.book.chapters[-1].sections[-1].application
         while not self.is_bold_title():
-            self.book.chapters[-1].sections[-1].application.append(self.curr())
+            if self.is_paragraph_start():
+                par_list.append(Paragraph())
+            par_list[-1].text.append(self.curr())
+            par_list[-1].props.append(self.curr_props())
             next(self)
         while self.is_bold_title() and not self.curr().startswith('DOCTRINE'):
             # A 'sidebar'. An extra non-doctrine note (e.g. in Luke 1 'Born in Bethlehem')
@@ -568,4 +694,6 @@ r = Reader(sys.argv[1], "gospel of luke")
 book = r.read()
 #book = r.raw()
 if book:
-    book.show()
+    #book.show()
+    r = RestInfo()
+    book.rest(r)
