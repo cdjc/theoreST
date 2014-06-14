@@ -170,12 +170,22 @@ class RstWriter(object):
             self._update_stack(nodes.line_block(), depth - 2)
             self._update_stack(nodes.line(), depth - 1)
         tos,tos_depth = self.node_stack[-1]
+        #print("tos:",type(tos),tos, depth, tos_depth)
+        #print('stk1:',self.node_stack)
         while depth <= tos_depth:
             del self.node_stack[-1]
-            old_node = tos
+            old_nodes = [tos]
+            #print("old:",type(tos),tos, depth, tos_depth)
             tos,tos_depth = self.node_stack[-1]
-            tos.append(old_node)
+            #print("pre:",type(tos),tos, depth, tos_depth)
+            while not hasattr(tos, 'append'):
+                del self.node_stack[-1]
+                old_nodes.insert(0, tos)
+                tos, tos_depth = self.node_stack[-1]
+                #print("pre!:",type(tos),tos, depth, tos_depth)
+            tos.extend(old_nodes)
         self.node_stack.append((item, depth))
+        #print('stk2:',self.node_stack)
         
     def _unwind_stack(self):
         while len(self.node_stack) > 1:
@@ -188,6 +198,7 @@ class RstWriter(object):
         return self.from_verse <= self.current_verse <= self.to_verse
     
     def span_content(self, elem, depth):
+        #print(' '*depth,depth,'<content>')
         if elem.text.strip():
             if 'bold' in self.options:
                 node = nodes.strong()
@@ -195,25 +206,23 @@ class RstWriter(object):
             else:
                 node = nodes.Text(elem.text)
             self._update_stack(node, depth)
-            #self._update_stack(nodes.Text(elem.text), depth)
         
     def span_ft(self,elem, depth):
         pass
-        #print('[ft]', end='')
         
     def div_p(self, elem, depth):
+        #print (' '*depth, depth,'<p>')
         self._update_stack(nodes.line_block(), depth - 1)
         node = nodes.line()
-        #if 'bold' in self.options:
-        #    node = nodes.strong()
-        #    node.append(nodes.line())
         self._update_stack(node, depth)
         
     def span_verse(self, elem, depth):
+        #print (' '*depth, depth,'<verse>')
         self.show_label = True # Next label could be a note instead though
         
     def span_label(self, elem, depth):
         if self.show_label and elem.text != '#':
+            #print(' '*depth, depth,'<vnum>',int(elem.text))
             self.current_verse = int(elem.text)
             self._update_stack(nodes.Text(' '+elem.text+' '), depth)
             self.show_label = False
@@ -222,6 +231,7 @@ class RstWriter(object):
         pass
         
     def span_it(self, elem, depth): # italics
+        #print(' '*depth, depth,'<it>')
         italics = nodes.emphasis()
         self._update_stack(italics, depth)
         
@@ -351,6 +361,7 @@ class YvesReader:
 
     def rst_nodes(self, options, version, book, chapter, verse = None, to_verse = None):
         fname = self.yves_file(version, book, chapter)
+        #print(fname)
         rawxml = self.read_yves(fname)
         processor = ProcessYvesXML(rawxml)
         writer = RstWriter(options, verse,to_verse)
@@ -388,8 +399,12 @@ if __name__ == '__main__':
         
     print('test')
     y = YvesReader()
-    nodes = y.rst_nodes({}, 'NET','Esther',9)
-    print()
-    print(nodes[-1].pformat())
+    #nodes = y.rst_nodes({}, 'NET','Luke',4, 19)
+    nodes = y.rst_nodes({}, 'NET','Esther',9, 24, 26)
+    #print(nodes[-1].pformat())
+    #print(dir(dom))
+    print (dom.toprettyxml())
+    #for node in nodes[-1].traverse():
+    #    print(node)
     #for node in list(nodes[-1].traverse()):
     #    print(node)

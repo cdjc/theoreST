@@ -80,7 +80,7 @@ class Tokeniser:
         pass
         
     def tokenise(self, chars):
-        print('chars:',chars)
+        #print('chars:',chars)
         tokens = [self._to_bib_token(x) for x in self._py_token_list(chars)]
         tokens = self._transform_for_SoS(tokens)
         tokens = self._transform_for_numbered_books(tokens)
