@@ -472,7 +472,14 @@ class Reader:
             next(self)
         self.book = Book(self.curr())
         next(self)
-        return self._intro
+        if self.curr().lower().startswith('chapter'):
+            print('Chapter:',self.curr())
+            self.book.chapters.append(Chapter(self.curr()))
+            next(self)  
+            if not self.is_bold_underline():
+                self.fail("Expected heading after chapter to be bold underline")
+            return self._section            
+        return self._intro # could be a chapter
     
     def _intro(self):
         self.book.introduction = Introduction()
